@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysta.biz - Calculadora Arancelaria Nicaragua</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --accent: #d93025; /* Rojo para alertas/notas */
+            --iva-exento: #188038; /* Verde para exentos */
+            --bg: #f8f9fa;
+        }
+
+        body { font-family: 'Roboto', Arial, sans-serif; background-color: var(--bg); margin: 0; padding: 20px; color: #3c4043; }
+        .container { max-width: 900px; margin: 0 auto; }
+        
+        /* Buscador */
+        .search-container { position: sticky; top: 0; background: var(--bg); padding: 20px 0; z-index: 100; }
+        .search-box { width: 100%; padding: 15px 25px; font-size: 18px; border: 1px solid #dfe1e5; border-radius: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); outline: none; }
+
+        /* Tarjeta de Producto */
+        .result-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); border-left: 6px solid var(--primary); }
+        .codigo-tag { font-weight: bold; color: var(--primary); background: #e8f0fe; padding: 4px 10px; border-radius: 5px; }
+        .descripcion { font-size: 17px; margin: 15px 0; line-height: 1.5; }
+        
+        /* Etiquetas Especiales */
+        .badge-iva { color: white; background: var(--iva-exento); padding: 3px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+        .ai-keywords { font-size: 13px; color: #5f6368; font-style: italic; margin-bottom: 15px; }
+
+        /* Calculadora Acumulativa */
+        .calc-container { background: #f1f3f4; border-radius: 8px; padding: 15px; }
+        .input-row { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; border-bottom: 1px solid #dadce0; padding-bottom: 15px; }
+        .cif-input { padding: 10px; border: 2px solid var(--primary); border-radius: 6px; font-size: 16px; width: 150px; }
+        
+        .tax-table { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; }
+        .tax-item span { display: block; }
+        .label { font-size: 11px; color: #70757a; font-weight: bold; }
+        .perc { font-size: 10px; color: #9aa0a6; }
+        .value { font-size: 16px; font-weight: bold; margin-top: 5px; }
+        .total-row { color: var(--primary); border-left: 1px solid #dadce0; }
+
+        /* Notas Legales */
+        .legal-notes { margin-top: 15px; padding: 10px; background: #fff4e5; border-radius: 6px; font-size: 12px; border: 1px solid #ffe2b3; }
+        .legal-notes ul { margin: 5px 0; padding-left: 20px; }
+        .ref-nota { font-weight: bold; color: var(--accent); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="search-container">
+        <h2 style="margin-top:0;">Analysta.biz - Nicaragua</h2>
+        <input type="text" id="searchInput" class="search-box" placeholder="Busca por nombre, código o utilidad (IA)...">
+    </div>
+
+    <div id="resultsList"></div>
+</div>
+
+<script>
+    let arancelData = [];
+
+    // Cargar CSV
+    Papa.parse("arancel_maestro_IA_Ready.csv", {
+        download: true,
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+            arancelData = results.data;
+        }
+    });
+
+    const searchInput = document.getElementById('searchInput');
+    const resultsList = document.getElementById('resultsList');
+
+    searchInput.addEventListener('input', () => {
+        const term = searchInput.value.toLowerCase();
+        if (term.length < 2) { resultsList.innerHTML = ''; return; }
+
+        const filtered = arancelData.filter(item => {
+            return (item.Codigo && item.Codigo.includes(term)) ||
+                   (item.Descripcion && item.Descripcion.toLowerCase().includes(term)) ||
+                   (item.Keywords_Sugeridas && item.Keywords_Sugeridas.toLowerCase().includes(term));
+        }).slice(0, 20);
+
+        renderCards(filtered);
+    });
+
+    function renderCards(data) {
+        resultsList.innerHTML = data.map((item, index) => {
+            // Lógica para detectar si es exento según tu columna 'Exento_IVA'
+            const esExento = item.Exento_IVA && item.Exento_IVA.toLowerCase().includes('si');
+            const tasaIVA = esExento ? 0 : 0.15;
+
+            return `
+            <div class="result-card">
+                <div>
+                    <span class="codigo-tag">${item.Codigo}</span>
+                    ${esExento ? '<span class="badge-iva">EXENTO DE IVA (Art. 127 Ley 822)</span>' : ''}
+                </div>
+                <div class="descripcion">${item.Descripcion}</div>
+                <div class="ai-keywords">✨ Sugerencias: ${item.Keywords_Sugeridas || 'N/A'}</div>
+                
+                <div class="calc-container">
+                    <div class="input-row">
+                        <label><strong>VALOR CIF (US$):</strong></label>
+                        <input type="number" class="cif-input" placeholder="0.00" 
+                               oninput="calcNica(this, ${item.DAI}, ${item.ISC}, ${tasaIVA}, ${index})">
+                        <small style="color: #70757a">Ingrese valor Costo + Seguro + Flete</small>
+                    </div>
+                    
+                    <div class="tax-table" id="tax-${index}">
+                        <div class="tax-item">
+                            <span class="label">DAI</span>
+                            <span class="perc">${(item.DAI*100).toFixed(0)}%</span>
+                            <span class="value">$0.00</span>
+                        </div>
+                        <div class="tax-item">
+                            <span class="label">ISC</span>
+                            <span class="perc">${(item.ISC*100).toFixed(0)}%</span>
+                            <span class="value">$0.00</span>
+                        </div>
+                        <div class="tax-item">
+                            <span class="label">IVA</span>
+                            <span class="perc">${(tasaIVA*100).toFixed(0)}%</span>
+                            <span class="value">$0.00</span>
+                        </div>
+                        <div class="tax-item total-row">
+                            <span class="label">TOTAL IMPUESTOS</span>
+                            <span class="perc">A PAGAR</span>
+                            <span class="value total-val">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="legal-notes">
+                    <strong>Notas de Referencia:</strong>
+                    ${item.Nota ? `<p class="ref-nota">Referencia Arancelaria: ${item.Nota}</p>` : ''}
+                    <ul>
+                        <li>El DAI es 0% para productos originarios de Centroamérica (Formulario Aduanero).</li>
+                        <li>Tratados USA (CAFTA) y China pueden aplicar exoneración de DAI. Consulte a su agente.</li>
+                        <li>Esta es una estimación. Los valores finales dependen de la declaración oficial.</li>
+                    </ul>
+                </div>
+            </div>
+            `;
+        }).join('');
+    }
+
+    function calcNica(input, dai, isc, iva, id) {
+        const cif = parseFloat(input.value) || 0;
+        
+        // FÓRMULA ACUMULATIVA NICARAGUA
+        const v_dai = cif * dai;
+        const v_isc = (cif + v_dai) * isc;
+        const v_iva = (cif + v_dai + v_isc) * iva;
+        const total = v_dai + v_isc + v_iva;
+
+        const container = document.getElementById(`tax-${id}`);
+        const values = container.getElementsByClassName('value');
+        
+        const fmt = (v) => `$${v.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+        
+        values[0].innerText = fmt(v_dai);
+        values[1].innerText = fmt(v_isc);
+        values[2].innerText = fmt(v_iva);
+        values[3].innerText = fmt(total);
+    }
+</script>
+
+</body>
+</html>
