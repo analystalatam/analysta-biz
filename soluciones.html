@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>analysta - Inteligencia de Mercado</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'brand-dark': '#1E1914',
+                        'brand-gold': '#AEA393',
+                        'brand-wine': '#450C1B',
+                        'brand-black': '#14110E',
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --brand-dark: #1E1914;
+            --brand-gold: #AEA393;
+            --brand-wine: #450C1B;
+        }
+        body {
+            background-color: var(--brand-dark);
+            color: #E5E1DC;
+            -webkit-font-smoothing: antialiased;
+        }
+        .phi-symbol {
+            font-family: serif;
+            font-style: italic;
+        }
+        .hover-gold-link:hover {
+            color: var(--brand-gold);
+            transition: color 0.3s ease;
+        }
+        .industry-card {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .industry-card:hover {
+            transform: translateY(-8px);
+        }
+    </style>
+</head>
+<body class="font-sans">
+<header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-sm border-b border-white/5">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex justify-between items-center h-24">
+<div class="flex-shrink-0 flex items-center">
+<a class="flex items-center space-x-2 group" href="#">
+<span class="phi-symbol text-3xl text-brand-gold">φ</span>
+<span class="text-white text-2xl font-normal tracking-tighter lowercase">analysta</span>
+</a>
+</div>
+<nav class="hidden lg:flex space-x-10">
+<a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="#">Soluciones/Servicios</a>
+<a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="#">Cómo Funciona</a>
+<a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="#industrias">Industrias</a>
+<a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="#">Precios/Acceso</a>
+<a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="#">Recursos</a>
+<a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="#">Compañía</a>
+</nav>
+<div class="hidden lg:flex">
+<a class="border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark px-6 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300" href="#">
+                    Agendar Demo
+                </a>
+</div>
+</div>
+</div>
+</header>
+<section class="relative pt-48 pb-32 lg:pt-64 lg:pb-48 overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+<div class="max-w-3xl">
+<h1 class="text-5xl lg:text-8xl font-serif text-white leading-none mb-8">
+                Visión <span class="italic text-brand-gold">estratégica</span> regional.
+            </h1>
+<p class="text-xl text-brand-gold/80 mb-12 max-w-xl font-light leading-relaxed">
+                Transformamos la complejidad de los datos en Centroamérica y el Caribe en claridad absoluta para su crecimiento institucional.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<a class="inline-flex items-center justify-center px-10 py-5 bg-brand-wine text-white text-sm font-bold uppercase tracking-widest hover:bg-brand-wine/80 transition-all" href="#">
+                    Explorar Soluciones
+                </a>
+<a class="inline-flex items-center justify-center px-10 py-5 border border-white/20 text-white text-sm font-bold uppercase tracking-widest hover:bg-white/10 transition-all" href="#">
+                    Nuestra Metodología
+                </a>
+</div>
+</div>
+</div>
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-30 pointer-events-none">
+<div class="w-full h-full bg-gradient-to-l from-brand-wine/20 to-transparent"></div>
+</div>
+</section>
+<section class="bg-brand-black py-32 lg:py-48" id="industrias">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="mb-24">
+<h2 class="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4">Sectores de Cobertura</h2>
+<p class="text-4xl lg:text-6xl font-serif text-white">Especialización en mercados <br/><span class="italic">clave de la región.</span></p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 border border-white/5">
+<div class="group relative aspect-[4/5] overflow-hidden bg-brand-dark industry-card">
+<img alt="Agricultura regional de alta precisión" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1tumRRty08jRrFXy2tndT1tWbo4D_JX8RqFRLLcbtsYuG1vRsscpgLdDejK0qukTiARCL6Vo8dM2kahCZygUau_d5q5zliBa4NSuwiLqN2j0mqCIm0wKjnVSbuJf3up1_jBPHGiLoQZ5v1mSjdUrSNTgklWJi_O_7xcfHHH_MXRlaomSrYJEI8r58OHL54ltMq5LBC9S9IqW_K66w6ugFPShmYW0E5GH_SVrflrjQkEs58qFbwyo9TnnSUZb-pdMvnb_8YdhZLxEh"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2 block">01</span>
+<h3 class="text-2xl font-serif text-white mb-2">Agricultura</h3>
+<p class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Monitoreo de cosechas, commodities y exportación.</p>
+</div>
+</div>
+<div class="group relative aspect-[4/5] overflow-hidden bg-brand-dark industry-card">
+<img alt="Desarrollo inmobiliario y construcción" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmtj0ugCnwME8qSYkSSE7JtNuaoZBoDN3Ao2PjAgqqJJKa3xryl81WOcjABRTX5uweHa2-jH4fpUMAXvWfKs-8sKVwa3a40IYDsO1bPCggvOiB5yvTguKpVR6MiHKsSJdCF4iLgdXwadVNUSIGDzxhSxneEam5TatfnUrjP7D-2OCmsVodTfnb1Om5C7v30OLBX2WMHTxKjdeLJQZWjVuIm2TU6yo1gJNInm0QKyYpM6vaHMJsZeUhDn2sACPGASirPPBhb7t3oTYP"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2 block">02</span>
+<h3 class="text-2xl font-serif text-white mb-2">Construcción</h3>
+<p class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Tendencias de urbanismo y costos de insumos.</p>
+</div>
+</div>
+<div class="group relative aspect-[4/5] overflow-hidden bg-brand-dark industry-card">
+<img alt="Plantas de energía renovable" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWYN3vQrl0SADhp98_tuJIxiWFR0eNIpGr9lw8oKIk-OkKY6fArn2-XYul8XCnM9AmuyDZBGR-t4GkiodWoLzIA--hOwln6c4u_yOiEXZcbHy69Jv3na3g40dY5AQwdXjB9cYZfkH3Or2yT4qCsFX5uJPF2Sy019ar8Yj76ANHlgr_Hds82QU-_5_xkjtumEa1Ui4-Xz-GdF-FIGB8tY_5pdOXSZXeW-loheSes0tUUUKLrm4kMub1t6dEaMIYhcBb-eduH27hNC7l"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2 block">03</span>
+<h3 class="text-2xl font-serif text-white mb-2">Energía</h3>
+<p class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Matriz energética y eficiencia regional.</p>
+</div>
+</div>
+<div class="group relative aspect-[4/5] overflow-hidden bg-brand-dark industry-card">
+<img alt="Procesos industriales avanzados" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd7wtj9UMwwwimXknmVQ7vrdubDVKd7_n9m1R1e5kh6d6GW90JX8y86oQHHAkf0pT9YewRlWNOJjKVTlR6JQddYRFr3KfckFzHfJptEHK4WnrzWFFR1QHz0taCMsO5j_nGcCHnxvrZgmA7IZop6UXcQJscfAGkUDd8MdN0TnLx6mejhZblfkipWgZORK3lJ5lM58gRM98O3GTvZ8MoOqtTNABdcOdaEuNeGVrS3XAedvqqimEoJ2DJv-UovMtcWbowrCL2FjyJW10_"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2 block">04</span>
+<h3 class="text-2xl font-serif text-white mb-2">Manufactura</h3>
+<p class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Zonas francas y cadenas de suministro locales.</p>
+</div>
+</div>
+<div class="group relative aspect-[4/5] overflow-hidden bg-brand-dark industry-card">
+<img alt="Bienes de consumo y retail" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzbwGPK7G-XJuyjNePsnhuxc1bRy57xd4Wq6W1RBaJdKPLsNScL1vUKC5F5-ZVnPH3Gu-6rafD8ualoBMQLoqG2nFrIl-PHt3sKK-u2XGIdhBOO_jr9itX0z-fhpw0VfwuqGGuC_nKRNoSPMzh7kiwDskfhLbgHKL2bFtiqhrsASRXlR0WWcQP2IZnGOe4rNFmxfRFNkl8K1Q3Fov8iG67qBGOekyAOukNmIOg5d_YoRM7SCwkXiDoWQxAIULk_cgVq5sB_gD3kupp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2 block">05</span>
+<h3 class="text-2xl font-serif text-white mb-2">Productos de Consumo</h3>
+<p class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Análisis de retail y comportamiento del comprador.</p>
+</div>
+</div>
+<div class="group relative aspect-[4/5] overflow-hidden bg-brand-dark industry-card">
+<img alt="Servicios médicos y farmacéuticos" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAok5KeEtgLyi812uZ4daZVuYhgO1pNksDW8_dH-zyt6qAY5cDGJtBYCbUQVVLO8LbOaaegDkWZjvDVpz8qjdvJ41XmwcQ01j1wloJuboTBq5qh9ifs05OKo3-ch97TT0PFqtyolDU8nSdZNw_XLYyoZL88INKNGJpOLw21FgjURhy4TUhM77jol8Kj_PwMnqiqjfIKjhUPRIWKXN4-Rm7iOI4wYZQKoiorrTfAeiidvlpfrNc3Wf0QEEsNJMBBaJTLzGNZXsodLsqj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2 block">06</span>
+<h3 class="text-2xl font-serif text-white mb-2">Salud</h3>
+<p class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Mercado farmacéutico e indicadores sanitarios.</p>
+</div>
+</div>
+<div class="group relative aspect-[4/5] overflow-hidden bg-brand-dark industry-card">
+<img alt="Logística y transporte regional" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5OoVu5oZbcovHBHxuV1Tv4ZzoCvji9MW8grOD1keryqkERKMCEF8SZnPtsD6dQmMU1jM46nFYFRRgmMflZ1oEdcGil3KtDxEPSwaNHYXf5mJl7Nb8IPEJjAmj_nHY9IJ9UZOOFGxsc-uTpukiEGaJzxAJtlxT6dnS1kNiPuujYWPq50z9Y5Ysnldcl6qO8csVoQoIOKKh-frl91TDBv2gZuZinalr3X-Na-WniibE6zIAsZ6WnQNhadCn5cSY-QtnSFT5u7qzsjKI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2 block">07</span>
+<h3 class="text-2xl font-serif text-white mb-2">Transporte</h3>
+<p class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Conectividad marítima, aérea y terrestre.</p>
+</div>
+</div>
+<div class="group relative aspect-[4/5] overflow-hidden bg-brand-dark industry-card">
+<img alt="Servicios tecnológicos y data center" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJwSLUIEKqMW_QFNwt-LXE84h911RoPrVnCkozKPYNuXsQwaAIknls4d3VMCX67DQXiFwAJ9VJI7MfxZB1cM0FIcT5Wd_Z0gAHnDHUAX6xz1lEgkyxuCBMsEvkwohi8YQqz4ls8_KYvFTiJAw1QFDZhw4H0spLTPQlz7Z8mWyyZIxd7nqVYV558EB9NJrsFgFbmGwEvXRSsWmUzKsbQH6fBF7EsS4BjJRUoVV6c557Uw8x8Gl299GykdSI_9ACG4p-QjfilGRuuyM5"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2 block">08</span>
+<h3 class="text-2xl font-serif text-white mb-2">Tecnología</h3>
+<p class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Infraestructura digital y economía del conocimiento.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-brand-dark border-t border-white/5">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col lg:flex-row items-center gap-24">
+<div class="w-full lg:w-1/2">
+<h2 class="text-4xl lg:text-5xl font-serif text-white mb-8">Información que <span class="italic text-brand-gold">inspira confianza.</span></h2>
+<p class="text-lg text-gray-400 leading-relaxed mb-8">
+                    Nuestra plataforma reemplaza el ruido visual por narrativa de datos elegante. Acceda a una curaduría de información crítica para mercados donde la transparencia es un valor diferencial.
+                </p>
+<ul class="space-y-6">
+<li class="flex items-start space-x-4">
+<span class="material-symbols-outlined text-brand-gold">check_circle</span>
+<span class="text-gray-300">Análisis cualitativo y cuantitativo con precisión matemática.</span>
+</li>
+<li class="flex items-start space-x-4">
+<span class="material-symbols-outlined text-brand-gold">check_circle</span>
+<span class="text-gray-300">Variables macroeconómicas proyectadas por expertos locales.</span>
+</li>
+<li class="flex items-start space-x-4">
+<span class="material-symbols-outlined text-brand-gold">check_circle</span>
+<span class="text-gray-300">Interfaz minimalista diseñada para la toma de decisiones ejecutivas.</span>
+</li>
+</ul>
+</div>
+<div class="w-full lg:w-1/2">
+<div class="relative group">
+<div class="absolute -inset-4 bg-brand-gold/10 rounded-2xl blur-2xl group-hover:bg-brand-gold/20 transition-all"></div>
+<img alt="Arquitectura visual de datos minimalista" class="relative rounded-lg shadow-2xl border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3Pwhy-wLvjQVQ7qJXohRoU8ArZ3nqSmQ-kkFNo2Pui3fDXDRlWZ-ISUxceeVEnGRSx28q56gaZK5lXAyqYFhby6P5w4hFVslMdtwud8NcU2jqMtw4PrIIgu919A6IbQwebpiasx3P_PBf172g8mGdWGY4EU1dPdNvhJHicD9uGpyvGEY3S021vo6BvoraO8_qelKUXujjcdVkmuU0xMNsn0U3jCGBHKzPt5T3iS_GGk6ToldLCylQO2D6bNrViNl9CmQlCFiMNKnK"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-brand-wine py-32 text-center overflow-hidden relative">
+<div class="max-w-4xl mx-auto px-6 relative z-10">
+<h2 class="text-4xl lg:text-6xl font-serif text-white mb-8">Decida con la <br/><span class="italic">proporción áurea</span> de los datos.</h2>
+<p class="text-xl text-white/70 mb-12">Suscríbase a la inteligencia de mercado más sofisticada de Centroamérica.</p>
+<a class="inline-block bg-white text-brand-wine px-12 py-5 text-sm font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-brand-dark transition-all" href="#">
+            Solicitar Acceso Exclusivo
+        </a>
+</div>
+<span class="absolute -bottom-24 -right-24 phi-symbol text-[30rem] text-white/5 pointer-events-none select-none">φ</span>
+</section>
+<footer class="bg-brand-black py-20 border-t border-white/5">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+<div class="col-span-1 md:col-span-1">
+<a class="flex items-center space-x-2 mb-6" href="#">
+<span class="phi-symbol text-2xl text-brand-gold">φ</span>
+<span class="text-white text-xl font-normal lowercase tracking-tighter">analysta</span>
+</a>
+<p class="text-sm text-gray-500 leading-relaxed">
+                    Inteligencia estratégica para la toma de decisiones en Centroamérica y el Caribe.
+                </p>
+</div>
+<div>
+<h4 class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-6">Explorar</h4>
+<ul class="space-y-4 text-sm text-gray-400">
+<li><a class="hover:text-white transition-colors" href="#">Soluciones</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Industrias</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Precios</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-6">Recursos</h4>
+<ul class="space-y-4 text-sm text-gray-400">
+<li><a class="hover:text-white transition-colors" href="#">Reportes</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Metodología</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-6">Compañía</h4>
+<ul class="space-y-4 text-sm text-gray-400">
+<li><a class="hover:text-white transition-colors" href="#">Sobre Nosotros</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Contacto</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Privacidad</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+<p>© 2024 Analysta. Todos los derechos reservados.</p>
+<div class="flex space-x-6 mt-4 md:mt-0 uppercase tracking-widest font-medium">
+<a class="hover:text-white" href="#">LinkedIn</a>
+<a class="hover:text-white" href="#">Twitter</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>
