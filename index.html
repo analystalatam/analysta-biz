@@ -1,329 +1,162 @@
 <!DOCTYPE html>
-<html class="light" lang="es"><head>
+
+<html lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>analysta - Inteligencia de Mercado version 2.0</title>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>Analysta.biz - Inteligencia de Mercado en Accion</title>
+<!-- Tailwind CSS v3 with Plugins -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#1162d4",
-                        "background-light": "#f6f7f8",
-                        "background-dark": "#101822",
-                        "text-light": "#0d131b",
-                        "text-dark": "#ffffff",
-                    },
-                    fontFamily: {
-                        "display": ["Manrope", "sans-serif"]
-                    },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-                },
-            },
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'custom-dark': '#161412',
+            'custom-gold': '#C0D173',
+            'custom-wine': '#521C24',
+            'custom-wine-hover': '#6b2530',
+            'custom-gray': '#cfcfcf',
+            'custom-border': '#5a623a',
+            'logo-gold': '#a2b855',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+          }
         }
-    </script>
+      }
+    }
+  </script>
+<!-- Google Fonts: Inter for clean, modern look -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Custom Styles for specific fine-tuning -->
+<style data-purpose="typography">
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #151310;
+      color: white;
+    }
+    
+    /* Fine-tune the gold text gradient or shadow if needed, but flat color matches design best */
+    .text-gold-stats {
+      color: #9CAB5A;
+    }
+  </style>
+<style data-purpose="layout">
+    /* Ensuring the hero image has rounded corners and fits well */
+    .hero-image-container {
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    
+    /* Custom separator line for stats */
+    .stat-divider {
+      border-left: 1px solid #333;
+      height: 40px;
+    }
+  </style>
 </head>
-<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
-<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md px-6 py-4 lg:px-40">
-<div class="flex items-center gap-4 text-text-light dark:text-text-dark">
-<div class="size-6 text-primary">
-<span class="material-symbols-outlined text-3xl">query_stats</span>
+<body class="min-h-screen flex flex-col antialiased" style="background-color: #161412;">
+<!-- BEGIN: Navbar -->
+<header class="w-full py-4 px-6 md:px-12 flex items-center justify-between border-b border-white/5 bg-custom-dark/95 backdrop-blur-sm fixed top-0 z-50">
+<!-- Logo Section -->
+<div class="flex items-center gap-3">
+<!-- Placeholder for Logo Image -->
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 text-logo-gold text-2xl font-bold">Φ</div>
+<span class="text-xl font-medium tracking-tight text-white">analysta.biz</span>
 </div>
-<h2 class="text-xl font-bold leading-tight tracking-tight">analysta</h2>
-</div>
-<div class="hidden lg:flex flex-1 justify-end gap-8 items-center">
-<div class="flex items-center gap-9">
-<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#services">Servicios</a>
-<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#industries">Industrias</a>
-<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#about">Compañia</a>
-</div>
-<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-blue-700 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">
-<span class="truncate">Obtener Cotización</span>
-</button>
-</div>
-<div class="lg:hidden">
-<button class="text-text-light dark:text-text-dark p-2">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</header>
-<main class="flex-grow">
-<section class="relative px-6 py-12 lg:px-40 lg:py-20">
-<div class="mx-auto max-w-[960px]">
-<div class="@container">
-<div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-16">
-<div class="flex flex-col gap-6 lg:w-1/2">
-<div class="flex flex-col gap-4 text-left">
-<h1 class="text-4xl lg:text-5xl font-black leading-tight tracking-tight text-text-light dark:text-text-dark">
-                                    Inteligencia de Mercado Accionable para las Industrias en Centroamerica y El Caribe.
-                                </h1>
-<h2 class="text-lg font-normal leading-relaxed text-slate-600 dark:text-slate-400">
-                                    Obtenga Insights precisos y datos relevantes de su mercado, nuestros principales clientes: Empresas Privadas, firmas de abogados, inversionistas nacionales y extranjeros, Proveedores y Fabricantes.
-                                </h2>
-</div>
-<div class="flex gap-4 flex-wrap">
-<button class="flex h-12 items-center justify-center rounded-lg bg-primary px-6 text-base font-bold text-white shadow-lg shadow-blue-500/20 hover:bg-blue-700 transition-all">
-                                    Solicitar Informe de Muestra
-                                </button>
-<button class="flex h-12 items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 bg-transparent px-6 text-base font-bold text-text-light dark:text-text-dark hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
-                                    Ver Metodología
-                                </button>
-</div>
-</div>
-<div class="lg:w-1/2 relative">
-<div class="absolute -inset-4 bg-gradient-to-tr from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl blur-xl opacity-70"></div>
-<div class="relative w-full bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]" data-alt="Abstract visualization of data points connecting across a map of Central America" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC1s0edDPzn8fAx16YAaQibYmzIbgcf-y1CeoCrV1UmOwwHlFHYAe8kIL04_xqz_l8AG4T51wtxfq__QkYNbcOiUlB43gBPPsUCcVQNZ32lFeBPkznS5aT4ToRt0IhHaFphLOdK1mLRKJgYpR3P4oMiIker_kSmgO5MMTjpMUbo09TVqy8tBAE71KzhUvW4Ie4lfwuQxSqijXQbiEcJtquIQuRJUHbwe4n6S7lzQXSmihW5aNuX42mSdBtcZoEeqlKEaasc0Sr-GZN8'); background-size: cover; background-position: center;">
-<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
-<div class="absolute bottom-6 left-6 right-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
-<div class="flex items-center gap-3 mb-2">
-<div class="bg-green-100 dark:bg-green-900/30 p-1.5 rounded-full text-green-600 dark:text-green-400">
-<span class="material-symbols-outlined text-sm">trending_up</span>
-</div>
-<span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Última Perspectiva</span>
-</div>
-<p class="text-sm font-semibold text-text-light dark:text-text-dark">Importaciones de Vehiculos en Costa Rica</p>
-<div class="mt-2 h-1.5 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-<div class="h-full bg-primary w-[75%] rounded-full"></div>
-</div>
-<div class="flex justify-between mt-1">
-<span class="text-xs text-slate-500">Crecimiento Anual</span>
-<span class="text-xs font-bold text-primary">+12.4%</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="border-y border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
-<div class="px-6 py-8 lg:px-40">
-<div class="mx-auto max-w-[960px]">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="flex flex-col gap-1 text-center md:text-left">
-<p class="text-4xl font-bold text-text-light dark:text-text-dark tracking-tight">500+</p>
-<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Informes Entregados</p>
-</div>
-<div class="flex flex-col gap-1 text-center md:text-left">
-<p class="text-4xl font-bold text-text-light dark:text-text-dark tracking-tight">12+</p>
-<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Industrias Cubiertas</p>
-</div>
-<div class="flex flex-col gap-1 text-center md:text-left">
-<p class="text-4xl font-bold text-text-light dark:text-text-dark tracking-tight">1M+</p>
-<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Datos Analizados</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="px-6 py-16 lg:px-40 bg-background-light dark:bg-background-dark" id="services">
-<div class="mx-auto max-w-[960px]">
-<div class="mb-12">
-<h2 class="text-3xl font-bold text-text-light dark:text-text-dark mb-4">A Quién Servimos</h2>
-<p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">Soluciones de inteligencia de mercado personalizadas para las empresas en centroamericana y el Caribe.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="group flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300">
-<div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary mb-2">
-<span class="material-symbols-outlined text-2xl">sailing</span>
-</div>
-<div>
-<h3 class="text-lg font-bold text-text-light dark:text-text-dark mb-2">Importadores y Exportadores</h3>
-<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Optimice rutas comerciales e identifique tendencias en la cadena de suministro en tiempo real. Entienda los flujos aduaneros antes que su competencia.</p>
-</div>
-</div>
-<div class="group flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300">
-<div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary mb-2">
-<span class="material-symbols-outlined text-2xl">gavel</span>
-</div>
-<div>
-<h3 class="text-lg font-bold text-text-light dark:text-text-dark mb-2">Firmas de Abogados</h3>
-<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Respalde la diligencia debida y litigios con datos de mercado concretos. Valide afirmaciones con números sólidos de fuentes confiables.</p>
-</div>
-</div>
-<div class="group flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300">
-<div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary mb-2">
-<span class="material-symbols-outlined text-2xl">business_center</span>
-</div>
-<div>
-<h3 class="text-lg font-bold text-text-light dark:text-text-dark mb-2">Inversionistas Extranjeros</h3>
-<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Minimice el riesgo de entrada al mercado con un análisis exhaustivo del sector. Conozca el panorama antes de invertir capital.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="px-6 py-16 lg:px-40 bg-white dark:bg-slate-900/50" id="industries">
-<div class="mx-auto max-w-[960px]">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-<div>
-<h2 class="text-3xl font-bold text-text-light dark:text-text-dark mb-3">Industrias Clave</h2>
-<p class="text-slate-600 dark:text-slate-400">Experiencia profunda en los sectores que impulsan el crecimiento regional.</p>
-</div>
-<a class="text-primary font-bold hover:underline inline-flex items-center gap-1" href="#">
-                        Ver todas las industrias <span class="material-symbols-outlined text-sm">arrow_forward</span>
+<!-- Navigation Links -->
+<nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-300">
+<a class="hover:text-white flex items-center gap-1 transition-colors" href="#">
+        Soluciones/Servicios
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
 </a>
+<a class="hover:text-white transition-colors" href="#">Cómo Funciona</a>
+<a class="hover:text-white transition-colors" href="#">Industrias</a>
+<a class="hover:text-white transition-colors" href="#">Precios/Acceso</a>
+<a class="hover:text-white flex items-center gap-1 transition-colors" href="#">
+        Recursos
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a>
+<a class="hover:text-white transition-colors" href="#">Compañía</a>
+</nav>
+<!-- Call to Action Button -->
+<div class="hidden md:block">
+<a class="bg-custom-wine hover:bg-custom-wine-hover text-white text-sm font-medium px-5 py-2.5 rounded transition-colors duration-200" href="#">
+        Obtener Cotización
+      </a>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer">
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 transition-opacity opacity-80 group-hover:opacity-90"></div>
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Aerial view of organized agricultural fields in Central America" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBKNhne5EMA8-zKO8YV6804It3cotLHEOon_Pzp1ArsoZIYl-s6DwWvje_gSo-Z4tQpM3dJabKjIVkxTWIUyCpBc8YceQI31N6MC6jtGnAry4O0qcwoMqhXytOM_QeaQbVRENcQprYfays-UzCFI4_Vwzx7r7AUNe4kqk9YCurPO3m1CdkyzhbbXY9doTCX6wYlB6WGsmML9XqZLQ2YQ2Ut4Z4DX0OmiW-fq3AiJC9XgA7kmEVupLW9AtJzzUJBG-3aD1k-CsiAMmo_');">
+<!-- Mobile Menu Icon (Hamburger) - Visible on small screens -->
+<button class="lg:hidden text-white p-2">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</header>
+<!-- END: Navbar -->
+<!-- BEGIN: Main Content -->
+<main class="flex-grow flex items-center  ustify-center pt-24 pb-12 px-6 md:px-12 lg:px-20 xl:px-32 bg-custom-dark">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center w-full max-w-[1400px]">
+<!-- LEFT COLUMN: Hero Image/Visualization -->
+<div class="hero-image-container relative w-full aspect-[4/3] lg:aspect-square xl:aspect-[5/4] shadow-2xl bg-gray-800">
+<!-- Using provided IMAGE_1 placeholder for the map visualization -->
+<img alt="Visualización de datos de mapa de Centroamérica" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5RWZLkYIPild6MCc5_3SndWLydmjuVgFfHS8KJdshO6Y9uN3YO2v_xgs1_tpzFpsrSzAPW0Z3geGXkQdkWCXHXqxxyN-lXULZCyteUbM5D59u3UgmCLBLdRP3M7SfuForCMlK8pmAxhEpaU4tmAYkVXlWIThRhJ6A9xg8R3pBcESfoez6D3A8pDlAIsw2UNuvWZUsIrTr1HpCU9uMbkDYL0OwqmLBCOcbod41JlySsrtCMzxfPGHTChqoQFP82JtntPkjx9Tm1gfZ"/>
+<!-- Overlay for better text readability if the image is bright, though design shows dark image -->
+<div class="absolute inset-0 bg-black/10"></div>
+<div class="absolute top-6 right-6 max-w-[240px] bg-[#161412]/85 backdrop-blur-md border border-white/10 rounded-xl p-4 shadow-2xl animate-fade-in">
+<div class="text-xs text-gray-400 mb-1 font-medium tracking-wide">Último Insight:</div>
+<div class="text-sm font-semibold text-white leading-tight mb-2">Exportaciones de Vehiculos de pasajeros en Costa Rica. Crecimiento Anual</div>
+<div class="text-3xl font-bold text-custom-gold mb-1">+12.4%</div>
+<svg fill="none" height="24" viewbox="0 0 100 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 20C15 20 20 12 30 15C40 18 50 8 60 10C70 12 80 4 98 2" stroke="#C0D173" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M2 20C15 20 20 12 30 15C40 18 50 8 60 10C70 12 80 4 98 2V24H2V20Z" fill="#C0D173" fill-opacity="0.1"></path>
+</svg>
+</div></div>
+<!-- RIGHT COLUMN: Content -->
+<div class="flex flex-col space-y-8">
+<!-- Headlines -->
+<div class="space-y-4">
+<h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.1] text-5xl lg:text-6xl xl:text-7xl">Inteligencia <br/> Accionable en <br/> Tiempo Real para <br/> Centroamérica.</h1>
+<p class="text-lg text-custom-gray max-w-lg leading-relaxed">
+            Obtenga insights precisos y datos relevantes de su mercado, competidor, marcas, etc... para tomar decisiones estratégicas.
+          </p>
 </div>
-<div class="absolute bottom-0 left-0 p-6 z-20 w-full">
-<div class="flex items-center gap-2 mb-1 text-white/80">
-<span class="material-symbols-outlined text-sm">agriculture</span>
-<span class="text-xs font-bold uppercase tracking-wider">Productos Básicos</span>
+<!-- Stats Section -->
+<div class="flex flex-wrap items-center gap-y-6">
+<!-- Stat 1 -->
+<div class="pr-8">
+<div class="text-4xl font-bold text-custom-gold">500+</div>
+<div class="text-sm text-gray-400 mt-1">Informes Entregados</div>
 </div>
-<h3 class="text-xl font-bold text-white">Agricultura</h3>
+<!-- Divider -->
+<div class="hidden sm:block w-px h-12 bg-white/20 mx-2"></div>
+<!-- Stat 2 -->
+<div class="px-8 border-l border-white/20 sm:border-none">
+<div class="text-4xl font-bold text-custom-gold">10+</div>
+<div class="text-sm text-gray-400 mt-1">Industrias Cubiertas</div>
 </div>
-</div>
-<div class="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer">
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 transition-opacity opacity-80 group-hover:opacity-90"></div>
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Construction site blueprints and crane silhouette at sunset" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmMbyisyqKbrIebSnJdVR1BaPC3pPLluLb7afAN-KO9S0VUMLc-l33N-C1ateMxjbrj4__Bywv_a1IU9STdDjYKiuH8SYcyryVjOk-s3A4Gxhs1T-Weky995wmDppg5QV-SpzFY0d00vz-8-r9c9D8bLwK9_tdbTeT4d7ttSQ92Aaoz_Wjnvk9dpMM1Rfk7M6TiYRdUaQnNUcMrEeMerX02OqAN6LesmFl2fzrsYxPK4Fd48dWZTF0pydbRJ06049n7Nt4D0B8_VJ_');">
-</div>
-<div class="absolute bottom-0 left-0 p-6 z-20 w-full">
-<div class="flex items-center gap-2 mb-1 text-white/80">
-<span class="material-symbols-outlined text-sm">architecture</span>
-<span class="text-xs font-bold uppercase tracking-wider">Infraestructura</span>
-</div>
-<h3 class="text-xl font-bold text-white">Construcción</h3>
-</div>
-</div>
-<div class="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer">
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 transition-opacity opacity-80 group-hover:opacity-90"></div>
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Clean medical laboratory equipment and scientific research setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDo9wpWbhTYjmoO3g7aOiGGis-9v1En2LeHE-Bezo3TY1mA6aRlTo-QyqENEiIk0NowNduojZfeVBNa6XczCzV36U3DE4-dhYrg4mM-aDlVDpYSdJcvFN0bO901IUaU46NL7CMsY6mSMv-LhsNvIE3wev_a4PzZ2Znurst7KHcy2ixnIsAmMh6TNHwsUsWkPSpGBMTlr1oQ6HUJcw9PVGbtIuVagovSGYhqDyivQYFicJuU4_hWN6dsJNYFE7rJrU0Lf6C0-__rTNPZ');">
-</div>
-<div class="absolute bottom-0 left-0 p-6 z-20 w-full">
-<div class="flex items-center gap-2 mb-1 text-white/80">
-<span class="material-symbols-outlined text-sm">medical_services</span>
-<span class="text-xs font-bold uppercase tracking-wider">Ciencias de la Vida</span>
-</div>
-<h3 class="text-xl font-bold text-white">Sector Salud</h3>
-</div>
-</div>
-<div class="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer">
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 transition-opacity opacity-80 group-hover:opacity-90"></div>
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Modern logistics fleet of trucks on a highway" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-rCjQ2BnOecBfFYWJVH6GrECk0Zmrbe27UZ4-RB1SZoui2c5HqUwCKKYouOATRkGsvXQk5uRK0X86B_F-Q31T7ZbM9A4k8XKyoaKkPlqbOIdPIZkLuajanuTLRLcAqdfm31HpjzLAv9206C0n20c5NwOROfi5bOskbRiXCT-isz5vBNRhDG2JDhjrIGUrnZg-pbHBqHmZl39_Q6mRrz-gwejHvCcpmSrDHn4utfDGhPrcbh--AhMEINkr-HItZqGk-MmMKJQzEvIb');">
-</div>
-<div class="absolute bottom-0 left-0 p-6 z-20 w-full">
-<div class="flex items-center gap-2 mb-1 text-white/80">
-<span class="material-symbols-outlined text-sm">local_shipping</span>
-<span class="text-xs font-bold uppercase tracking-wider">Logística</span>
-</div>
-<h3 class="text-xl font-bold text-white">Vehículos</h3>
-</div>
-</div>
-<div class="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer">
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 transition-opacity opacity-80 group-hover:opacity-90"></div>
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Warehouse interior with stacked boxes and inventory" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDlKGvj2TewVEX4m58iOC4WYYLEq4AHSW-JYJbPVAN0I9kB3WVMBi5pURDIwFxo0vSood94J9-iuonFFyDBAOkQakcQKu8MoY6V2O1PnGeMVxEgB3NgJnyFr236y06k3328ZWZ9zD4ldSCZFrsDlcAFvsNXPwKg2DX1KArBn15u1ioM4bL7b1qoB-6Y_Gk4TqbMkt9x1OhsA4yuriQ5zcPzMq3Ito88JURWlaE5g_16ZfA6jLw3OB249D_E21F8atRfN72FB4fgp-oj');">
-</div>
-<div class="absolute bottom-0 left-0 p-6 z-20 w-full">
-<div class="flex items-center gap-2 mb-1 text-white/80">
-<span class="material-symbols-outlined text-sm">inventory_2</span>
-<span class="text-xs font-bold uppercase tracking-wider">Venta Minorista</span>
-</div>
-<h3 class="text-xl font-bold text-white">Artículos para el Hogar</h3>
-</div>
-</div>
-<div class="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer bg-slate-900 flex items-center justify-center border border-slate-200 dark:border-slate-800">
-<div class="text-center p-6">
-<h3 class="text-xl font-bold text-white mb-2">¿Más Industrias?</h3>
-<p class="text-slate-400 text-sm mb-4">Cubrimos más de 25 mercados especializados.</p>
-<button class="text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-sm font-bold transition-colors">Ver Cobertura Completa</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="px-6 py-20 lg:px-40 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
-<div class="mx-auto max-w-[960px] bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden border border-slate-200 dark:border-slate-700">
-<div class="flex flex-col lg:flex-row">
-<div class="p-10 lg:w-1/2 flex flex-col justify-center bg-primary text-white">
-<h2 class="text-3xl font-bold mb-4">Obtenga Inteligencia Accionable Hoy</h2>
-<p class="text-blue-100 mb-8 text-lg">Deje de adivinar. Comience a saber. Complete el formulario para hablar con un analista regional dedicado.</p>
-<div class="flex flex-col gap-4">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-blue-200">check_circle</span>
-<span>Informes personalizados para su sector</span>
-</div>
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-blue-200">check_circle</span>
-<span>Acceso a datos crudos disponible</span>
-</div>
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-blue-200">check_circle</span>
-<span>Consulta de expertos incluida</span>
+<!-- Divider -->
+<div class="hidden sm:block w-px h-12 bg-white/20 mx-2"></div>
+<!-- Stat 3 -->
+<div class="pl-8 border-l border-white/20 sm:border-none">
+<div class="text-4xl font-bold text-custom-gold">500+</div>
+<div class="text-sm text-gray-400 mt-1">Datos Analizados</div>
 </div>
 </div>
-</div>
-<div class="p-10 lg:w-1/2">
-<form class="flex flex-col gap-5">
-<div class="flex flex-col gap-1">
-<label class="text-sm font-bold text-text-light dark:text-text-dark" for="name">Nombre Completo</label>
-<input class="w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary dark:text-white placeholder-slate-400" id="name" placeholder="Juan Pérez" type="text"/>
-</div>
-<div class="flex flex-col gap-1">
-<label class="text-sm font-bold text-text-light dark:text-text-dark" for="email">Correo Electrónico</label>
-<input class="w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary dark:text-white placeholder-slate-400" id="email" placeholder="juan@empresa.com" type="email"/>
-</div>
-<div class="flex flex-col gap-1">
-<label class="text-sm font-bold text-text-light dark:text-text-dark" for="interest">Área de Interés</label>
-<select class="w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary dark:text-white" id="interest">
-<option>Análisis de Entrada al Mercado</option>
-<option>Inteligencia de la Competencia</option>
-<option>Datos de Importación/Exportación</option>
-<option>Diligencia Debida Legal</option>
-<option>Otro</option>
-</select>
-</div>
-<button class="mt-2 w-full cursor-pointer rounded-lg bg-primary py-3 px-4 text-center text-sm font-bold text-white hover:bg-blue-700 transition-colors" type="button">
-                                Solicitar Consulta
-                            </button>
-<p class="text-center text-xs text-slate-500 mt-2">No se requiere tarjeta de crédito. Sus datos están seguros.</p>
-</form>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-4 mt-4">
+<!-- Primary CTA -->
+<button class="bg-custom-wine hover:bg-custom-wine-hover text-white px-8 py-3.5 rounded text-base font-medium transition-colors duration-200 text-center">Solicitar Informe de Muestra</button>
+<!-- Secondary CTA -->
+<button class="bg-transparent border border-custom-gold text-custom-gold hover:text-white hover:border-white px-8 py-3.5 rounded text-base font-medium transition-colors duration-200 text-center">Ver<br/>Metodología</button>
 </div>
 </div>
+<!-- End Right Column -->
 </div>
-</section>
 </main>
-<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 px-6 lg:px-40">
-<div class="mx-auto max-w-[960px] flex flex-col md:flex-row justify-between gap-10">
-<div class="flex flex-col gap-4 max-w-xs">
-<div class="flex items-center gap-2 text-text-light dark:text-text-dark">
-<span class="material-symbols-outlined text-primary">query_stats</span>
-<span class="text-lg font-bold">Analysta.biz</span>
-</div>
-<p class="text-sm text-slate-500 leading-relaxed">Proporcionando inteligencia de mercado de la más alta calidad para Centroamérica desde 2015.</p>
-</div>
-<div class="flex flex-wrap gap-12">
-<div class="flex flex-col gap-3">
-<h4 class="text-sm font-bold text-text-light dark:text-text-dark">Compañía</h4>
-<a class="text-sm text-slate-500 hover:text-primary" href="#">Nosotros</a>
-<a class="text-sm text-slate-500 hover:text-primary" href="#">Carreras</a>
-<a class="text-sm text-slate-500 hover:text-primary" href="#">Contacto</a>
-</div>
-<div class="flex flex-col gap-3">
-<h4 class="text-sm font-bold text-text-light dark:text-text-dark">Recursos</h4>
-<a class="text-sm text-slate-500 hover:text-primary" href="#">Blog</a>
-<a class="text-sm text-slate-500 hover:text-primary" href="#">Casos de Estudio</a>
-<a class="text-sm text-slate-500 hover:text-primary" href="#">Metodología</a>
-</div>
-<div class="flex flex-col gap-3">
-<h4 class="text-sm font-bold text-text-light dark:text-text-dark">Legal</h4>
-<a class="text-sm text-slate-500 hover:text-primary" href="#">Política de Privacidad</a>
-<a class="text-sm text-slate-500 hover:text-primary" href="#">Términos de Servicio</a>
-</div>
-</div>
-</div>
-<div class="mx-auto max-w-[960px] mt-12 pt-8 border-t border-slate-100 dark:border-slate-800 text-center md:text-left text-xs text-slate-400">
-            © 2023 Analysta.biz. Todos los derechos reservados.
-        </div>
-</footer>
-</div>
-
+<!-- END: Main Content -->
 </body></html>
