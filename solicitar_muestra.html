@@ -3,24 +3,51 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Solicitar Muestra - analysta.biz</title>
+    <title>Solicitar Muestra - Analysta.biz</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet"/>
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #1E1914; color: white; }
+        
+        /* CORRECCIÓN VISUAL: Forzamos el color de fondo y texto */
         .form-input {
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: white;
+            background-color: #2A241D !important; /* Fondo café oscuro sólido */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff !important; /* Texto blanco puro */
             transition: all 0.3s ease;
         }
+        
+        /* Color del texto de ayuda (placeholder) */
+        .form-input::placeholder {
+            color: #9CA3AF; /* Gris claro */
+        }
+
         .form-input:focus {
             border-color: #727B3D;
+            background-color: #332b24 !important;
             outline: none;
             box-shadow: 0 0 0 1px #727B3D;
         }
+        
+        /* Corrección para los selectores (dropdowns) */
         select option { background-color: #1E1914; color: white; }
     </style>
+    
+    <script>
+        // VALIDACIÓN: Al menos uno de los dos campos de producto
+        function validarFormulario(event) {
+            var descripcion = document.getElementById('prod_desc').value;
+            var codigo = document.getElementById('prod_hs').value;
+
+            // Si ambos están vacíos, mostramos alerta y detenemos el envío
+            if (descripcion.trim() === "" && codigo.trim() === "") {
+                alert("Por favor, ingrese al menos la Descripción del Producto O el Código HS/SAC para poder ayudarle.");
+                event.preventDefault(); // Evita que se envíe el formulario
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body class="min-h-screen flex flex-col">
 
@@ -37,10 +64,10 @@
             
             <div class="text-center mb-10">
                 <h1 class="font-serif text-3xl md:text-4xl text-white mb-4">Solicitud de Informe Muestra</h1>
-                <p class="text-[#AEA393]">Complete el perfil para recibir su reporte gratuito en su correo.</p>
+                <p class="text-[#AEA393]">Complete el formulario para recibir el informe en su correo.</p>
             </div>
 
-            <form action="https://assets.mailerlite.com/jsonp/2051910/forms/177129890679620702/subscribe" method="POST" class="space-y-8">
+            <form action="PEGAR_AQUI_URL_DE_MAILERLITE" method="POST" class="space-y-8" onsubmit="validarFormulario(event)">
                 
                 <input type="hidden" name="ml-submit" value="1">
 
@@ -66,12 +93,12 @@
                     <h3 class="text-[#727B3D] text-sm font-bold uppercase tracking-widest border-b border-white/10 pb-2">2. Datos del Negocio</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-xs text-gray-400 mb-1">Nombre de tu Empresa</label>
+                            <label class="block text-xs text-gray-400 mb-1">Nombre de la Empresa</label>
                             <input type="text" name="fields[company]" required class="form-input w-full rounded px-4 py-3">
                         </div>
                         <div>
-                            <label class="block text-xs text-gray-400 mb-1">NIT / RUC (ID Tributario)</label>
-                            <input type="text" name="fields[ruc_nit]" required class="form-input w-full rounded px-4 py-3" placeholder="J0310000...">
+                            <label class="block text-xs text-gray-400 mb-1">RUC / NIT</label>
+                            <input type="text" name="fields[ruc_nit]" required class="form-input w-full rounded px-4 py-3" placeholder="ID Tributario">
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -81,7 +108,7 @@
                         </div>
                         <div>
                             <label class="block text-xs text-gray-400 mb-1">País</label>
-                            <select name="fields[country]" class="form-input w-full rounded px-4 py-3">
+                            <select name="fields[country]" class="form-input w-full rounded px-4 py-3 cursor-pointer">
                                 <option value="" disabled selected>Seleccione...</option>
                                 <option value="Guatemala">Guatemala</option>
                                 <option value="El Salvador">El Salvador</option>
@@ -99,9 +126,17 @@
 
                 <div class="space-y-4">
                     <h3 class="text-[#727B3D] text-sm font-bold uppercase tracking-widest border-b border-white/10 pb-2">3. Configuración</h3>
-                    <div>
-                        <label class="block text-xs text-gray-400 mb-1">Producto / Partida Arancelaria</label>
-                        <textarea name="fields[product_interest]" class="form-input w-full rounded px-4 py-3" rows="2" placeholder="Ej. Código HS 3105.20..."></textarea>
+                    <p class="text-xs text-gray-500 italic">* Debe llenar al menos uno de los dos campos siguientes.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">Descripción del Producto</label>
+                            <input type="text" id="prod_desc" name="fields[product_desc]" class="form-input w-full rounded px-4 py-3" placeholder="Ej. Fertilizante NPK">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">Código HS o SAC </label>
+                            <input type="text" id="prod_hs" name="fields[hs_code]" class="form-input w-full rounded px-4 py-3" placeholder="Ej. 3105.20.00">
+                        </div>
                     </div>
                 </div>
 
@@ -110,7 +145,7 @@
                         Recibir Reporte en mi Correo
                     </button>
                     <p class="text-center text-xs text-gray-500 mt-4">
-                        Sus datos están seguros, vea nuestra politica de privacidad. Recibirá el reporte automáticamente.
+                        Sus datos están seguros. Recibirá el reporte automáticamente.
                     </p>
                 </div>
 
