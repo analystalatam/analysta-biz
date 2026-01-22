@@ -9,43 +9,65 @@
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #1E1914; color: white; }
         
-        /* CORRECCIÓN VISUAL: Forzamos el color de fondo y texto */
+        /* Estilos de Inputs */
         .form-input {
-            background-color: #2A241D !important; /* Fondo café oscuro sólido */
+            background-color: #2A241D !important;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #ffffff !important; /* Texto blanco puro */
+            color: #ffffff !important;
             transition: all 0.3s ease;
         }
-        
-        /* Color del texto de ayuda (placeholder) */
-        .form-input::placeholder {
-            color: #9CA3AF; /* Gris claro */
-        }
-
+        .form-input::placeholder { color: #9CA3AF; }
         .form-input:focus {
             border-color: #727B3D;
             background-color: #332b24 !important;
             outline: none;
             box-shadow: 0 0 0 1px #727B3D;
         }
-        
-        /* Corrección para los selectores (dropdowns) */
         select option { background-color: #1E1914; color: white; }
     </style>
     
     <script>
-        // VALIDACIÓN: Al menos uno de los dos campos de producto
-        function validarFormulario(event) {
+        function enviarConRedireccion(event) {
+            // 1. Evitar que el formulario se envíe de la forma tradicional (pantalla blanca)
+            event.preventDefault();
+
+            // 2. Validación de Producto (Tu lógica original)
             var descripcion = document.getElementById('prod_desc').value;
             var codigo = document.getElementById('prod_hs').value;
 
-            // Si ambos están vacíos, mostramos alerta y detenemos el envío
             if (descripcion.trim() === "" && codigo.trim() === "") {
                 alert("Por favor, ingrese al menos la Descripción del Producto O el Código HS/SAC para poder ayudarle.");
-                event.preventDefault(); // Evita que se envíe el formulario
                 return false;
             }
-            return true;
+
+            // 3. Efecto visual en el botón
+            var btn = document.querySelector('button[type="submit"]');
+            var textoOriginal = btn.innerText;
+            btn.innerText = "Procesando...";
+            btn.disabled = true;
+            btn.classList.add('opacity-50', 'cursor-not-allowed');
+
+            // 4. Preparar datos
+            const form = event.target;
+            const data = new FormData(form);
+
+            // 5. Enviar a MailerLite en segundo plano (Fetch)
+            fetch(form.action, {
+                method: 'POST',
+                body: data,
+                mode: 'no-cors' // Esto permite enviar a MailerLite sin que el navegador bloquee por seguridad
+            })
+            .then(() => {
+                // 6. ¡Éxito! Redirigir a tu página de gracias
+                window.location.href = 'gracias.html';
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert("Hubo un error de conexión. Intente nuevamente.");
+                btn.innerText = textoOriginal;
+                btn.disabled = false;
+                btn.classList.remove('opacity-50', 'cursor-not-allowed');
+            });
         }
     </script>
 </head>
@@ -67,7 +89,7 @@
                 <p class="text-[#AEA393]">Complete el formulario para recibir el informe en su correo.</p>
             </div>
 
-            <form action="https://assets.mailerlite.com/jsonp/2051910/forms/177129890679620702/subscribe" method="POST" class="space-y-8" onsubmit="validarFormulario(event)">
+            <form action="https://assets.mailerlite.com/jsonp/2051910/forms/177129890679620702/subscribe" method="POST" class="space-y-8" onsubmit="enviarConRedireccion(event)">
                 
                 <input type="hidden" name="ml-submit" value="1">
 
@@ -97,14 +119,14 @@
                             <input type="text" name="fields[company]" required class="form-input w-full rounded px-4 py-3">
                         </div>
                         <div>
-                            <label class="block text-xs text-gray-400 mb-1">RUC / NIT</label>
-                            <input type="text" name="fields[ruc_nit]" required class="form-input w-full rounded px-4 py-3" placeholder="ID Tributario">
+                            <label class="block text-xs text-gray-400 mb-1">NIT / RUC</label>
+                            <input type="text" name="fields[nit_ruc]" required class="form-input w-full rounded px-4 py-3" placeholder="ID Tributario">
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-xs text-gray-400 mb-1">Cargo</label>
-                            <input type="text" name="fields[job_title]" class="form-input w-full rounded px-4 py-3">
+                            <label class="block text-xs text-gray-400 mb-1">Posicion / Cargo</label>
+                            <input type="text" name="fields[job_title_cargo]" class="form-input w-full rounded px-4 py-3">
                         </div>
                         <div>
                             <label class="block text-xs text-gray-400 mb-1">País</label>
@@ -131,10 +153,10 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-xs text-gray-400 mb-1">Descripción del Producto</label>
-                            <input type="text" id="prod_desc" name="fields[product_desc]" class="form-input w-full rounded px-4 py-3" placeholder="Ej. Fertilizante NPK">
+                            <input type="text" id="prod_desc" name="fields[product_interest_producto_de_interes]" class="form-input w-full rounded px-4 py-3" placeholder="Ej. Fertilizante NPK">
                         </div>
                         <div>
-                            <label class="block text-xs text-gray-400 mb-1">Código HS o SAC </label>
+                             <label class="block text-xs text-gray-400 mb-1">Código SAC o HS</label>
                             <input type="text" id="prod_hs" name="fields[hs_code]" class="form-input w-full rounded px-4 py-3" placeholder="Ej. 3105.20.00">
                         </div>
                     </div>
