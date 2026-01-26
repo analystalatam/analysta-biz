@@ -6,164 +6,200 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-3X5B6PGFV8');
     </script>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Nuestros Clientes - analysta.biz</title>
+    <title>Nuestros Clientes - Analysta</title>
+    
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        'brand-bg': '#1E1914',      /* Fondo Oscuro */
-                        'brand-olive': '#727B3D',   /* Verde Oliva */
-                        'brand-wine': '#450C1B',    /* Vino */
-                        'brand-wine-hover': '#5e1025',
-                        'brand-tan': '#AEA393',     /* Beige */
-                        'brand-light': '#F9F8F6',   /* Blanco roto */
-                    },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
+                    },
+                    // PALETA DE COLORES ESTÁNDAR EXTENDIDA
+                    colors: {
+                        'brand-dark': '#1E1914',     // Fondo principal
+                        'brand-gold': '#AEA393',     // Dorado/Beige base
+                        'brand-tan': '#B69574',      // Acento elegante (Títulos/Logo)
+                        'brand-olive': '#727B3D',    // Acción principal (Botones/Highlights)
+                        'brand-brown': '#63372C',    // Fondos secundarios
+                        'brand-mud': '#4A412A',      // Fondos oscuros/Tarjetas
+                        'brand-wine': '#450C1B',     // Acentos fuertes
+                        'brand-wine-hover': '#5e1025',
+                        'brand-black': '#14110E',
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #1E1914; color: white; }
-        /* Clase para asegurar que las tarjetas tengan la misma altura visual */
+    <style type="text/tailwindcss">
+        :root {
+            --brand-dark: #1E1914;
+            --brand-tan: #B69574;
+            --brand-olive: #727B3D;
+        }
+        body {
+            background-color: var(--brand-dark);
+            color: #E5E1DC;
+            -webkit-font-smoothing: antialiased;
+        }
+        .phi-symbol {
+            font-family: serif;
+            font-style: italic;
+        }
+        .hover-gold-link:hover {
+            color: var(--brand-tan);
+            transition: color 0.3s ease;
+        }
+        /* Clase para asegurar altura visual consistente */
         .card-height { min-height: 480px; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased bg-brand-bg selection:bg-brand-olive selection:text-white">
 
-<header class="w-full py-5 px-6 md:px-12 flex items-center justify-between border-b border-white/5 bg-brand-bg/95 backdrop-blur-sm fixed top-0 z-50">
-    <div class="flex items-center gap-3">
-        <a href="index.html" class="flex items-center gap-2 group">
-             <div class="flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-brand-olive text-xl font-serif font-bold group-hover:bg-brand-olive group-hover:text-white transition-all">Φ</div>
-            <span class="text-lg font-medium tracking-tight text-white group-hover:text-brand-tan transition-colors">analysta</span>
-        </a>
-    </div>
-    <nav class="hidden lg:flex items-center gap-8 text-xs font-medium uppercase tracking-widest text-brand-tan">
-        <a class="hover:text-white transition-colors" href="index.html">Inicio</a>
-        <a class="text-white border-b border-brand-olive pb-0.5" href="clientes.html">Clientes</a>
-        <a class="hover:text-white transition-colors" href="precios.html">Precios</a>
-    </nav>
-    <div class="hidden md:block">
-        <a class="bg-brand-wine hover:bg-brand-wine-hover text-white text-xs font-semibold px-6 py-3 rounded transition-colors duration-200 uppercase tracking-wider" href="https://wa.me/50587676284">
-            Contacto
-        </a>
+<body class="font-sans antialiased min-h-screen flex flex-col">
+
+<header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-sm border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex justify-between items-center h-24">
+            <div class="flex-shrink-0 flex items-center">
+                <a class="flex items-center space-x-2 group" href="index.html">
+                    <span class="phi-symbol text-3xl text-brand-tan">φ</span>
+                    <span class="text-white text-2xl font-normal tracking-tighter lowercase">analysta</span>
+                </a>
+            </div>
+            <nav class="hidden lg:flex space-x-10">
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="soluciones.html">Soluciones</a>
+                <a class="text-sm font-medium tracking-wide text-brand-tan border-b border-brand-tan pb-0.5" href="clientes.html">Clientes</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="como_funciona.html">Cómo Funciona</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="compania.html">Compañía</a>
+                <a class="text-sm font-medium tracking-wide text-white border-b border-white/20 pb-0.5 hover:text-brand-tan hover:border-brand-tan transition-colors" href="precios.html">Precios</a>
+            </nav>
+            <div class="hidden lg:flex">
+                <a class="bg-brand-olive hover:bg-brand-olive/80 text-white px-6 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-sm shadow-lg shadow-black/20" href="contacto.html">
+                    Contacto / Acceso
+                </a>
+            </div>
+             <div class="lg:hidden">
+                <a href="precios.html" class="text-brand-tan uppercase text-xs font-bold border border-brand-tan px-4 py-2">Ver Precios</a>
+            </div>
+        </div>
     </div>
 </header>
-
-<main class="flex-grow pt-32 pb-20 px-6 md:px-12 lg:px-20">
+<main class="flex-grow pt-48 pb-20 px-6 md:px-12 lg:px-20">
     
     <div class="text-center max-w-3xl mx-auto mb-20">
-        <span class="text-brand-olive text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Inteligencia Empresarial, Comercial y de Mercado Aplicada</span>
+        <span class="text-brand-tan text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Ecosistema de Valor</span>
         <h1 class="font-serif text-4xl md:text-5xl text-white mb-6">Perfiles de Clientes de Alto Impacto</h1>
-        <p class="text-brand-tan text-lg font-light leading-relaxed">
-            Nuestras soluciones no son para todos.<br/> Diseñadas para actores que definen Inversiones, Estrategias, Proyectos, Contratos y mas.<br/> Clientes que exigen precisión y claridad absoluta en sus decisiones.
+        <p class="text-brand-gold/80 text-lg font-light leading-relaxed">
+            Nuestras soluciones no son para todos. <br class="hidden md:block"/>
+            Diseñadas para actores que definen Inversiones, Estrategias y Proyectos. <br class="hidden md:block"/>
+            Clientes que exigen precisión y claridad absoluta en sus decisiones.
         </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1400px] mx-auto">
         
         <div class="group relative rounded-xl overflow-hidden card-height bg-cover bg-center shadow-2xl shadow-black/50" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop');">
-            <div class="absolute inset-0 bg-[#1E1914]/90 transition-all duration-700 group-hover:bg-[#1E1914]/75 group-hover:mix-blend-hard-light"></div>
+            <div class="absolute inset-0 bg-brand-dark/90 transition-all duration-700 group-hover:bg-brand-dark/75 group-hover:mix-blend-hard-light"></div>
             
-            <div class="relative z-10 p-8 h-full flex flex-col border border-white/5 group-hover:border-brand-olive/40 transition-colors">
+            <div class="relative z-10 p-8 h-full flex flex-col border border-white/5 group-hover:border-brand-tan/40 transition-colors">
                 <div class="flex justify-between items-start mb-4">
-                     <span class="font-serif text-6xl text-white/10 group-hover:text-brand-olive/30 transition-colors leading-none">01</span>
+                     <span class="font-serif text-6xl text-brand-tan/20 group-hover:text-brand-tan/40 transition-colors leading-none">01</span>
                      <span class="bg-brand-olive px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white rounded-full">Estratégico</span>
                 </div>
                 <h3 class="text-2xl font-serif text-white mb-2">Inversionistas & Bancos</h3>
-                <p class="text-sm text-brand-tan/90 font-medium uppercase tracking-wider mb-6 border-b border-white/10 pb-4">Capital Privado, M&A, Due Diligence</p>
+                <p class="text-sm text-brand-gold/80 font-medium uppercase tracking-wider mb-6 border-b border-white/10 pb-4">Capital Privado, M&A, Due Diligence</p>
                 <p class="text-gray-200 text-sm leading-relaxed mb-8 flex-grow pr-2">
                     El capital inteligente exige certezas, no promesas. Antes de una fusión, adquisición o financiamiento mayor, validan la salud real del objetivo mediante auditoría de cuota de mercado e importaciones reales.
                 </p>
-                <div class="text-xs text-white bg-[#1E1914]/60 p-4 rounded-lg border-l-[3px] border-brand-olive backdrop-blur-md group-hover:bg-brand-olive/10 transition-colors">
+                <div class="text-xs text-white bg-brand-dark/60 p-4 rounded-lg border-l-[3px] border-brand-olive backdrop-blur-md group-hover:bg-brand-olive/10 transition-colors">
                     <span class="font-bold text-brand-olive block mb-1 tracking-wide uppercase">Objetivo Crítico:</span> Validar valoraciones financieras con hechos irrefutables.
                 </div>
             </div>
         </div>
 
-        <div class="group relative rounded-xl overflow-hidden card-height bg-cover bg-center shadow-xl shadow-black/30" style="background-image: url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHN1cHBseSUyMGNoYWlufGVufDB8fDB8fHwy');">
-            <div class="absolute inset-0 bg-[#1E1914]/90 transition-all duration-700 group-hover:bg-[#1E1914]/75 group-hover:mix-blend-hard-light"></div>
-            <div class="relative z-10 p-8 h-full flex flex-col border border-white/5 group-hover:border-brand-olive/40 transition-colors">
-                 <span class="font-serif text-6xl text-white/10 group-hover:text-brand-olive/30 transition-colors leading-none mb-4">02</span>
+        <div class="group relative rounded-xl overflow-hidden card-height bg-cover bg-center shadow-xl shadow-black/30" style="background-image: url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=1000&auto=format&fit=crop&q=80');">
+            <div class="absolute inset-0 bg-brand-dark/90 transition-all duration-700 group-hover:bg-brand-dark/75 group-hover:mix-blend-hard-light"></div>
+            <div class="relative z-10 p-8 h-full flex flex-col border border-white/5 group-hover:border-brand-tan/40 transition-colors">
+                 <span class="font-serif text-6xl text-white/10 group-hover:text-brand-tan/30 transition-colors leading-none mb-4">02</span>
                 <h3 class="text-2xl font-serif text-white mb-2">Empresas Comerciales</h3>
-                <p class="text-sm text-brand-tan/90 font-medium uppercase tracking-wider mb-6 border-b border-white/10 pb-4">Importadores, Retailers & Exportadores</p>
+                <p class="text-sm text-brand-gold/80 font-medium uppercase tracking-wider mb-6 border-b border-white/10 pb-4">Importadores, Retailers & Exportadores</p>
                 <p class="text-gray-200 text-sm leading-relaxed mb-8 flex-grow pr-2">
                     Organizaciones que no operan a ciegas. Monitorean el mercado 24/7 para detectar nuevos competidores agresivos, encontrar proveedores alternativos y anticipar guerras de precios.
                 </p>
-                <div class="text-xs text-white bg-[#1E1914]/60 p-4 rounded-lg border-l-[3px] border-brand-olive backdrop-blur-md group-hover:bg-brand-olive/10 transition-colors">
-                    <span class="font-bold text-brand-olive block mb-1 tracking-wide uppercase">Objetivo Crítico:</span> Detectar nuevas oportunidades de negocio antes que la competencia y Proteger la cuota de mercado.
+                <div class="text-xs text-white bg-brand-dark/60 p-4 rounded-lg border-l-[3px] border-brand-olive backdrop-blur-md group-hover:bg-brand-olive/10 transition-colors">
+                    <span class="font-bold text-brand-olive block mb-1 tracking-wide uppercase">Objetivo Crítico:</span> Detectar nuevas oportunidades y proteger la cuota de mercado.
                 </div>
             </div>
         </div>
 
         <div class="group relative rounded-xl overflow-hidden card-height bg-cover bg-center shadow-xl shadow-black/30" style="background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop');">
-            <div class="absolute inset-0 bg-[#1E1914]/90 transition-all duration-700 group-hover:bg-[#1E1914]/75 group-hover:mix-blend-hard-light"></div>
-            <div class="relative z-10 p-8 h-full flex flex-col border border-white/5 group-hover:border-brand-olive/40 transition-colors">
-                 <span class="font-serif text-6xl text-white/10 group-hover:text-brand-olive/30 transition-colors leading-none mb-4">03</span>
-                <h3 class="text-2xl font-serif text-white mb-2">Líderes Corporativos & Gerentes</h3>
-                <p class="text-sm text-brand-tan/90 font-medium uppercase tracking-wider mb-6 border-b border-white/10 pb-4">General, Comercial, Mercadeo, Supply Chain</p>
+            <div class="absolute inset-0 bg-brand-dark/90 transition-all duration-700 group-hover:bg-brand-dark/75 group-hover:mix-blend-hard-light"></div>
+            <div class="relative z-10 p-8 h-full flex flex-col border border-white/5 group-hover:border-brand-tan/40 transition-colors">
+                 <span class="font-serif text-6xl text-white/10 group-hover:text-brand-tan/30 transition-colors leading-none mb-4">03</span>
+                <h3 class="text-2xl font-serif text-white mb-2">Líderes Corporativos</h3>
+                <p class="text-sm text-brand-gold/80 font-medium uppercase tracking-wider mb-6 border-b border-white/10 pb-4">General, Comercial, Mercadeo, Supply Chain</p>
                 <p class="text-gray-200 text-sm leading-relaxed mb-8 flex-grow pr-2">
-                    Profesionales bajo presión por resultados. Utilizan nuestros datos para sustentar presupuestos de ventas, ajustes de pronosticos de demanda, defender cuotas de mercado y planes de expansión comercial ante Juntas Directivas.
+                    Profesionales bajo presión por resultados. Utilizan nuestros datos para sustentar presupuestos de ventas, ajustes de pronósticos de demanda y planes de expansión comercial.
                 </p>
-                <div class="text-xs text-white bg-[#1E1914]/60 p-4 rounded-lg border-l-[3px] border-brand-olive backdrop-blur-md group-hover:bg-brand-olive/10 transition-colors">
-                    <span class="font-bold text-brand-olive block mb-1 tracking-wide uppercase">Objetivo Crítico:</span> Respaldar la toma de decisiones y la estrategia con datos duros.
+                <div class="text-xs text-white bg-brand-dark/60 p-4 rounded-lg border-l-[3px] border-brand-olive backdrop-blur-md group-hover:bg-brand-olive/10 transition-colors">
+                    <span class="font-bold text-brand-olive block mb-1 tracking-wide uppercase">Objetivo Crítico:</span> Respaldar la toma de decisiones con datos duros.
                 </div>
             </div>
         </div>
 
-        <div class="group relative rounded-xl overflow-hidden card-height bg-cover bg-center shadow-xl shadow-black/30" style="background-image: url('https://images.unsplash.com/photo-1589307904488-7d60ff29c975?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGxhdyUyMGZpcm18ZW58MHx8MHx8fDI%3D');">
-            <div class="absolute inset-0 bg-[#1E1914]/90 transition-all duration-700 group-hover:bg-[#1E1914]/75 group-hover:mix-blend-hard-light"></div>
-            <div class="relative z-10 p-8 h-full flex flex-col border border-white/5 group-hover:border-brand-olive/40 transition-colors">
-                 <span class="font-serif text-6xl text-white/10 group-hover:text-brand-olive/30 transition-colors leading-none mb-4">04</span>
-                <h3 class="text-2xl font-serif text-white mb-2">Sector Legal & Cumplimiento</h3>
-                <p class="text-sm text-brand-tan/90 font-medium uppercase tracking-wider mb-6 border-b border-white/10 pb-4">Abogados, Asesores de Inversión Extranjera</p>
+        <div class="group relative rounded-xl overflow-hidden card-height bg-cover bg-center shadow-xl shadow-black/30" style="background-image: url('https://images.unsplash.com/photo-1589307904488-7d60ff29c975?w=1000&auto=format&fit=crop&q=80');">
+            <div class="absolute inset-0 bg-brand-dark/90 transition-all duration-700 group-hover:bg-brand-dark/75 group-hover:mix-blend-hard-light"></div>
+            <div class="relative z-10 p-8 h-full flex flex-col border border-white/5 group-hover:border-brand-tan/40 transition-colors">
+                 <span class="font-serif text-6xl text-white/10 group-hover:text-brand-tan/30 transition-colors leading-none mb-4">04</span>
+                <h3 class="text-2xl font-serif text-white mb-2">Sector Legal</h3>
+                <p class="text-sm text-brand-gold/80 font-medium uppercase tracking-wider mb-6 border-b border-white/10 pb-4">Abogados, Asesores de Inversión</p>
                 <p class="text-gray-200 text-sm leading-relaxed mb-8 flex-grow pr-2">
-                    Expertos que requieren prueba documental admisible. Usan la data para verificar cumplimiento de contratos de exclusividad, investigar competencia desleal, y asesorar a nuevos inversores sobre el panorama arancelario real.
+                    Expertos que requieren prueba documental admisible. Usan la data para verificar contratos de exclusividad, investigar competencia desleal y asesorar sobre el panorama arancelario real.
                 </p>
-                <div class="text-xs text-white bg-[#1E1914]/60 p-4 rounded-lg border-l-[3px] border-brand-olive backdrop-blur-md group-hover:bg-brand-olive/10 transition-colors">
-                    <span class="font-bold text-brand-olive block mb-1 tracking-wide uppercase">Objetivo Crítico:</span> Mitigar riesgos legales y comerciales con auditoría de mercado.
+                <div class="text-xs text-white bg-brand-dark/60 p-4 rounded-lg border-l-[3px] border-brand-olive backdrop-blur-md group-hover:bg-brand-olive/10 transition-colors">
+                    <span class="font-bold text-brand-olive block mb-1 tracking-wide uppercase">Objetivo Crítico:</span> Mitigar riesgos legales con auditoría de mercado.
                 </div>
             </div>
         </div>
         
-        <div class="group relative rounded-xl overflow-hidden card-height bg-cover bg-center shadow-xl shadow-black/30" style="background-image: url('https://images.unsplash.com/photo-1613690399151-65ea69478674?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2hpcHBpbmclMjBjb250YWluZXJ8ZW58MHx8MHx8fDI%3D');">
-            <div class="absolute inset-0 bg-[#1E1914]/90 transition-all duration-700 group-hover:bg-[#1E1914]/75 group-hover:mix-blend-hard-light"></div>
-            <div class="relative z-10 p-8 h-full flex flex-col border border-white/5 group-hover:border-brand-olive/40 transition-colors">
-                 <span class="font-serif text-6xl text-white/10 group-hover:text-brand-olive/30 transition-colors leading-none mb-4">05</span>
+        <div class="group relative rounded-xl overflow-hidden card-height bg-cover bg-center shadow-xl shadow-black/30" style="background-image: url('https://images.unsplash.com/photo-1613690399151-65ea69478674?w=1000&auto=format&fit=crop&q=80');">
+            <div class="absolute inset-0 bg-brand-dark/90 transition-all duration-700 group-hover:bg-brand-dark/75 group-hover:mix-blend-hard-light"></div>
+            <div class="relative z-10 p-8 h-full flex flex-col border border-white/5 group-hover:border-brand-tan/40 transition-colors">
+                 <span class="font-serif text-6xl text-white/10 group-hover:text-brand-tan/30 transition-colors leading-none mb-4">05</span>
                 <h3 class="text-2xl font-serif text-white mb-2">Operadores Logísticos</h3>
-                <p class="text-sm text-brand-tan/90 font-medium uppercase tracking-wider mb-6 border-b border-white/10 pb-4">Freight Forwarders, Navieros, Almacenes</p>
+                <p class="text-sm text-brand-gold/80 font-medium uppercase tracking-wider mb-6 border-b border-white/10 pb-4">Freight Forwarders, Navieros, Almacenes</p>
                 <p class="text-gray-200 text-sm leading-relaxed mb-8 flex-grow pr-2">
-                    El motor del comercio internacional. Utilizan la inteligencia de mercado (MI) para identificar qué empresas están moviendo carga activamente hoy, prospectando clientes de alto volumen para sus servicios de transporte, aduanas y almacenes.
+                    El motor del comercio internacional. Utilizan la inteligencia de mercado para identificar qué empresas están moviendo carga activamente hoy y prospectar clientes de alto volumen.
                 </p>
-                <div class="text-xs text-white bg-[#1E1914]/60 p-4 rounded-lg border-l-[3px] border-brand-olive backdrop-blur-md group-hover:bg-brand-olive/10 transition-colors">
-                    <span class="font-bold text-brand-olive block mb-1 tracking-wide uppercase">Objetivo Crítico:</span> Prospección comercial de ventas B2B altamente efectiva.
+                <div class="text-xs text-white bg-brand-dark/60 p-4 rounded-lg border-l-[3px] border-brand-olive backdrop-blur-md group-hover:bg-brand-olive/10 transition-colors">
+                    <span class="font-bold text-brand-olive block mb-1 tracking-wide uppercase">Objetivo Crítico:</span> Prospección comercial B2B altamente efectiva.
                 </div>
             </div>
         </div>
 
         <div class="group relative rounded-xl overflow-hidden card-height bg-cover bg-center shadow-xl shadow-black/30" style="background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop');">
-            <div class="absolute inset-0 bg-[#1E1914]/90 transition-all duration-700 group-hover:bg-[#1E1914]/75 group-hover:mix-blend-hard-light"></div>
-            <div class="relative z-10 p-8 h-full flex flex-col border border-white/5 group-hover:border-brand-olive/40 transition-colors">
-                 <span class="font-serif text-6xl text-white/10 group-hover:text-brand-olive/30 transition-colors leading-none mb-4">06</span>
+            <div class="absolute inset-0 bg-brand-dark/90 transition-all duration-700 group-hover:bg-brand-dark/75 group-hover:mix-blend-hard-light"></div>
+            <div class="relative z-10 p-8 h-full flex flex-col border border-white/5 group-hover:border-brand-tan/40 transition-colors">
+                 <span class="font-serif text-6xl text-white/10 group-hover:text-brand-tan/30 transition-colors leading-none mb-4">06</span>
                 <h3 class="text-2xl font-serif text-white mb-2">Prensa & Investigación</h3>
-                <p class="text-sm text-brand-tan/90 font-medium uppercase tracking-wider mb-6 border-b border-white/10 pb-4">Periodismo Económico, Think Tanks</p>
+                <p class="text-sm text-brand-gold/80 font-medium uppercase tracking-wider mb-6 border-b border-white/10 pb-4">Periodismo Económico, Think Tanks</p>
                 <p class="text-gray-200 text-sm leading-relaxed mb-8 flex-grow pr-2">
-                    Buscadores de la verdad económica. Transforman estadísticas brutas de comercio exterior en noticias, infografías y reportajes de impacto sobre el estado real de la economía nacional y sectorial.
+                    Buscadores de la verdad económica. Transforman estadísticas brutas de comercio exterior en noticias, infografías y reportajes de impacto sobre el estado real de la economía.
                 </p>
-                <div class="text-xs text-white bg-[#1E1914]/60 p-4 rounded-lg border-l-[3px] border-brand-olive backdrop-blur-md group-hover:bg-brand-olive/10 transition-colors">
-                    <span class="font-bold text-brand-olive block mb-1 tracking-wide uppercase">Objetivo Crítico:</span> Generar periodismo de datos creíble y fundamentado.
+                <div class="text-xs text-white bg-brand-dark/60 p-4 rounded-lg border-l-[3px] border-brand-olive backdrop-blur-md group-hover:bg-brand-olive/10 transition-colors">
+                    <span class="font-bold text-brand-olive block mb-1 tracking-wide uppercase">Objetivo Crítico:</span> Generar periodismo de datos creíble.
                 </div>
             </div>
         </div>
@@ -171,16 +207,16 @@
     </div>
 
     <div class="mt-24 text-center border-t border-white/5 pt-16 relative">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-bg/50 pointer-events-none"></div>
-        <h4 class="text-white font-serif text-3xl mb-6 relative z-10">¿Se identifica con alguno de estos perfiles de clientes?<br/> Imagine que su competencia ya este usando estos datos y usted no!.</h4>
-        <p class="text-brand-tan text-base mb-10 max-w-xl mx-auto leading-relaxed relative z-10">
-            No deje que la incertidumbre defina su estrategia.<br/> Obtenga la ventaja competitiva que necesita.<br/> Tenemos una solución de datos diseñada para su industria.
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-black/50 pointer-events-none"></div>
+        <h4 class="text-white font-serif text-3xl mb-6 relative z-10">¿Se identifica con alguno de estos perfiles?<br/>Su competencia ya está usando estos datos.</h4>
+        <p class="text-brand-gold/70 text-base mb-10 max-w-xl mx-auto leading-relaxed relative z-10">
+            No deje que la incertidumbre defina su estrategia. Obtenga la ventaja competitiva que necesita.
         </p>
         <div class="flex flex-col md:flex-row justify-center gap-5 relative z-10">
-            <a href="precios.html" class="px-10 py-4 bg-brand-wine hover:bg-brand-wine-hover text-white text-sm font-bold uppercase tracking-widest rounded transition-all shadow-lg shadow-brand-wine/20">
+            <a href="precios.html" class="px-10 py-4 bg-brand-olive hover:bg-brand-olive/90 text-white text-sm font-bold uppercase tracking-widest rounded transition-all shadow-lg shadow-black/30">
                 Ver Planes y Precios
             </a>
-            <a href="https://wa.me/50587676284" class="px-10 py-4 border-2 border-white/10 hover:border-brand-olive hover:text-brand-olive text-white text-sm font-bold uppercase tracking-widest rounded transition-all bg-white/5 hover:bg-brand-bg">
+            <a href="https://wa.me/50588889999" class="px-10 py-4 border border-brand-tan/50 hover:border-brand-tan hover:text-brand-tan text-white text-sm font-bold uppercase tracking-widest rounded transition-all bg-brand-tan/5 hover:bg-brand-dark">
                 Hablar con un Asesor
             </a>
         </div>
@@ -188,19 +224,50 @@
 
 </main>
 
-<footer class="w-full py-10 px-6 border-t border-white/10 bg-[#161412] text-center relative z-10">
-    <div class="flex justify-center items-center gap-2 mb-4 opacity-50 grayscale hover:grayscale-0 transition-all">
-        <span class="text-xl font-serif text-brand-olive">Φ</span>
-        <span class="text-sm text-white tracking-widest uppercase">analysta</span>
+<footer class="bg-brand-black py-20 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+            <div class="col-span-1 md:col-span-1">
+                <a class="flex items-center space-x-2 mb-6" href="#">
+                    <span class="phi-symbol text-2xl text-brand-tan">φ</span>
+                    <span class="text-white text-xl font-normal lowercase tracking-tighter">analysta</span>
+                </a>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Decodificando Mercados en Centroamérica y el Caribe.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Explorar</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="soluciones.html">Soluciones</a></li>
+                    <li><a class="hover:text-white transition-colors" href="clientes.html">Clientes</a></li>
+                    <li><a class="hover:text-white transition-colors" href="precios.html">Precios</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Recursos</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="solicitar_muestra.html">Muestra Gratis</a></li>
+                    <li><a class="hover:text-white transition-colors" href="como_funciona.html">Metodología</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Legal</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="compania.html">Sobre Nosotros</a></li>
+                    <li><a class="hover:text-white transition-colors" href="privacidad.html">Privacidad</a></li>
+                    <li><a class="hover:text-white transition-colors" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>© 2026 Analysta. Todos los derechos reservados.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0 uppercase tracking-widest font-medium">
+                <a class="hover:text-white" href="https://wa.me/50588889999">WhatsApp</a>
+                <a class="hover:text-white" href="mailto:info@analysta.biz">Email</a>
+            </div>
+        </div>
     </div>
-    <div class="mb-6 flex justify-center gap-4 text-[10px] text-gray-500">
-        <a href="index.html" class="hover:text-white">Inicio</a>
-        <span>|</span>
-        <a href="precios.html" class="hover:text-white">Precios</a>
-        <span>|</span>
-        <a href="privacidad.html" class="hover:text-white">Privacidad</a>
-    </div>
-    <p class="text-xs text-gray-600">© 2026 Analysta. Todos los derechos reservados.</p>
 </footer>
 
 </body>

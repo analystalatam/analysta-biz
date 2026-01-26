@@ -1,155 +1,287 @@
 <!DOCTYPE html>
-<html lang="es"><head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3X5B6PGFV8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html lang="es">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3X5B6PGFV8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3X5B6PGFV8');
+    </script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Cómo Funciona - Analysta</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
-  gtag('config', 'G-3X5B6PGFV8');
-</script>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Analysta - Cómo Funciona</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'earth-bg': '#AEA393',
-            'earth-green': '#727B3D',
-            'earth-maroon': '#450C1B',
-            'earth-dark': '#1E1914',
-          },
-          fontFamily: {
-            'serif': ['"Playfair Display"', 'serif'],
-            'sans': ['"Inter"', 'sans-serif'],
-          },
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    // PALETA DE COLORES ESTÁNDAR EXTENDIDA
+                    colors: {
+                        'brand-dark': '#1E1914',     // Fondo principal
+                        'brand-gold': '#AEA393',     // Dorado/Beige base
+                        'brand-tan': '#B69574',      // Acento elegante (Títulos)
+                        'brand-olive': '#727B3D',    // Acción principal (Botones)
+                        'brand-brown': '#63372C',    // Fondos secundarios
+                        'brand-mud': '#4A412A',      // Fondos oscuros/Tarjetas
+                        'brand-wine': '#450C1B',     // Acentos fuertes
+                        'brand-wine-hover': '#5e1025',
+                        'brand-black': '#14110E',
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
-<style type="text/tailwindcss">
-  :root {
-    --primary-bg: #AEA393;
-    --accent-green: #727B3D;
-    --accent-maroon: #450C1B;
-  }
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
-  }
-  .fine-line {
-    border-color: rgba(69, 12, 27, 0.1);
-  }
-</style>
+    </script>
+    <style type="text/tailwindcss">
+        :root {
+            --brand-dark: #1E1914;
+            --brand-tan: #B69574;
+            --brand-olive: #727B3D;
+        }
+        body {
+            background-color: var(--brand-dark);
+            color: #E5E1DC;
+            -webkit-font-smoothing: antialiased;
+        }
+        .phi-symbol {
+            font-family: serif;
+            font-style: italic;
+        }
+        .hover-gold-link:hover {
+            color: var(--brand-tan);
+            transition: color 0.3s ease;
+        }
+        /* Línea conectora para el proceso paso a paso */
+        .step-connector {
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, var(--brand-tan), transparent);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        @media (min-width: 1024px) {
+            .step-connector {
+                left: 100%;
+                top: 50%;
+                width: 100px;
+                height: 1px;
+                background: linear-gradient(to right, var(--brand-tan), transparent);
+                transform: translateY(-50%);
+            }
+        }
+    </style>
 </head>
-<body class="font-sans text-earth-dark bg-[#F9F8F6]">
-<header class="w-full bg-[#F9F8F6] py-6 px-6 md:px-12 flex justify-between items-center border-b border-earth-maroon/5 sticky top-0 z-50">
-<div class="flex items-center gap-1">
-<span class="font-serif text-2xl text-earth-maroon">φ</span>
-<span class="font-sans text-xl font-medium tracking-tight text-earth-dark lowercase">analysta</span>
-</div>
-<nav class="hidden lg:block">
-<ul class="flex space-x-10 text-[13px] uppercase tracking-widest font-medium text-earth-dark/70">
-<li><a class="hover:text-earth-maroon transition-colors" href="soluciones.html">Soluciones</a></li>
-<li><a class="text-earth-maroon font-bold" href="como_funciona.html">Cómo Funciona</a></li>
-<li><a class="hover:text-earth-maroon transition-colors" href="soluciones.html#industrias">Industrias</a></li>
-<li><a class="hover:text-earth-maroon transition-colors" href="precios.html">Precios</a></li>
-<li><a class="hover:text-earth-maroon transition-colors" href="clientes.html">Clientes</a></li>
-<li><a class="hover:text-earth-maroon transition-colors" href="compania.html">Compañía</a></li>
-</ul>
-</nav>
-<button class="lg:hidden text-earth-maroon">
-<span class="material-symbols-outlined text-3xl">menu</span>
-</button>
+
+<body class="font-sans antialiased min-h-screen flex flex-col">
+
+<header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-sm border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex justify-between items-center h-24">
+            <div class="flex-shrink-0 flex items-center">
+                <a class="flex items-center space-x-2 group" href="index.html">
+                    <span class="phi-symbol text-3xl text-brand-tan">φ</span>
+                    <span class="text-white text-2xl font-normal tracking-tighter lowercase">analysta</span>
+                </a>
+            </div>
+            <nav class="hidden lg:flex space-x-10">
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="soluciones.html">Soluciones</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="clientes.html">Clientes</a>
+                <a class="text-sm font-medium tracking-wide text-brand-tan border-b border-brand-tan pb-0.5" href="como_funciona.html">Cómo Funciona</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="compania.html">Compañía</a>
+                <a class="text-sm font-medium tracking-wide text-white border-b border-white/20 pb-0.5 hover:text-brand-tan hover:border-brand-tan transition-colors" href="precios.html">Precios</a>
+            </nav>
+            <div class="hidden lg:flex">
+                <a class="bg-brand-olive hover:bg-brand-olive/80 text-white px-6 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-sm shadow-lg shadow-black/20" href="contacto.html">
+                    Contacto / Acceso
+                </a>
+            </div>
+             <div class="lg:hidden">
+                <a href="precios.html" class="text-brand-tan uppercase text-xs font-bold border border-brand-tan px-4 py-2">Ver Precios</a>
+            </div>
+        </div>
+    </div>
 </header>
-<section class="w-full bg-[var(--primary-bg)] pt-24 pb-16 px-6 border-b border-earth-maroon/10">
-<div class="max-w-7xl mx-auto text-center">
-<h1 class="font-serif text-5xl md:text-7xl font-light text-earth-maroon mb-8 tracking-tight">
-      Cómo Funciona
-    </h1>
-<p class="text-xl md:text-2xl text-earth-dark/80 max-w-3xl mx-auto font-light leading-relaxed">
-      Una arquitectura de datos refinada para transformar la complejidad de datos crudos en claridad para tus decisiones.
-    </p>
-</div>
+<section class="relative pt-48 pb-20 lg:pt-64 lg:pb-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 text-center lg:text-left">
+        <div class="max-w-4xl">
+            <h1 class="text-5xl lg:text-7xl font-serif text-white leading-none mb-8">
+                El motor de la <br/><span class="italic text-brand-tan">certeza.</span>
+            </h1>
+            <p class="text-xl text-brand-gold/80 mb-12 max-w-2xl font-light leading-relaxed mx-auto lg:mx-0">
+                Hemos refinado una arquitectura de datos capaz de transformar millones de registros aduaneros brutos en claridad estratégica para su negocio.
+            </p>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-dark via-transparent to-brand-dark pointer-events-none"></div>
+    <div class="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
 </section>
-<section class="w-full">
-<div class="flex flex-col lg:flex-row min-h-[70vh]">
-<article class="flex-1 flex flex-col items-center text-center p-12 md:p-20 border-b lg:border-b-0 lg:border-r fine-line bg-[#FDFCFB]">
-<div class="mb-12">
-<span class="material-symbols-outlined text-6xl text-earth-green font-extralight">data_exploration</span>
-</div>
-<h2 class="font-serif text-3xl text-earth-maroon mb-6 font-medium italic">Recolección</h2>
-<p class="text-earth-dark/70 leading-relaxed mb-12 max-w-sm font-light">
-        Interconectamos las fuentes de datos aduaneros de la region, con la informacion logística internacional, y creamos un flujo constante de información bruta verificada.
-      </p>
-<div class="mt-auto w-full">
-<img alt="Infografía Recolección" class="w-full h-auto grayscale opacity-80 hover:grayscale-0 transition-all duration-700" src="recoleccion.png"/>
-</div>
-</article>
-<article class="flex-1 flex flex-col items-center text-center p-12 md:p-20 border-b lg:border-b-0 lg:border-r fine-line bg-[#FAF9F7]">
-<div class="mb-12">
-<span class="material-symbols-outlined text-6xl text-earth-green font-extralight">insights</span>
-</div>
-<h2 class="font-serif text-3xl text-earth-maroon mb-6 font-medium italic">Análisis</h2>
-<p class="text-earth-dark/70 leading-relaxed mb-12 max-w-sm font-light">
-        Nuestro algoritmo y tecnologia analiza millones de registros mediante modelos predictivos y validación experta para identificar patrones y tendencias de mercados, competidores y proveedores.
-      </p>
-<div class="mt-auto w-full">
-<img alt="Infografía Análisis" class="w-full h-auto grayscale opacity-80 hover:grayscale-0 transition-all duration-700" src="analisis.png"/>
-</div>
-</article>
-<article class="flex-1 flex flex-col items-center text-center p-12 md:p-20 bg-[#F7F6F3]">
-<div class="mb-12">
-<span class="material-symbols-outlined text-6xl text-earth-green font-extralight">model_training</span>
-</div>
-<h2 class="font-serif text-3xl text-earth-maroon mb-6 font-medium italic">Entrega</h2>
-<p class="text-earth-dark/70 leading-relaxed mb-12 max-w-sm font-light">
-        Te entregamos lo que tu necesites, desde la base de datos de tu interes, hasta informes de Market Share por Industria, Competidores, Marcas y mas! Presentados en interfaces intuitivas, diseñadas para facilitar la toma de decisiones críticas en entornos de alta incertidumbre.
-      </p>
-<div class="mt-auto w-full">
-<img alt="Infografía Entrega" class="w-full h-auto grayscale opacity-80 hover:grayscale-0 transition-all duration-700" src="entrega.png"/>
-</div>
-</article>
-</div>
+
+<section class="bg-brand-dark pb-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 relative">
+            
+            <article class="relative group">
+                <div class="bg-brand-mud/30 border border-white/5 p-8 rounded-lg hover:border-brand-tan/50 transition-all duration-500 relative z-10 h-full">
+                    <div class="mb-8 relative overflow-hidden rounded h-48">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1000&auto=format&fit=crop" alt="Servidores de datos" class="object-cover w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-700 grayscale group-hover:grayscale-0">
+                        <div class="absolute top-0 left-0 bg-brand-dark/20 w-full h-full"></div>
+                    </div>
+                    
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="text-6xl font-serif text-brand-tan/20 group-hover:text-brand-tan transition-colors">01</span>
+                        <h2 class="text-2xl font-serif text-white">Recolección</h2>
+                    </div>
+                    
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Interconectamos fuentes oficiales de aduanas, manifiestos de carga y registros logísticos de toda la región. Creamos un flujo constante de "Big Data" verificado y legal.
+                    </p>
+                </div>
+                <div class="step-connector lg:block hidden"></div>
+            </article>
+
+            <article class="relative group mt-8 lg:mt-0">
+                <div class="bg-brand-mud/30 border border-white/5 p-8 rounded-lg hover:border-brand-tan/50 transition-all duration-500 relative z-10 h-full">
+                    <div class="mb-8 relative overflow-hidden rounded h-48">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Análisis de datos" class="object-cover w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-700 grayscale group-hover:grayscale-0">
+                    </div>
+                    
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="text-6xl font-serif text-brand-tan/20 group-hover:text-brand-tan transition-colors">02</span>
+                        <h2 class="text-2xl font-serif text-white">Procesamiento</h2>
+                    </div>
+                    
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Nuestro algoritmo propietario limpia, categoriza y cruza la información. Validamos nombres de empresas, unificamos partidas arancelarias y detectamos anomalías de precios.
+                    </p>
+                </div>
+                <div class="step-connector lg:block hidden"></div>
+            </article>
+
+            <article class="relative group mt-8 lg:mt-0">
+                <div class="bg-brand-mud/30 border border-brand-tan/20 p-8 rounded-lg hover:bg-brand-mud/50 transition-all duration-500 relative z-10 h-full shadow-2xl shadow-brand-tan/5">
+                    <div class="mb-8 relative overflow-hidden rounded h-48">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop" alt="Toma de decisiones" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-700">
+                    </div>
+                    
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="text-6xl font-serif text-brand-olive/50 group-hover:text-brand-olive transition-colors">03</span>
+                        <h2 class="text-2xl font-serif text-white">Inteligencia</h2>
+                    </div>
+                    
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Entregamos claridad. Reciba dashboards interactivos, reportes en Excel/PDF o acceso vía App. Datos listos para negociar, invertir o competir.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </div>
 </section>
-<section class="w-full bg-[#1E1914] py-24 px-6 border-t border-earth-maroon/20">
-<div class="max-w-4xl mx-auto text-center">
-<h2 class="font-serif text-4xl md:text-5xl text-[#AEA393] mb-10 font-light leading-tight">
-      Inteligencia de Negocios para líderes con visión de futuro! Por que la informacion es poder!.
-    </h2>
-<div class="flex flex-col sm:flex-row justify-center gap-6">
-<button class="bg-earth-green text-white px-10 py-4 text-sm uppercase tracking-widest hover:bg-earth-green/90 transition-all font-semibold">
-        Solicitar Informe de Muestra
-      </button>
-<button class="border border-[#AEA393]/30 text-[#AEA393] px-10 py-4 text-sm uppercase tracking-widest hover:bg-[#AEA393]/10 transition-all font-semibold">
-        Cotizacion Personalizada
-      </button>
-</div>
-</div>
+
+<section class="bg-brand-black py-24 border-y border-white/5">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+        <span class="material-symbols-outlined text-5xl text-brand-olive mb-6">verified_user</span>
+        <h3 class="text-3xl font-serif text-white mb-6">Calidad de Dato Garantizada</h3>
+        <p class="text-brand-gold/70 text-lg font-light leading-relaxed mb-10">
+            A diferencia de los datos gratuitos o "scraped", nuestra información pasa por un proceso de doble validación (Algorítmica + Humana) para asegurar un 99.8% de precisión en la identificación de actores comerciales.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center border-t border-white/5 pt-10">
+            <div>
+                <div class="text-3xl font-bold text-brand-tan mb-1">24h</div>
+                <div class="text-xs text-gray-500 uppercase tracking-widest">Actualización</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-brand-tan mb-1">5 Años</div>
+                <div class="text-xs text-gray-500 uppercase tracking-widest">Histórico</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-brand-tan mb-1">100%</div>
+                <div class="text-xs text-gray-500 uppercase tracking-widest">Legal</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-brand-tan mb-1">ISO</div>
+                <div class="text-xs text-gray-500 uppercase tracking-widest">Estándares</div>
+            </div>
+        </div>
+    </div>
 </section>
-<footer class="w-full bg-[#F9F8F6] py-16 px-6 border-t fine-line">
-<div class="max-w-7xl mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
-<div class="flex items-center gap-1 opacity-60">
-<span class="font-serif text-xl text-earth-maroon">φ</span>
-<span class="font-sans text-lg font-medium tracking-tight text-earth-dark lowercase">analysta</span>
-</div>
-<nav>
-<ul class="flex flex-wrap justify-center gap-x-10 gap-y-4 text-[12px] uppercase tracking-wider font-medium text-earth-dark/50">
-<li><a class="hover:text-earth-maroon transition-colors" href="soluciones.html">Soluciones</a></li>
-<li><a class="hover:text-earth-maroon transition-colors" href="como_funciona.html">Cómo Funciona</a></li>
-<li><a class="hover:text-earth-maroon transition-colors" href="soluciones.html#Industrias">Industrias</a></li>
-<li><a class="hover:text-earth-maroon transition-colors" href="precios.html">Precios</a></li>
-<li><a class="hover:text-earth-maroon transition-colors" href="contacto.html">Contacto</a></li>
-</ul>
-</nav>
-</div>
-<div class="text-center pt-8 border-t fine-line">
-<p class="text-[11px] uppercase tracking-[0.2em] text-earth-dark/40 font-medium">
+
+<section class="bg-brand-wine py-32 text-center overflow-hidden relative">
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <h2 class="text-4xl lg:text-5xl font-serif text-white mb-8">La información es <span class="italic">poder.</span><br/>Úsela a su favor.</h2>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-6 mt-12">
+            <a href="solicitar_muestra.html" class="bg-brand-olive text-white px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-brand-olive/90 transition-all shadow-xl shadow-black/30">
+                Solicitar Muestra Gratis
+            </a>
+            <a href="https://wa.me/50588889999" class="bg-transparent border border-white/30 text-white px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-brand-wine transition-all">
+                Cotización Personalizada
+            </a>
+        </div>
+    </div>
+    <span class="absolute -bottom-24 -right-24 phi-symbol text-[30rem] text-white/5 pointer-events-none select-none">φ</span>
+</section>
+
+<footer class="bg-brand-black py-20 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+            <div class="col-span-1 md:col-span-1">
+                <a class="flex items-center space-x-2 mb-6" href="#">
+                    <span class="phi-symbol text-2xl text-brand-tan">φ</span>
+                    <span class="text-white text-xl font-normal lowercase tracking-tighter">analysta</span>
+                </a>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Decodificando Mercados en Centroamérica y el Caribe.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Explorar</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="soluciones.html">Soluciones</a></li>
+                    <li><a class="hover:text-white transition-colors" href="clientes.html">Clientes</a></li>
+                    <li><a class="hover:text-white transition-colors" href="precios.html">Precios</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Recursos</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="solicitar_muestra.html">Muestra Gratis</a></li>
+                    <li><a class="hover:text-white transition-colors" href="como_funciona.html">Metodología</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Legal</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="compania.html">Sobre Nosotros</a></li>
+                    <li><a class="hover:text-white transition-colors" href="privacidad.html">Privacidad</a></li>
+                    <li><a class="hover:text-white transition-colors" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>© 2026 Analysta. Todos los derechos reservados.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0 uppercase tracking-widest font-medium">
+                <a class="hover:text-white" href="https://wa.me/50588889999">WhatsApp</a>
+                <a class="hover:text-white" href="mailto:info@analysta.biz">Email</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
