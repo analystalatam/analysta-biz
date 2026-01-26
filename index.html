@@ -1,196 +1,204 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3X5B6PGFV8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3X5B6PGFV8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3X5B6PGFV8');
+    </script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Analysta - Inteligencia de Mercados</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
-  gtag('config', 'G-3X5B6PGFV8');
-</script>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Analysta - Decodifcando el mercado</title>
-<!-- Tailwind CSS v3 with Plugins -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Tailwind Configuration -->
-<script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'custom-dark': '#161412',
-            'custom-gold': '#C0D173',
-            'custom-wine': '#521C24',
-            'custom-wine-hover': '#6b2530',
-            'custom-gray': '#cfcfcf',
-            'custom-border': '#5a623a',
-            'logo-gold': '#a2b855',
-          },
-          fontFamily: {
-            sans: ['Inter', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
-          }
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    // Aquí definimos tus fuentes para usarlas como 'font-sans' o 'font-serif'
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    // Aquí definimos tu paleta de colores oficial
+                    colors: {
+                        'brand-dark': '#1E1914',   // Negro Café (Fondo)
+                        'brand-gold': '#AEA393',   // Dorado/Beige (Texto y Bordes)
+                        'brand-wine': '#450C1B',   // Vino (Botones)
+                        'brand-wine-hover': '#5e1025', // Vino más claro (al pasar el mouse)
+                        'brand-black': '#14110E',  // Negro puro (Footers/Secciones oscuras)
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
-<!-- Google Fonts: Inter for clean, modern look -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<!-- Custom Styles for specific fine-tuning -->
-<style data-purpose="typography">
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #151310;
-      color: white;
-    }
+    </script>
     
-    /* Fine-tune the gold text gradient or shadow if needed, but flat color matches design best */
-    .text-gold-stats {
-      color: #9CAB5A;
-    }
-  </style>
-<style data-purpose="layout">
-    /* Ensuring the hero image has rounded corners and fits well */
-    .hero-image-container {
-      overflow: hidden;
-      border-radius: 12px;
-    }
-    
-    /* Custom separator line for stats */
-    .stat-divider {
-      border-left: 1px solid #333;
-      height: 40px;
-    }
-  </style>
+    <style type="text/tailwindcss">
+        /* Variables para uso general */
+        :root {
+            --brand-dark: #1E1914;
+            --brand-gold: #AEA393;
+            --brand-wine: #450C1B;
+        }
+        body {
+            background-color: var(--brand-dark);
+            color: #E5E1DC; /* Color de texto base (blanco roto suave) */
+            -webkit-font-smoothing: antialiased; /* Hace que el texto se vea más nítido */
+        }
+        /* Estilo especial para el símbolo Phi */
+        .phi-symbol {
+            font-family: serif;
+            font-style: italic;
+        }
+        /* Efecto suave al pasar el mouse sobre enlaces */
+        .hover-gold-link:hover {
+            color: var(--brand-gold);
+            transition: color 0.3s ease;
+        }
+    </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased" style="background-color: #161412;">
-<!-- BEGIN: Navbar -->
-<header class="w-full py-4 px-6 md:px-12 flex items-center justify-between border-b border-white/5 bg-custom-dark/95 backdrop-blur-sm fixed top-0 z-50">
-<!-- Logo Section -->
-<div class="flex items-center gap-3">
-<!-- Placeholder for Logo Image -->
-<!--<div class="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 text-logo-gold text-2xl font-bold">φ</div>
-<span class="text-xl font-medium tracking-tight text-white">analysta</span>
-</div> -->
 
-<a class="flex items-center space-x-2 group" href="index.html">
-<span class="phi-symbol text-3xl text-brand-gold">φ</span>
-<span class="text-white text-2xl font-normal tracking-tighter lowercase">analysta</span>
-</a>
-</div>
+<body class="font-sans antialiased min-h-screen flex flex-col">
 
-<!-- Navigation Links -->
-<nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-300">
-<a class="hover:text-white flex items-center gap-1 transition-colors" href="soluciones.html">
-        Soluciones
-        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-</a>
-<a class="hover:text-white transition-colors" href="como_funciona.html">Cómo Funciona</a>
-<a class="hover:text-white transition-colors" href="soluciones.html#industrias">Industrias</a>
-<a class="hover:text-white transition-colors" href="precios.html">Precios</a>
-<a class="hover:text-white flex items-center gap-1 transition-colors" href="clientes.html">
-        Clientes
-        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-</a>
-<a class="hover:text-white transition-colors" href="compania.html">Compañía</a>
-</nav>
-<!-- Call to Action Button -->
-<div class="hidden md:block">
-<a class="bg-custom-wine hover:bg-custom-wine-hover text-white text-sm font-medium px-5 py-2.5 rounded transition-colors duration-200" href="precios.html">
-        Acceso/Membresia
-      </a>
-</div>
-<!-- Mobile Menu Icon (Hamburger) - Visible on small screens -->
-<button class="lg:hidden text-white p-2">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-</button>
+<header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-sm border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex justify-between items-center h-24">
+            
+            <div class="flex-shrink-0 flex items-center">
+                <a class="flex items-center space-x-2 group" href="index.html">
+                    <span class="phi-symbol text-3xl text-brand-gold">φ</span>
+                    <span class="text-white text-2xl font-normal tracking-tighter lowercase">analysta</span>
+                </a>
+            </div>
+
+            <nav class="hidden lg:flex space-x-10">
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="soluciones.html">Soluciones</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="clientes.html">Clientes</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="como_funciona.html">Cómo Funciona</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="compania.html">Compañía</a>
+                <a class="text-sm font-medium tracking-wide text-white border-b border-brand-gold pb-0.5 hover:text-brand-gold transition-colors" href="precios.html">Precios</a>
+            </nav>
+
+            <div class="hidden lg:flex">
+                <a class="border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark px-6 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300" href="contacto.html">
+                    Contacto / Acceso
+                </a>
+            </div>
+            
+            <div class="lg:hidden">
+                <a href="precios.html" class="text-brand-gold uppercase text-xs font-bold border border-brand-gold px-4 py-2">Ver Precios</a>
+            </div>
+        </div>
+    </div>
 </header>
-<!-- END: Navbar -->
-<!-- BEGIN: Main Content -->
-<main class="flex-grow flex items-center  ustify-center pt-24 pb-12 px-6 md:px-12 lg:px-20 xl:px-32 bg-custom-dark">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center w-full max-w-[1400px]">
-<!-- LEFT COLUMN: Hero Image/Visualization -->
-<div class="hero-image-container relative w-full aspect-[4/3] lg:aspect-square xl:aspect-[5/4] shadow-2xl bg-gray-800">
-<!-- Using provided IMAGE_1 placeholder for the map visualization -->
-<img alt="Visualización de datos de mapa de Centroamérica" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5RWZLkYIPild6MCc5_3SndWLydmjuVgFfHS8KJdshO6Y9uN3YO2v_xgs1_tpzFpsrSzAPW0Z3geGXkQdkWCXHXqxxyN-lXULZCyteUbM5D59u3UgmCLBLdRP3M7SfuForCMlK8pmAxhEpaU4tmAYkVXlWIThRhJ6A9xg8R3pBcESfoez6D3A8pDlAIsw2UNuvWZUsIrTr1HpCU9uMbkDYL0OwqmLBCOcbod41JlySsrtCMzxfPGHTChqoQFP82JtntPkjx9Tm1gfZ"/>
-<!-- Overlay for better text readability if the image is bright, though design shows dark image -->
-<div class="absolute inset-0 bg-black/10"></div>
-<div class="absolute top-6 right-6 max-w-[240px] bg-[#161412]/85 backdrop-blur-md border border-white/10 rounded-xl p-4 shadow-2xl animate-fade-in">
-<div class="text-xs text-gray-400 mb-1 font-medium tracking-wide">Último Insight:</div>
-<div class="text-sm font-semibold text-white leading-tight mb-2">Exportaciones de Vehiculos en Costa Rica. Crecimiento Anual</div>
-<div class="text-3xl font-bold text-custom-gold mb-1">+12.4%</div>
-<svg fill="none" height="24" viewbox="0 0 100 24" width="100%" xmlns="http://www.w3.org/2000/svg">
-<path d="M2 20C15 20 20 12 30 15C40 18 50 8 60 10C70 12 80 4 98 2" stroke="#C0D173" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-<path d="M2 20C15 20 20 12 30 15C40 18 50 8 60 10C70 12 80 4 98 2V24H2V20Z" fill="#C0D173" fill-opacity="0.1"></path>
-</svg>
-</div></div>
-<!-- RIGHT COLUMN: Content -->
-<div class="flex flex-col space-y-8">
-<!-- Headlines -->
-<div class="space-y-4">
-<h1 class="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-[1.1] text-4xl lg:text-5xl xl:text-6xl">Decodificando Mercados<br/>Centroamérica<br/>y El Caribe.</h1>
-<p class="text-lg text-custom-gray max-w-lg leading-relaxed">
-            Obtenga acceso a:<br/>1. Estadisticas e informes de Market Share Productos.<br/> 2. Herramientas y Apps de Inteligencia de Mercados.<br/> 3. Mantengase adelante de su competencia. <br/> 4. Sorprenda a sus proveedores con "Know-how" del mercado.
-          </p>
-</div>
-<!-- Stats Section -->
-<div class="flex flex-row items-center justify-between lg:justify-start gap-4 md:gap-8 w-full">
-  <div class="flex flex-col">
-    <div class="text-3xl md:text-4xl font-bold text-custom-gold">1M+</div>
-    <div class="text-xs md:text-sm text-gray-400 mt-1">Datos Analizados</div>
-  </div>
-
-  <div class="w-px h-10 bg-white/20"></div>
-
-  <div class="flex flex-col">
-    <div class="text-3xl md:text-4xl font-bold text-custom-gold">10+</div>
-    <div class="text-xs md:text-sm text-gray-400 mt-1">Industrias Cubiertas</div>
-  </div>
-
-  <div class="w-px h-10 bg-white/20"></div>
-
-  <div class="flex flex-col">
-    <div class="text-3xl md:text-4xl font-bold text-custom-gold">1000+</div>
-    <div class="text-xs md:text-sm text-gray-400 mt-1">Reportes Entregados</div>
-  </div>
-</div>
-<!-- Action Buttons -->
-<!--<div class="flex flex-col sm:flex-row gap-4 mt-4">
-<!-- Primary CTA -->
-<!--<button class="bg-custom-wine hover:bg-custom-wine-hover text-white px-8 py-3.5 rounded text-base font-medium transition-colors duration-200 text-center">Solicitar Informe de Muestra</button>-->
-<!-- Secondary CTA -->
-<!--<button class="bg-transparent border border-custom-gold text-custom-gold hover:text-white hover:border-white px-8 py-3.5 rounded text-base font-medium transition-colors duration-200 text-center">Cotizacion Personalizada</button>
-</div>-->
-<div class="flex flex-col sm:flex-row gap-4 mt-4">
+<section class="relative pt-48 pb-32 lg:pt-64 lg:pb-48 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        <div class="max-w-4xl">
+            <h1 class="text-5xl lg:text-8xl font-serif text-white leading-none mb-8">
+                Decodificando el <br/><span class="italic text-brand-gold">mercado real.</span>
+            </h1>
+            <p class="text-xl text-brand-gold/80 mb-12 max-w-xl font-light leading-relaxed">
+                Transformamos datos de comercio internacional complejos de Centroamérica en Inteligencia de Mercado accionable para líderes que exigen certeza y claridad.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6">
+                <a class="inline-flex items-center justify-center px-10 py-5 bg-brand-wine text-white text-sm font-bold uppercase tracking-widest hover:bg-brand-wine-hover transition-all" href="soluciones.html">
+                    Explorar Soluciones
+                </a>
+                <a class="inline-flex items-center justify-center px-10 py-5 border border-white/20 text-white text-sm font-bold uppercase tracking-widest hover:bg-white/10 transition-all" href="solicitar_muestra.html">
+                    Solicitar Muestra
+                </a>
+            </div>
+        </div>
+    </div>
     
-    <a href="solicitar_muestra.html" class="bg-custom-wine hover:bg-custom-wine-hover text-white px-8 py-3.5 rounded text-base font-medium transition-colors duration-200 text-center inline-block">
-        Solicitar Informe de Muestra
-    </a>
-    <a href="https://wa.me/50587676284?text=Hola%20Analysta,%20me%20interesa%20una%20cotización%20personalizada." 
-   target="_blank"
-   class="px-8 py-4 rounded border border-[#727B3D] text-[#727B3D] font-medium hover:bg-[#727B3D] hover:text-white transition-all text-sm tracking-widest uppercase">
-   Cotización Personalizada
-    </a>
-</div>
-</div>
-<!-- End Right Column -->
-</div>
-</main>
-<!-- END: Main Content -->
-<footer class="py-8 text-center text-xs text-gray-600 border-t border-white/5 mt-12">
-    <p>&copy; 2026 Analysta. Todos los derechos reservados.</p>
-    <div class="mt-2 space-x-4">
-        <a href="privacidad.html" class="hover:text-gray-400 transition-colors">Política de Privacidad</a>
-        <a href="mailto:ventas@analysta.biz" class="hover:text-gray-400 transition-colors">Contacto</a>
+    <div class="absolute right-0 top-0 w-1/2 h-full opacity-20 pointer-events-none">
+        <div class="w-full h-full bg-gradient-to-l from-brand-wine to-transparent"></div>
+    </div>
+</section>
+<section class="bg-brand-black py-24 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="group">
+                <span class="material-symbols-outlined text-4xl text-brand-gold mb-6 group-hover:scale-110 transition-transform">analytics</span>
+                <h3 class="text-xl font-serif text-white mb-3">Datos Aduaneros Reales</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">No estimaciones. Acceda a registros detallados de importación y exportación validados por aduanas nacionales.</p>
+            </div>
+            <div class="group">
+                <span class="material-symbols-outlined text-4xl text-brand-gold mb-6 group-hover:scale-110 transition-transform">psychology</span>
+                <h3 class="text-xl font-serif text-white mb-3">Inteligencia Competitiva</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">Monitoree a su competencia, descubra sus proveedores y detecte nuevos jugadores en el mercado al instante.</p>
+            </div>
+            <div class="group">
+                <span class="material-symbols-outlined text-4xl text-brand-gold mb-6 group-hover:scale-110 transition-transform">trending_up</span>
+                <h3 class="text-xl font-serif text-white mb-3">Tendencias de Mercado</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">Anticipe cambios de demanda y precios con históricos de hasta 5 años para proyectar con seguridad.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-brand-dark py-32 text-center relative overflow-hidden">
+    <div class="max-w-3xl mx-auto px-6 relative z-10">
+        <h2 class="text-4xl lg:text-5xl font-serif text-white mb-8">El conocimiento es <span class="italic text-brand-gold">tu mejor ventaja.</span></h2>
+        <p class="text-lg text-gray-400 mb-10">Únase a los líderes que ya no deciden a ciegas.</p>
+        <a class="inline-block bg-white text-brand-dark px-12 py-5 text-sm font-bold uppercase tracking-widest hover:bg-brand-gold transition-all" href="precios.html">
+            Ver Planes y Precios
+        </a>
+    </div>
+    <span class="absolute -bottom-12 left-1/2 transform -translate-x-1/2 phi-symbol text-[20rem] text-white/5 pointer-events-none select-none">φ</span>
+</section>
+<footer class="bg-brand-black py-20 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+            <div class="col-span-1 md:col-span-1">
+                <a class="flex items-center space-x-2 mb-6" href="#">
+                    <span class="phi-symbol text-2xl text-brand-gold">φ</span>
+                    <span class="text-white text-xl font-normal lowercase tracking-tighter">analysta</span>
+                </a>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Decodificando Mercados en Centroamérica y el Caribe.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-6">Explorar</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="soluciones.html">Soluciones</a></li>
+                    <li><a class="hover:text-white transition-colors" href="clientes.html">Clientes</a></li>
+                    <li><a class="hover:text-white transition-colors" href="precios.html">Precios</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-6">Recursos</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="solicitar_muestra.html">Muestra Gratis</a></li>
+                    <li><a class="hover:text-white transition-colors" href="como_funciona.html">Metodología</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-6">Legal</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="compania.html">Sobre Nosotros</a></li>
+                    <li><a class="hover:text-white transition-colors" href="privacidad.html">Privacidad</a></li>
+                    <li><a class="hover:text-white transition-colors" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>© 2026 Analysta. Todos los derechos reservados.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0 uppercase tracking-widest font-medium">
+                <a class="hover:text-white" href="https://wa.me/50587676284">WhatsApp</a>
+                <a class="hover:text-white" href="mailto:ventas@analysta.biz">Email</a>
+            </div>
+        </div>
     </div>
 </footer>
-</body></html>
+</body>
+</html>
