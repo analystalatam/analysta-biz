@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3X5B6PGFV8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3X5B6PGFV8');
+    </script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Dashboard Interactivo (Muestra) - Analysta</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'], },
+                    colors: {
+                        'brand-dark': '#1E1914', 'brand-gold': '#AEA393', 'brand-tan': '#B69574',
+                        'brand-olive': '#727B3D', 'brand-black': '#14110E', 'brand-wine': '#450C1B'
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body { background-color: #1E1914; color: #E5E1DC; -webkit-font-smoothing: antialiased; }
+        .phi-symbol { font-family: serif; font-style: italic; }
+        .hover-gold-link:hover { color: #B69574; transition: color 0.3s ease; }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col">
+
+<header class="w-full top-0 z-50 bg-brand-dark border-b border-white/5 relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex justify-between items-center h-20">
+            <div class="flex-shrink-0 flex items-center">
+                <a class="flex items-center space-x-2 group" href="index.html">
+                    <span class="phi-symbol text-2xl text-brand-tan">φ</span>
+                    <span class="text-white text-xl font-normal tracking-tighter lowercase">analysta</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-6">
+                <span class="text-xs text-brand-gold uppercase tracking-widest hidden md:block">Versión de Demostración</span>
+                <a class="bg-brand-olive hover:bg-brand-olive/80 text-white px-5 py-2 text-xs font-bold uppercase tracking-widest transition-all shadow-lg shadow-black/20" href="precios.html">
+                    Desbloquear Acceso Total
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="flex-grow w-full max-w-[1600px] mx-auto p-4 md:p-6 flex flex-col">
+    <div class="mb-6 flex flex-col md:flex-row justify-between items-end gap-4">
+        <div>
+            <h1 class="text-3xl font-serif text-white mb-2">Monitor de Importaciones (Muestra)</h1>
+            <p class="text-sm text-gray-400">Interactúe con los filtros para explorar una fracción de nuestros datos reales procesados en BigQuery.</p>
+        </div>
+    </div>
+
+    <div class="w-full bg-white rounded-lg overflow-hidden shadow-2xl relative" style="height: 75vh; min-height: 600px;">
+        <iframe 
+            width="100%" 
+            height="100%" 
+            src="https://lookerstudio.google.com/embed/reporting/8f81a582-7d54-4236-a520-63f6eaf6efd0/page/n78sF" 
+            frameborder="0" 
+            style="border:0" 
+            allowfullscreen 
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+        </iframe>
+    </div>
+</main>
+
+<footer class="bg-brand-black py-8 border-t border-white/5 text-center text-xs text-gray-600">
+    <p>© 2026 Analysta. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
