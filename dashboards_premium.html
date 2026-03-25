@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3X5B6PGFV8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3X5B6PGFV8');
+    </script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Club Privado - Analysta</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'], },
+                    colors: {
+                        'brand-dark': '#1E1914', 'brand-gold': '#AEA393', 'brand-tan': '#B69574',
+                        'brand-olive': '#727B3D', 'brand-black': '#14110E', 'brand-wine': '#450C1B'
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body { background-color: #1E1914; color: #E5E1DC; -webkit-font-smoothing: antialiased; }
+        .phi-symbol { font-family: serif; font-style: italic; }
+        .hover-gold-link:hover { color: #B69574; transition: color 0.3s ease; }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col">
+
+<header class="w-full top-0 z-50 bg-[#161412] border-b border-brand-tan/20 relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex justify-between items-center h-20">
+            <div class="flex-shrink-0 flex items-center">
+                <a class="flex items-center space-x-2 group" href="index.html">
+                    <span class="phi-symbol text-2xl text-brand-tan">φ</span>
+                    <span class="text-white text-xl font-normal tracking-tighter lowercase">analysta</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-brand-tan text-xl">workspace_premium</span>
+                <span class="text-xs text-brand-tan uppercase tracking-widest font-bold">Portal de Clientes</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="flex-grow w-full max-w-[1600px] mx-auto p-4 md:p-6 flex flex-col mt-4">
+    
+    <div class="bg-brand-olive/10 border border-brand-olive/30 rounded-lg p-4 mb-6 flex items-start gap-4">
+        <span class="material-symbols-outlined text-brand-olive mt-0.5">lock</span>
+        <div>
+            <h3 class="text-white font-medium text-sm mb-1">Acceso Restringido</h3>
+            <p class="text-gray-400 text-xs leading-relaxed">
+                Este reporte contiene datos completos y confidenciales. Para visualizarlo, asegúrese de haber iniciado sesión en su navegador con la <strong>cuenta de Google autorizada</strong> para su membresía. Si ve un mensaje de error, compruebe su sesión de Google.
+            </p>
+        </div>
+    </div>
+
+    <div class="mb-6">
+        <h1 class="text-3xl font-serif text-white mb-2">Market Intelligence: Reporte Total Anual</h1>
+    </div>
+
+    <div class="w-full bg-[#1A1816] rounded-lg overflow-hidden shadow-2xl relative border border-white/5" style="height: 80vh; min-height: 700px;">
+        <iframe 
+            width="100%" 
+            height="100%" 
+            src="https://lookerstudio.google.com/embed/reporting/9cb41c2d-65ba-45bc-b4c2-cb7b9f26705f/page/p_yxceoozp1d" 
+            frameborder="0" 
+            style="border:0" 
+            allowfullscreen 
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+        </iframe>
+    </div>
+</main>
+
+<footer class="bg-brand-black py-8 border-t border-white/5 text-center text-xs text-gray-600 mt-12">
+    <p>© 2026 Analysta. Información Confidencial.</p>
+</footer>
+
+</body>
+</html>
