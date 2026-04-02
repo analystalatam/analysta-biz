@@ -1,100 +1,220 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3X5B6PGFV8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-3X5B6PGFV8');
     </script>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Sobre Nosotros - Analysta.biz</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #1E1914; color: white; }
-        .serif { font-family: 'Playfair Display', serif; }
+    <title>Compañía - Analysta BI</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'brand-dark': '#1E1914',
+                        'brand-gold': '#AEA393',
+                        'brand-tan': '#B69574',
+                        'brand-olive': '#727B3D',
+                        'brand-brown': '#63372C',
+                        'brand-mud': '#4A412A',
+                        'brand-wine': '#450C1B',
+                        'brand-black': '#14110E',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        :root {
+            --brand-dark: #1E1914;
+            --brand-tan: #B69574;
+            --brand-olive: #727B3D;
+        }
+        body {
+            background-color: var(--brand-dark);
+            color: #E5E1DC;
+            -webkit-font-smoothing: antialiased;
+        }
+        .phi-symbol {
+            font-family: serif;
+            font-style: italic;
+        }
+        .hover-gold-link:hover {
+            color: var(--brand-tan);
+            transition: color 0.3s ease;
+        }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
 
-    <header class="py-6 px-6 md:px-12 flex justify-between items-center border-b border-white/10">
-        <a href="index.html" class="flex items-center gap-2">
-            <span class="text-2xl text-[#727B3D] serif">Φ</span>
-            <span class="font-medium text-white tracking-tight">analysta</span>
-        </a>
-        <nav class="hidden md:flex gap-8 text-sm text-gray-400">
-            <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
-            <a href="compania.html" class="text-white font-medium">Compañía</a>
-        </nav>
-        <a href="dashboards_gratis.html" class="text-xs border border-white/20 px-4 py-2 rounded hover:bg-white hover:text-black transition-all">
-            Dashboards de Muestra Gratis
-        </a>
-    </header>
+<body class="font-sans antialiased min-h-screen flex flex-col">
 
-    <main class="flex-grow">
-        <section class="py-20 px-6 md:px-12 text-center border-b border-white/5 bg-[#161412]">
-            <h1 class="serif text-4xl md:text-5xl text-white mb-6">Datos que impulsan decisiones.</h1>
-            <p class="text-[#AEA393] max-w-2xl mx-auto text-lg leading-relaxed">
-                En un mundo saturado de "información cruda, ruido y caos", nosotros entregamos "Claridad". Analysta es tu respaldo para obtener datos comerciales limpios y confiables para empresas en Centroamérica y el Caribe.
+<header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-sm border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex justify-between items-center h-24">
+            <div class="flex-shrink-0 flex items-center">
+                <a class="flex items-center space-x-2 group" href="index.html">
+                    <span class="phi-symbol text-3xl text-brand-tan">φ</span>
+                    <span class="text-white text-2xl font-normal tracking-tighter lowercase">analysta</span>
+                </a>
+            </div>
+            <nav class="hidden lg:flex space-x-10">
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="soluciones.html">Soluciones</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="clientes.html">Clientes</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="como_funciona.html">Metodología</a>
+                <a class="text-sm font-medium tracking-wide text-brand-tan border-b border-brand-tan pb-0.5" href="compania.html">Compañía</a>
+                <a class="text-sm font-medium tracking-wide text-white border-b border-white/20 pb-0.5 hover:text-brand-tan hover:border-brand-tan transition-colors" href="precios.html">Precios</a>
+            </nav>
+            <div class="hidden lg:flex">
+                <a class="bg-brand-olive hover:bg-brand-olive/80 text-white px-6 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-sm shadow-lg shadow-black/20 flex items-center gap-2" href="dashboards_premium.html">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    Portal Clientes
+                </a>
+            </div>
+             <div class="lg:hidden">
+                <a href="precios.html" class="text-brand-tan uppercase text-xs font-bold border border-brand-tan px-4 py-2">Ver Precios</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="flex-grow">
+    <section class="relative pt-48 pb-20 lg:pt-56 lg:pb-24 overflow-hidden bg-brand-black border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 text-center">
+            <h1 class="text-4xl lg:text-6xl font-serif text-white leading-tight mb-8">
+                De los datos crudos a la <br/><span class="italic text-brand-tan">certeza comercial.</span>
+            </h1>
+            <p class="text-lg text-brand-gold/80 max-w-3xl mx-auto font-light leading-relaxed">
+                En un ecosistema saturado de "ruido", Analysta.biz nace para entregar <strong>Claridad</strong>. Somos la firma de Inteligencia de Negocios (SaaS) que democratiza el acceso a la información estratégica en Centroamérica y el Caribe.
             </p>
-        </section>
+        </div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-mud/20 via-brand-black to-brand-black pointer-events-none"></div>
+    </section>
 
-        <section class="py-20 px-6 md:px-12 max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <span class="text-[#727B3D] text-xs font-bold uppercase tracking-widest mb-2 block">Nuestra Esencia</span>
-                    <h2 class="serif text-3xl text-white mb-6">Claridad en Mercados Complejos</h2>
-                    <p class="text-gray-400 leading-relaxed mb-6">
-                        Nacimos con una premisa simple: los datos de aduanas y comercio exterior no deberían ser un laberinto. Transformamos millones de registros brutos en reportes estratégicos, limpios y accionables.
+    <section class="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <div>
+                <span class="text-brand-olive text-xs font-bold uppercase tracking-widest mb-4 block">Nuestro Propósito</span>
+                <h2 class="font-serif text-3xl lg:text-4xl text-white mb-6">Claridad en Mercados Complejos</h2>
+                
+                <div class="space-y-6 text-gray-400 font-light leading-relaxed">
+                    <p>
+                        Nacimos de una frustración real en las industrias: la información aduanera y operaciones de comercio exterior son públicos, pero es un laberinto incomprensible. Las empresas, desde ágiles PYMES hasta gigantes corporativos, gastan miles de horas y dinero tratando de recopilar, procesar, limpiar datos en lugar de tomar decisiones.
                     </p>
-                    <p class="text-gray-400 leading-relaxed">
-                        Ayudamos a importadores, exportadores, gerentes, abogados y analistas a ver lo que su competencia ignora: tendencias reales, precios exactos y volúmenes precisos.
+                    <p>
+                        <strong>Analysta.biz cierra esa brecha.</strong> Transformamos millones de registros fragmentados en dashboards interactivos. Detrás de nuestra plataforma hay más de <strong>20 años de experiencia directiva en Comercio Exterior y Cadena de Suministros globales (Supply Chain Management)</strong>. Entendemos exactamente lo que un Directivo, Gerente General, Financiero o Comercial necesita ver para actuar con rapidez.
                     </p>
-                </div>
-                <div class="relative">
-                    <div class="absolute -inset-4 bg-[#727B3D]/20 blur-2xl rounded-full"></div>
-                    <div class="relative bg-[#2A241D] p-8 rounded-xl border border-white/10">
-                        <ul class="space-y-6">
-                            <li class="flex items-start gap-4">
-                                <span class="text-[#727B3D] text-xl">01.</span>
-                                <div>
-                                    <h3 class="text-white font-medium mb-1">Precisión Quirúrgica</h3>
-                                    <p class="text-sm text-gray-500">No entregamos "big data" sin procesar. Curamos cada cifra.</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <span class="text-[#727B3D] text-xl">02.</span>
-                                <div>
-                                    <h3 class="text-white font-medium mb-1">Enfoque Regional</h3>
-                                    <p class="text-sm text-gray-500">Expertos en la dinámica comercial de CentroAmerica y Caribe.</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <span class="text-[#727B3D] text-xl">03.</span>
-                                <div>
-                                    <h3 class="text-white font-medium mb-1">Velocidad</h3>
-                                    <p class="text-sm text-gray-500">Reportes en horas, no en semanas.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                    <p>
+                        No somos una firma de consultoría tradicional que cobra por horas de investigación. Somos una plataforma tecnológica que ofrece <strong>licenciamiento de inteligencia accesible</strong>, diseñada para que usted sepa lo que su competencia ignora: Tamano del mercado, market share, tendencias reales, precios de importación exactos y márgenes estimados.
+                    </p>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <footer class="py-8 text-center text-xs text-gray-600 border-t border-white/5">
-        <p>&copy; 2026 Analysta. Todos los derechos reservados.</p>
-        <div class="mt-2 space-x-4">
-            <a href="privacidad.html" class="hover:text-gray-400 transition-colors">Política de Privacidad</a>
-            <a href="mailto:ventas@analysta.biz" class="hover:text-gray-400 transition-colors">Contacto</a>
+            <div class="relative">
+                <div class="absolute -inset-4 bg-brand-mud/20 blur-2xl rounded-full"></div>
+                <div class="relative bg-brand-dark p-8 md:p-10 rounded-xl border border-white/5 shadow-2xl">
+                    <ul class="space-y-10">
+                        
+                        <li class="flex items-start gap-5 group">
+                            <span class="font-serif text-brand-tan text-3xl opacity-50 group-hover:opacity-100 transition-opacity">01.</span>
+                            <div>
+                                <h3 class="text-white font-medium text-lg mb-2">Licenciamiento SaaS</h3>
+                                <p class="text-sm text-gray-500 leading-relaxed">
+                                    No vendemos archivos estáticos; ofrecemos suscripciones a una plataforma viva. Acceda a inteligencia visualizada en tiempo real, con planes que se ajustan al presupuesto de una PYME o al rigor de una corporación.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="flex items-start gap-5 group">
+                            <span class="font-serif text-brand-tan text-3xl opacity-50 group-hover:opacity-100 transition-opacity">02.</span>
+                            <div>
+                                <h3 class="text-white font-medium text-lg mb-2">Metodología de Expertos</h3>
+                                <p class="text-sm text-gray-500 leading-relaxed">
+                                    Nuestra magia no es solo mostrar el dato, es procesarlo. Aplicamos lógicas de <em>Import Parity</em> y limpieza de datos basadas en dos décadas de operación real en comercio exterior y logistica internacional.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="flex items-start gap-5 group">
+                            <span class="font-serif text-brand-tan text-3xl opacity-50 group-hover:opacity-100 transition-opacity">03.</span>
+                            <div>
+                                <h3 class="text-white font-medium text-lg mb-2">Respaldo y Cumplimiento</h3>
+                                <p class="text-sm text-gray-500 leading-relaxed">
+                                    Opere con total tranquilidad. Como entidad constituida en <strong>Delaware, EE. UU. (LLC)</strong>, nuestra plataforma procesa exclusivamente información pública bajo estrictas normativas de anonimización y protección de datos comerciales.
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
         </div>
-    </footer>
+    </section>
+</main>
+
+<footer class="bg-brand-black py-20 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+            <div class="col-span-1 md:col-span-1">
+                <a class="flex items-center space-x-2 mb-6" href="index.html">
+                    <span class="phi-symbol text-2xl text-brand-tan">φ</span>
+                    <span class="text-white text-xl font-normal lowercase tracking-tighter">analysta</span>
+                </a>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Decodificando Mercados en Centroamérica y el Caribe.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Explorar</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="soluciones.html">Soluciones</a></li>
+                    <li><a class="hover:text-white transition-colors" href="clientes.html">Clientes</a></li>
+                    <li><a class="hover:text-white transition-colors" href="precios.html">Precios</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Recursos</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="dashboards_gratis.html">Muestra Gratis</a></li>
+                    <li><a class="hover:text-white transition-colors" href="como_funciona.html">Metodología</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Legal</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="compania.html">Sobre Nosotros</a></li>
+                    <li><a class="hover:text-white transition-colors" href="terminos.html">Terminos y Condiciones</a></li>
+                    <li><a class="hover:text-white transition-colors" href="privacidad.html">Privacidad</a></li>
+                    <li><a class="hover:text-white transition-colors" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>© 2026 Analysta BI Solutions, LLC. Todos los derechos reservados.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0 uppercase tracking-widest font-medium">
+                <a class="hover:text-white" href="https://wa.me/17863958720">WhatsApp</a>
+                <a class="hover:text-white" href="mailto:info@analysta.biz">Email</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>

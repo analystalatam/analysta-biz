@@ -1,213 +1,290 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3X5B6PGFV8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-3X5B6PGFV8');
     </script>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Contacto - Analysta.biz</title>
+    <title>Contacto - Analysta</title>
+    
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        'brand-bg': '#1E1914',      /* Fondo Oscuro */
-                        'brand-olive': '#727B3D',   /* Verde Oliva (Acentos) */
-                        'brand-wine': '#450C1B',    /* Vino (Botones) */
-                        'brand-wine-hover': '#5e1025',
-                        'brand-tan': '#AEA393',     /* Beige (Texto secundario) */
-                        'brand-light': '#F9F8F6',   /* Blanco roto */
-                    },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'brand-dark': '#1E1914',
+                        'brand-gold': '#AEA393',
+                        'brand-tan': '#B69574',
+                        'brand-olive': '#727B3D',
+                        'brand-brown': '#63372C',
+                        'brand-mud': '#4A412A',
+                        'brand-wine': '#450C1B',
+                        'brand-wine-hover': '#5e1025',
+                        'brand-black': '#14110E',
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #1E1914; color: white; }
-        
-        /* Estilo personalizado para los inputs del formulario */
-        .form-input {
-            background-color: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: white;
-            transition: all 0.3s ease;
+    <style type="text/tailwindcss">
+        :root {
+            --brand-dark: #1E1914;
+            --brand-tan: #B69574;
+            --brand-olive: #727B3D;
         }
-        .form-input:focus {
-            border-color: #727B3D; /* brand-olive */
-            background-color: rgba(255, 255, 255, 0.05);
-            outline: none;
-            box-shadow: 0 0 0 1px rgba(114, 123, 61, 0.2);
+        body {
+            background-color: var(--brand-dark);
+            color: #E5E1DC;
+            -webkit-font-smoothing: antialiased;
         }
-        /* Color del texto placeholder */
-        ::placeholder { color: #6b7280; }
+        .phi-symbol {
+            font-family: serif;
+            font-style: italic;
+        }
+        .hover-gold-link:hover {
+            color: var(--brand-tan);
+            transition: color 0.3s ease;
+        }
+        /* Estilos de formulario Premium */
+        .form-input, .form-select, .form-textarea {
+            @apply w-full bg-white/5 border border-white/10 text-white rounded px-4 py-3 transition-all duration-300;
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            @apply border-brand-olive bg-white/10 outline-none ring-1 ring-brand-olive/50;
+        }
+        ::placeholder { color: #6b7280; font-weight: 300; }
+        select option { background-color: #1E1914; color: white; }
         
-        /* Estilo para los Selects (Dropdowns) */
-        select option {
-            background-color: #1E1914;
-            color: white;
+        /* Checkbox personalizado */
+        .custom-checkbox {
+            @apply w-4 h-4 text-brand-olive bg-brand-dark border-white/20 rounded focus:ring-brand-olive focus:ring-offset-brand-dark focus:ring-2 cursor-pointer;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased bg-brand-bg selection:bg-brand-olive selection:text-white">
 
-<header class="w-full py-5 px-6 md:px-12 flex items-center justify-between border-b border-white/5 bg-brand-bg/95 backdrop-blur-sm fixed top-0 z-50">
-    <div class="flex items-center gap-3">
-        <a href="index.html" class="flex items-center gap-2 group">
-             <div class="flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-brand-olive text-xl font-serif font-bold group-hover:bg-brand-olive group-hover:text-white transition-all">Φ</div>
-            <span class="text-lg font-medium tracking-tight text-white group-hover:text-brand-tan transition-colors">analysta</span>
-        </a>
-    </div>
-    <nav class="hidden lg:flex items-center gap-8 text-xs font-medium uppercase tracking-widest text-brand-tan">
-        <a class="hover:text-white transition-colors" href="soluciones.html">Soluciones</a>
-        <a class="hover:text-white transition-colors" href="como_funciona.html">Cómo Funciona</a>
-        <a class="hover:text-white transition-colors" href="soluciones.html#industrias">Industrias</a>
-        <a class="hover:text-white transition-colors" href="precios.html">Precios</a>
-    </nav>
-    <div class="hidden md:block">
-        <a class="bg-brand-wine text-white text-xs font-semibold px-6 py-3 rounded uppercase tracking-wider cursor-default opacity-100" href="#">
-            Contacto
-        </a>
+<body class="font-sans antialiased min-h-screen flex flex-col selection:bg-brand-olive selection:text-white">
+
+<header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-sm border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex justify-between items-center h-24">
+            <div class="flex-shrink-0 flex items-center">
+                <a class="flex items-center space-x-2 group" href="index.html">
+                    <span class="phi-symbol text-3xl text-brand-tan">φ</span>
+                    <span class="text-white text-2xl font-normal tracking-tighter lowercase">analysta</span>
+                </a>
+            </div>
+            <nav class="hidden lg:flex space-x-10">
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="soluciones.html">Soluciones</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="clientes.html">Clientes</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="como_funciona.html">Metodología</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="compania.html">Compañía</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="precios.html">Precios</a>
+            </nav>
+            <div class="hidden lg:flex items-center gap-4">
+                <a class="text-sm font-bold tracking-wide text-brand-tan uppercase border-b border-brand-tan pb-0.5" href="contacto.html">Contacto</a>
+                <a class="bg-brand-olive hover:bg-brand-olive/80 text-white px-6 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-sm shadow-lg shadow-black/20 flex items-center gap-2" href="dashboards_premium.html">
+                    Portal Clientes
+                </a>
+            </div>
+             <div class="lg:hidden">
+                <a href="precios.html" class="text-brand-tan uppercase text-xs font-bold border border-brand-tan px-4 py-2">Ver Precios</a>
+            </div>
+        </div>
     </div>
 </header>
 
-<main class="flex-grow pt-32 pb-20 px-6 md:px-12 lg:px-20">
+<main class="flex-grow pt-32 pb-20 px-6 lg:px-12 relative overflow-hidden">
     
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+    <div class="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-brand-black to-transparent pointer-events-none z-0"></div>
+    <span class="absolute -top-24 -left-24 phi-symbol text-[40rem] text-white/5 pointer-events-none select-none z-0">φ</span>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 relative z-10 mt-12">
         
         <div class="flex flex-col justify-center">
-            <h1 class="font-serif text-4xl md:text-5xl text-white mb-6 leading-tight">
-                Hablemos de <span class="text-brand-tan italic">Datos.</span>
+            <span class="text-brand-olive text-xs font-bold uppercase tracking-widest mb-4 block">Hablemos de negocios</span>
+            <h1 class="font-serif text-5xl md:text-6xl text-white mb-6 leading-tight">
+                El conocimiento es su mejor <span class="text-brand-tan italic">ventaja.</span>
             </h1>
-            <p class="text-brand-tan/80 text-lg font-light leading-relaxed mb-8">
-                Ya sea que necesite estadísticas de importaciones o exportaciones precisas, informes de participación de mercado o herramientas SaaS personalizadas, nuestro equipo está listo para ayudarle a transformar la incertidumbre en estrategia.
+            <p class="text-gray-300 text-lg font-light leading-relaxed mb-10">
+                Ya sea que necesite estadísticas de importaciones precisas, informes de participación de mercado o cotizar un despliegue de BI Corporativo, nuestro equipo directivo está listo para asistirle.
             </p>
             
-            <div class="space-y-8 border-t border-white/10 pt-8 mt-4">
-                <div>
-                    <h3 class="text-white font-medium mb-2">Soporte al Cliente</h3>
-                    <p class="text-sm text-gray-400">¿Ya es miembro? Estamos aquí para ayudarle con sus accesos o informes.</p>
+            <div class="space-y-8 border-t border-white/10 pt-10">
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-brand-tan text-3xl">mail</span>
+                    <div>
+                        <h3 class="text-white font-medium mb-1">Ventas Corporativas</h3>
+                        <p class="text-sm text-gray-400 mb-2">Cotizaciones para planes Premium y licencias multi-usuario.</p>
+                        <a href="mailto:ventas@analysta.biz" class="text-sm font-semibold text-brand-olive hover:text-white transition-colors">ventas@analysta.biz</a>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="text-white font-medium mb-2">Ventas y Demostraciones</h3>
-                    <p class="text-sm text-gray-400">Descubra cómo nuestra inteligencia comercial puede potenciar su industria específica.</p>
+                
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-brand-tan text-3xl">support_agent</span>
+                    <div>
+                        <h3 class="text-white font-medium mb-1">Soporte a Suscriptores</h3>
+                        <p class="text-sm text-gray-400 mb-2">Asistencia técnica para el uso de Dashboards y facturación.</p>
+                        <a href="https://wa.me/17863958720" target="_blank" class="text-sm font-semibold text-brand-olive hover:text-white transition-colors">WhatsApp: +1 (786) 395-8720</a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="mt-12 flex gap-6 text-sm text-brand-olive font-medium tracking-wide">
-                <span>ventas@analysta.biz</span>
-                <span>+(505) 8767-6284</span>
             </div>
         </div>
 
-        <div class="bg-white/5 border border-white/5 p-8 md:p-10 rounded-xl shadow-2xl backdrop-blur-sm">
-            <form action="#" method="POST" class="space-y-6">
+        <div class="bg-brand-black border border-white/10 p-8 md:p-10 rounded-xl shadow-2xl relative">
+            <div class="absolute inset-0 bg-gradient-to-br from-brand-mud/10 to-transparent rounded-xl pointer-events-none"></div>
+            
+            <form action="#" method="POST" class="space-y-6 relative z-10">
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label for="nombre" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" class="form-input w-full rounded px-4 py-3" placeholder="Carlos" required>
+                        <label for="nombre" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Nombre *</label>
+                        <input type="text" id="nombre" name="nombre" class="form-input" required>
                     </div>
                     <div>
-                        <label for="apellido" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Apellido</label>
-                        <input type="text" id="apellido" name="apellido" class="form-input w-full rounded px-4 py-3" placeholder="Lopez" required>
+                        <label for="apellido" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Apellido *</label>
+                        <input type="text" id="apellido" name="apellido" class="form-input" required>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label for="email" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Correo Comercial</label>
-                        <input type="email" id="email" name="email" class="form-input w-full rounded px-4 py-3" placeholder="nombre@empresa.com" required>
+                        <label for="email" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Correo Corporativo *</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="ejemplo@suempresa.com" required>
                     </div>
                     <div>
                         <label for="telefono" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" class="form-input w-full rounded px-4 py-3" placeholder="+505 0000 0000">
+                        <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="+505 0000 0000">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label for="empresa" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Empresa</label>
-                        <input type="text" id="empresa" name="empresa" class="form-input w-full rounded px-4 py-3" placeholder="Nombre de su compañía">
+                        <label for="empresa" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Empresa *</label>
+                        <input type="text" id="empresa" name="empresa" class="form-input" required>
                     </div>
                     <div>
-                        <label for="cargo" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Cargo / Puesto</label>
-                        <input type="text" id="cargo" name="cargo" class="form-input w-full rounded px-4 py-3" placeholder="Ej. Gerente Comercial">
+                        <label for="cargo" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Cargo</label>
+                        <input type="text" id="cargo" name="cargo" class="form-input" placeholder="Ej. Gerente Comercial">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label for="pais" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">País</label>
-                        <select id="pais" name="pais" class="form-input w-full rounded px-4 py-3 appearance-none cursor-pointer">
+                        <label for="pais" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">País *</label>
+                        <select id="pais" name="pais" class="form-select cursor-pointer" required>
                             <option value="" disabled selected>Seleccione uno</option>
-                            <option value="GT">Guatemala</option>
+                            <option value="CR">Costa Rica</option>
                             <option value="SV">El Salvador</option>
+                            <option value="GT">Guatemala</option>
                             <option value="HN">Honduras</option>
                             <option value="NI">Nicaragua</option>
-                            <option value="CR">Costa Rica</option>
                             <option value="PA">Panamá</option>
-                            <option value="RP">Republica Dominicana</option>
+                            <option value="DO">República Dominicana</option>
                             <option value="PR">Puerto Rico</option>
-                            <option value="MX">México</option>
-                            <option value="CO">Colombia</option>
-                            <option value="US">Estados Unidos</option>
                             <option value="OTRO">Otro</option>
                         </select>
                     </div>
                     <div>
-                        <label for="motivo" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Motivo de Consulta</label>
-                        <select id="motivo" name="motivo" class="form-input w-full rounded px-4 py-3 appearance-none cursor-pointer" required>
+                        <label for="motivo" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Motivo *</label>
+                        <select id="motivo" name="motivo" class="form-select cursor-pointer" required>
                             <option value="" disabled selected>Seleccione uno</option>
-                            <option value="precios">Precios y Planes</option>
-                            <option value="demo">Solicitud de Demostración</option>
-                            <option value="soporte">Atención al Cliente</option>
-                            <option value="general">Pregunta General</option>
-                            <option value="otros">Otros</option>
+                            <option value="demo">Solicitar Demo Gratis</option>
+                            <option value="cotizacion">Cotización Premium</option>
+                            <option value="soporte">Soporte Técnico</option>
+                            <option value="general">Información General</option>
                         </select>
                     </div>
                 </div>
 
                 <div>
-                    <label for="origen" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">¿Cómo supo de nosotros?</label>
-                    <select id="origen" name="origen" class="form-input w-full rounded px-4 py-3 appearance-none cursor-pointer">
-                        <option value="" disabled selected>Seleccione uno</option>
-                        <option value="google">Búsqueda en Google</option>
-                        <option value="linkedin">LinkedIn</option>
-                        <option value="referencia">Referencia / Recomendación</option>
-                        <option value="evento">Evento / Conferencia</option>
-                        <option value="prensa">Noticias / Prensa</option>
-                    </select>
-                </div>
-
-                <div>
                     <label for="mensaje" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" class="form-input w-full rounded px-4 py-3 resize-none" placeholder="Cuéntenos más sobre sus necesidades de información..."></textarea>
+                    <textarea id="mensaje" name="mensaje" rows="3" class="form-textarea resize-none" placeholder="¿En qué podemos ayudarle?"></textarea>
                 </div>
 
-                <button type="submit" class="w-full bg-brand-wine hover:bg-brand-wine-hover text-white font-semibold py-4 rounded transition-all duration-300 uppercase tracking-widest text-sm shadow-lg">
-                    Enviar Mensaje
+                <div class="flex items-start gap-3 bg-brand-mud/20 p-4 rounded border border-white/5">
+                    <div class="flex items-center h-5">
+                        <input id="privacidad" name="privacidad" type="checkbox" required class="custom-checkbox">
+                    </div>
+                    <div class="text-xs text-gray-400 leading-tight">
+                        <label for="privacidad">
+                            He leído y acepto el <a href="privacidad.html" target="_blank" class="text-brand-tan hover:underline">Aviso de Privacidad</a> y los <a href="terminos.html" target="_blank" class="text-brand-tan hover:underline">Términos de Uso</a> de Analysta BI Solutions, LLC. Entiendo que mis datos serán procesados para responder a mi solicitud comercial.
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-brand-wine hover:bg-brand-wine-hover text-white font-bold py-4 rounded transition-all duration-300 uppercase tracking-widest text-sm shadow-lg shadow-black/40">
+                    Enviar Solicitud
                 </button>
+                
+                <p class="text-[10px] text-center text-gray-500 mt-2">
+                    Operamos bajo cumplimiento normativo global. Su información es confidencial y no será vendida a terceros.
+                </p>
             </form>
         </div>
     </div>
 </main>
 
-<footer class="w-full py-10 px-6 border-t border-white/10 bg-[#161412] text-center">
-    <p class="text-xs text-gray-600">© 2024 Analysta. Todos los derechos reservados.</p>
+<footer class="bg-brand-black py-20 border-t border-white/5 mt-12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+            <div class="col-span-1 md:col-span-1">
+                <a class="flex items-center space-x-2 mb-6" href="index.html">
+                    <span class="phi-symbol text-2xl text-brand-tan">φ</span>
+                    <span class="text-white text-xl font-normal lowercase tracking-tighter">analysta</span>
+                </a>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Decodificando Mercados en Centroamérica y el Caribe.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Explorar</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="soluciones.html">Soluciones</a></li>
+                    <li><a class="hover:text-white transition-colors" href="clientes.html">Clientes</a></li>
+                    <li><a class="hover:text-white transition-colors" href="precios.html">Precios</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Recursos</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="dashboards_gratis.html">Muestra Gratis</a></li>
+                    <li><a class="hover:text-white transition-colors" href="como_funciona.html">Metodología</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Legal</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="compania.html">Sobre Nosotros</a></li>
+                    <li><a class="hover:text-white transition-colors" href="terminos.html">Términos y Condiciones</a></li>
+                    <li><a class="hover:text-white transition-colors" href="privacidad.html">Privacidad</a></li>
+                    <li><a class="hover:text-white transition-colors" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>© 2026 Analysta BI Solutions, LLC. Todos los derechos reservados.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0 uppercase tracking-widest font-medium">
+                <a class="hover:text-white" href="https://wa.me/17863958720">WhatsApp</a>
+                <a class="hover:text-white" href="mailto:ventas@analysta.biz">Email</a>
+            </div>
+        </div>
+    </div>
 </footer>
 
 </body>

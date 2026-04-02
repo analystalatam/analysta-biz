@@ -6,81 +6,114 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-3X5B6PGFV8');
     </script>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Planes y Precios - analysta.biz</title>
+    <title>Planes y Licencias - Analysta</title>
+    
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        'brand-bg': '#1E1914',      /* Fondo Oscuro */
-                        'brand-olive': '#727B3D',   /* Verde Oliva (Acentos) */
-                        'brand-wine': '#450C1B',    /* Vino (Botones) */
-                        'brand-wine-hover': '#5e1025',
-                        'brand-tan': '#AEA393',     /* Beige (Texto secundario) */
-                        'brand-light': '#F9F8F6',   /* Blanco roto */
-                        'brand-brown': '#63372C'    /* Marrón medio */
-                    },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'brand-dark': '#1E1914',
+                        'brand-gold': '#AEA393',
+                        'brand-tan': '#B69574',
+                        'brand-olive': '#727B3D',
+                        'brand-brown': '#63372C',
+                        'brand-mud': '#4A412A',
+                        'brand-wine': '#450C1B',
+                        'brand-wine-hover': '#5e1025',
+                        'brand-black': '#14110E',
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #1E1914; color: white; }
-        /* Efecto suave para los botones de compra */
+    <style type="text/tailwindcss">
+        :root {
+            --brand-dark: #1E1914;
+            --brand-tan: #B69574;
+            --brand-olive: #727B3D;
+        }
+        body {
+            background-color: var(--brand-dark);
+            color: #E5E1DC;
+            -webkit-font-smoothing: antialiased;
+        }
+        .phi-symbol {
+            font-family: serif;
+            font-style: italic;
+        }
+        .hover-gold-link:hover {
+            color: var(--brand-tan);
+            transition: color 0.3s ease;
+        }
         .btn-price { transition: all 0.2s ease-in-out; }
         .btn-price:hover { transform: translateY(-2px); }
     </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased bg-brand-bg selection:bg-brand-olive selection:text-white">
 
-<header class="w-full py-5 px-6 md:px-12 flex items-center justify-between border-b border-white/5 bg-brand-bg/95 backdrop-blur-sm fixed top-0 z-50">
-    <div class="flex items-center gap-3">
-        <a href="index.html" class="flex items-center gap-2 group">
-             <div class="flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-brand-olive text-xl font-serif font-bold group-hover:bg-brand-olive group-hover:text-white transition-all">Φ</div>
-            <span class="text-lg font-medium tracking-tight text-white group-hover:text-brand-tan transition-colors">analysta</span>
-        </a>
-    </div>
-    <nav class="hidden lg:flex items-center gap-8 text-xs font-medium lowercase tracking-widest text-brand-tan">
-        <a class="hover:text-white transition-colors" href="index.html">Inicio</a>
-        <a class="hover:text-white transition-colors" href="compania.html">Compañía</a>
-        <a class="text-white border-b border-brand-olive pb-0.5" href="precios.html">Precios</a>
-    </nav>
-    <div class="hidden lg:flex">
+<body class="font-sans antialiased min-h-screen flex flex-col selection:bg-brand-olive selection:text-white">
+
+<header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-sm border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex justify-between items-center h-24">
+            <div class="flex-shrink-0 flex items-center">
+                <a class="flex items-center space-x-2 group" href="index.html">
+                    <span class="phi-symbol text-3xl text-brand-tan">φ</span>
+                    <span class="text-white text-2xl font-normal tracking-tighter lowercase">analysta</span>
+                </a>
+            </div>
+            <nav class="hidden lg:flex space-x-10">
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="soluciones.html">Soluciones</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="clientes.html">Clientes</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="como_funciona.html">Metodología</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="compania.html">Compañía</a>
+                <a class="text-sm font-medium tracking-wide text-brand-tan border-b border-brand-tan pb-0.5" href="precios.html">Precios</a>
+            </nav>
+            <div class="hidden lg:flex">
                 <a class="bg-brand-olive hover:bg-brand-olive/80 text-white px-6 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-sm shadow-lg shadow-black/20 flex items-center gap-2" href="dashboards_premium.html">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                     Portal Clientes
                 </a>
+            </div>
+             <div class="lg:hidden">
+                <a href="precios.html" class="text-brand-tan uppercase text-xs font-bold border border-brand-tan px-4 py-2">Ver Precios</a>
+            </div>
+        </div>
     </div>
 </header>
 
-<main class="flex-grow pt-32 pb-20 px-6 md:px-12 lg:px-20">
+<main class="flex-grow pt-48 pb-20 px-6 lg:px-12">
     
-    <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-brand-olive text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Inversión Transparente</span>
-        <h1 class="font-serif text-4xl md:text-5xl text-white mb-6">Seleccione el servicio de inteligencia deseado.</h1>
-        <p class="text-brand-tan text-lg font-light leading-relaxed">
-            Sin contratos ocultos. Pague de forma segura con tarjeta de crédito o débito a través de la plataforma Pagadito.com
+    <div class="text-center max-w-3xl mx-auto mb-20 relative z-10">
+        <span class="text-brand-olive text-xs font-bold uppercase tracking-[0.2em] mb-4 block">Licenciamiento SaaS</span>
+        <h1 class="font-serif text-5xl lg:text-6xl text-white mb-6 leading-tight">Invierta en <span class="italic text-brand-tan">claridad comercial.</span></h1>
+        <p class="text-brand-gold/80 text-lg font-light leading-relaxed">
+            Sin costos ocultos. Adquiera acceso a nuestra plataforma de inteligencia visual. Transacciones procesadas de forma segura bajo estándares internacionales.
         </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto items-start">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch relative z-10">
         
-        <div class="bg-white/5 border border-white/10 p-8 rounded-xl flex flex-col hover:border-brand-tan/30 transition-colors duration-300 relative group h-full">
+        <div class="bg-brand-mud/30 border border-white/10 p-8 rounded-xl flex flex-col hover:border-brand-tan/30 transition-colors duration-300 h-full">
             <div class="mb-6">
-                <h3 class="text-xl font-medium text-white mb-2">Estadísticas de Importación/Exportacion</h3>
-                <p class="text-sm text-brand-tan/80">Datos detallados por 1 producto. Sus Estadisticas le llegaran a su correo electronico.</p>
+                <span class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-2 block">Acceso Flexible</span>
+                <h3 class="text-2xl font-serif text-white mb-2">Plan Basic (Macro)</h3>
+                <p class="text-sm text-gray-400">Licencia de acceso a Dashboard Macro para 1 Industria/Producto. Ideal para análisis de volumen total.</p>
             </div>
             
             <div class="mb-6 pb-6 border-b border-white/10">
@@ -89,142 +122,193 @@
                     <span class="text-4xl font-bold text-white">$30</span>
                     <span class="text-sm text-gray-400">/ mes</span>
                 </div>
-                <p class="text-[10px] text-brand-tan mt-2 uppercase tracking-wide">Al contratar plan anual</p>
+                <p class="text-[10px] text-brand-tan mt-2 uppercase tracking-wide">Equivalente en plan anual</p>
             </div>
 
             <div class="space-y-3 flex-grow">
-                <p class="text-xs text-brand-tan font-semibold uppercase mb-2">Seleccione duración:</p>
+                <p class="text-xs text-brand-tan font-semibold uppercase mb-3">Seleccione su ciclo de licencia:</p>
                 
-                <a href="https://www.pagalink.com/f8d22b78635cdfd382c7" target="_blank" class="btn-price flex justify-between items-center w-full px-4 py-3 rounded border border-white/10 hover:border-brand-olive hover:bg-white/5 bg-[#161412] text-sm text-gray-300 group-hover:text-white">
+                <a href="https://www.pagalink.com/f8d22b78635cdfd382c7" target="_blank" class="btn-price flex justify-between items-center w-full px-4 py-3 rounded border border-white/10 hover:border-brand-olive hover:bg-brand-mud/50 bg-brand-dark text-sm text-gray-300 group-hover:text-white">
                     <span>1 Mes</span>
                     <span class="font-bold text-white">$50.00</span>
                 </a>
 
-                <a href="https://www.pagalink.com/bf29e9e9a1793f348049" target="_blank" class="btn-price flex justify-between items-center w-full px-4 py-3 rounded border border-white/10 hover:border-brand-olive hover:bg-white/5 bg-[#161412] text-sm text-gray-300 group-hover:text-white">
-                    <span>3 Meses <span class="text-[10px] text-brand-olive ml-1">(Ahorra 10%)</span></span>
+                <a href="https://www.pagalink.com/bf29e9e9a1793f348049" target="_blank" class="btn-price flex justify-between items-center w-full px-4 py-3 rounded border border-white/10 hover:border-brand-olive hover:bg-brand-mud/50 bg-brand-dark text-sm text-gray-300 group-hover:text-white">
+                    <span>3 Meses <span class="text-[10px] text-brand-olive ml-1">(-10%)</span></span>
                     <span class="font-bold text-white">$135.00</span>
                 </a>
 
-                 <a href="https://www.pagalink.com/0cabbfe8dd79a24aac81" target="_blank" class="btn-price flex justify-between items-center w-full px-4 py-3 rounded border border-white/10 hover:border-brand-olive hover:bg-white/5 bg-[#161412] text-sm text-gray-300 group-hover:text-white">
-                    <span>6 Meses <span class="text-[10px] text-brand-olive ml-1">(Ahorra 20%)</span></span>
+                 <a href="https://www.pagalink.com/0cabbfe8dd79a24aac81" target="_blank" class="btn-price flex justify-between items-center w-full px-4 py-3 rounded border border-white/10 hover:border-brand-olive hover:bg-brand-mud/50 bg-brand-dark text-sm text-gray-300 group-hover:text-white">
+                    <span>6 Meses <span class="text-[10px] text-brand-olive ml-1">(-20%)</span></span>
                     <span class="font-bold text-white">$240.00</span>
                 </a>
 
-                <a href="https://www.pagalink.com/0c24d4f2f5efde4af7d1" target="_blank" class="btn-price flex justify-between items-center w-full px-4 py-3 rounded border border-brand-olive bg-brand-olive/10 hover:bg-brand-olive text-sm text-white font-medium relative overflow-hidden">
-                    <span class="relative z-10">12 Meses <span class="text-[10px] text-brand-olive ml-1">(Ahorra 40%)</span></span>
-                    <span class="relative z-10 font-bold">$360.00</span>
-                    <div class="absolute inset-0 bg-brand-olive opacity-0 hover:opacity-100 transition-opacity duration-300 z-0"></div>
+                <a href="https://www.pagalink.com/0c24d4f2f5efde4af7d1" target="_blank" class="btn-price flex justify-between items-center w-full px-4 py-3 rounded border border-brand-olive bg-brand-olive/10 hover:bg-brand-olive text-sm text-white font-medium">
+                    <span>12 Meses <span class="text-[10px] text-brand-tan ml-1 font-bold">Ahorra 40%</span></span>
+                    <span class="font-bold">$360.00</span>
                 </a>
-                <p class="text-[10px] text-center text-gray-500 mt-2">Acceso inmediato tras confirmación a su correo electronico</p>
             </div>
+            <p class="text-[10px] text-center text-gray-500 mt-4">Credenciales enviadas automáticamente al confirmar el pago.</p>
         </div>
 
-        <div class="bg-[#1C1815] border border-brand-olive p-8 rounded-xl flex flex-col relative transform md:-translate-y-6 shadow-2xl shadow-black/50 h-full">
+        <div class="bg-brand-black border border-brand-olive p-8 rounded-xl flex flex-col relative transform md:-translate-y-4 shadow-2xl shadow-brand-olive/10 h-full">
             <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-brand-olive to-transparent opacity-50"></div>
             <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brand-olive text-white text-[10px] font-bold px-4 py-1 uppercase tracking-widest rounded-full shadow-lg">
-                Recomendado
+                Corporativo
             </div>
             
             <div class="mb-6 mt-2">
-                <h3 class="text-2xl font-serif font-medium text-white mb-2">Inteligencia de Mercado (IM)</h3>
-                <p class="text-sm text-brand-tan/90">Participación de mercado anual por 1 producto. Visión estratégica completa.</p>
+                <span class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-2 block">El Estándar de la Industria</span>
+                <h3 class="text-2xl font-serif text-white mb-2">Plan Standard (Brands)</h3>
+                <p class="text-sm text-gray-400">Licencia anual completa por 1 producto/industria. Análisis táctico con segmentación directa a la competencia.</p>
             </div>
             
             <div class="mb-8 pb-8 border-b border-white/10">
                 <div class="flex items-baseline gap-1">
                     <span class="text-5xl font-bold text-white">$600</span>
                 </div>
-                <p class="text-xs text-brand-tan mt-2">Pago único por informe</p>
+                <p class="text-xs text-brand-tan mt-2">Licencia por 12 meses (Pago Único)</p>
             </div>
             
             <ul class="space-y-4 mb-8 flex-grow">
-                <li class="flex items-start gap-3 text-sm text-white">
-                    <span class="text-brand-olive text-lg">✓</span> Informe Anual Completo
+                <li class="flex items-start gap-3 text-sm text-gray-300">
+                    <span class="text-brand-olive font-bold">✓</span> Dashboard Interactivo (24/7)
                 </li>
-                <li class="flex items-start gap-3 text-sm text-white">
-                    <span class="text-brand-olive text-lg">✓</span> Análisis de Competencia
+                <li class="flex items-start gap-3 text-sm text-gray-300">
+                    <span class="text-brand-olive font-bold">✓</span> Market Share por Marcas
                 </li>
-                <li class="flex items-start gap-3 text-sm text-white">
-                    <span class="text-brand-olive text-lg">✓</span> Desglose Marcas/Productos
+                <li class="flex items-start gap-3 text-sm text-gray-300">
+                    <span class="text-brand-olive font-bold">✓</span> Segmentación por Modelos (si aplica)
                 </li>
-                <li class="flex items-start gap-3 text-sm text-white">
-                    <span class="text-brand-olive text-lg">✓</span> Entrega en PDF Ejecutivo mas estadisticas en Excel.
+                <li class="flex items-start gap-3 text-sm text-gray-300">
+                    <span class="text-brand-olive font-bold">✓</span> Descarga de reportes PDF/Excel (Uso Interno)
                 </li>
             </ul>
             
-            <a href="https://www.pagalink.com/7f21651818bff1d08754" target="_blank" class="btn-price w-full py-4 bg-brand-wine hover:bg-brand-wine-hover text-white text-center rounded transition-all text-sm font-bold tracking-widest uppercase shadow-lg shadow-brand-wine/20">
-                Comprar Informe
+            <a href="https://www.pagalink.com/7f21651818bff1d08754" target="_blank" class="btn-price w-full py-4 bg-brand-olive hover:bg-brand-olive/80 text-white text-center rounded transition-all text-sm font-bold tracking-widest uppercase shadow-lg shadow-black/50">
+                Adquirir Licencia Anual
             </a>
             <p class="text-[10px] text-center text-gray-500 mt-4 flex items-center justify-center gap-1">
-                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-                Procesado seguro por Pagadito
+                <svg class="w-3 h-3 text-brand-tan" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Procesado por Pagadito / Stripe
             </p>
         </div>
 
-        <div class="bg-white/5 border border-white/10 p-8 rounded-xl flex flex-col hover:border-brand-tan/30 transition-colors duration-300 h-full">
+        <div class="bg-brand-mud/30 border border-white/10 p-8 rounded-xl flex flex-col hover:border-brand-tan/30 transition-colors duration-300 h-full">
             <div class="mb-6">
-                <h3 class="text-xl font-medium text-white mb-2">Aplicaciones de Inteligencia Comercial (SaaS)</h3>
-                <p class="text-sm text-brand-tan/80">Software especializado para optimizar su inteligencia comercial y logística.</p>
+                <span class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-2 block">Solución A La Medida</span>
+                <h3 class="text-2xl font-serif text-white mb-2">Plan Premium (BI)</h3>
+                <p class="text-sm text-gray-400">Arquitectura de datos dedicada por Industria/Productos. Estimación de márgenes operativos e integración con sus sistemas.</p>
             </div>
             
             <div class="mb-6 pb-6 border-b border-white/10">
                 <div class="flex items-baseline gap-1">
-                    <span class="text-4xl font-bold text-white">$120</span>
-                    <span class="text-sm text-gray-400">/ año</span>
+                    <span class="text-2xl font-bold text-white">Cotización a Medida</span>
                 </div>
-                <p class="text-[10px] text-brand-tan mt-2 uppercase tracking-wide">Por aplicación</p>
+                <p class="text-[10px] text-brand-tan mt-2 uppercase tracking-wide">Licencia Multi-Usuario (Hasta 3)</p>
             </div>
 
-            <div class="space-y-4 flex-grow">
-                <p class="text-xs text-brand-tan font-semibold uppercase mb-2">Elija su herramienta:</p>
-                
-                <div class="bg-[#161412] p-4 rounded border border-white/5 hover:border-brand-olive transition-colors group">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="text-white font-medium">SAC <span class="italic text-brand-gold">Express</span>
-                        <span class="text-brand-olive text-xs font-bold">$10/mes</span>
-                    </div>
-                    <p class="text-xs text-gray-500 mb-3">Gestión ágil de servicios.</p>
-                    <a href="https://www.pagalink.com/d8eb07334fe91430807f" target="_blank" class="block w-full py-2 bg-white/10 hover:bg-brand-olive text-center text-xs text-white uppercase tracking-wider rounded transition-colors">
-                        Suscribir Anual ($120)
-                    </a>
-                </div>
-
-                <div class="bg-[#161412] p-4 rounded border border-white/5 hover:border-brand-olive transition-colors group">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="text-white font-medium">Costo<span class="italic text-brand-gold">Bodega</span>
-                        <span class="text-brand-olive text-xs font-bold">$10/mes</span>
-                    </div>
-                    <p class="text-xs text-gray-500 mb-3">Control de costos logísticos.</p>
-                    <a href="https://www.pagalink.com/ee265520f1b6c2fe82f5" target="_blank" class="block w-full py-2 bg-white/10 hover:bg-brand-olive text-center text-xs text-white uppercase tracking-wider rounded transition-colors">
-                        Suscribir Anual ($120)
-                    </a>
-                </div>
-            </div>
+            <ul class="space-y-4 mb-8 flex-grow">
+                <li class="flex items-start gap-3 text-sm text-gray-300">
+                    <span class="text-brand-olive font-bold">✓</span> Todo lo del Plan Standard
+                </li>
+                <li class="flex items-start gap-3 text-sm text-gray-300">
+                    <span class="text-brand-olive font-bold">✓</span> Cálculo de "Import Parity"
+                </li>
+                <li class="flex items-start gap-3 text-sm text-gray-300">
+                    <span class="text-brand-olive font-bold">✓</span> Desglose técnico (Tipo, Modelo, Año, Motor, etc.)
+                </li>
+                <li class="flex items-start gap-3 text-sm text-gray-300">
+                    <span class="text-brand-olive font-bold">✓</span> Soporte directo de Analista Experto
+                </li>
+            </ul>
+            
+            <a href="https://wa.me/17863958720" target="_blank" class="btn-price w-full py-4 bg-transparent border border-white/30 hover:border-white hover:bg-white text-white hover:text-brand-dark text-center rounded transition-all text-sm font-bold tracking-widest uppercase">
+                Contactar Asesor
+            </a>
         </div>
 
     </div>
 
-    <div class="mt-24 text-center border-t border-white/5 pt-10 max-w-2xl mx-auto">
-        <h4 class="text-white font-serif text-xl mb-4">¿Preguntas sobre la facturación?</h4>
-        <p class="text-brand-tan text-sm mb-6 leading-relaxed">
-            Todos nuestros planes incluyen factura fiscal válida que llega a su correo. Si necesita una propuesta corporativa personalizada estamos aquí para ayudarle.
+    <div class="max-w-4xl mx-auto mt-24 border-t border-white/10 pt-16">
+        <div class="text-center mb-10">
+            <h3 class="font-serif text-3xl text-white mb-4">Ecosistema Analítico Especializado</h3>
+            <p class="text-gray-400 text-sm">Complemente su inteligencia de mercado con nuestras soluciones de nicho (Desarrollo bajo demanda para clientes corporativos).</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-brand-black p-6 rounded-lg border border-white/5 flex flex-col justify-between group">
+                <div>
+                    <h4 class="text-xl font-medium text-white mb-2">SAC <span class="italic text-brand-tan">Express</span></h4>
+                    <p class="text-sm text-gray-500 mb-4">Módulo especializado para la gestión ágil y monitoreo de servicios aduaneros centralizados.</p>
+                </div>
+                <a href="https://wa.me/17863958720" class="text-xs text-brand-olive uppercase font-bold tracking-widest group-hover:text-white transition-colors">Consultar Integración →</a>
+            </div>
+
+            <div class="bg-brand-black p-6 rounded-lg border border-white/5 flex flex-col justify-between group">
+                <div>
+                    <h4 class="text-xl font-medium text-white mb-2">Costo<span class="italic text-brand-tan">Bodega</span></h4>
+                    <p class="text-sm text-gray-500 mb-4">App dedicada al control preciso y proyección de costos logísticos desde el puerto hasta su inventario.</p>
+                </div>
+                <a href="https://wa.me/17863958720" class="text-xs text-brand-olive uppercase font-bold tracking-widest group-hover:text-white transition-colors">Solicitar Demo →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-24 text-center max-w-2xl mx-auto">
+        <h4 class="text-white font-serif text-xl mb-4">¿Preguntas sobre la facturación corporativa?</h4>
+        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+            Emitimos facturas digitales enviadas a su correo electronico. Si requiere estructurar los pagos para diferentes departamentos (BI, Marketing, Supply Chain), estamos a su disposición.
         </p>
-        <a href="https://wa.me/50587676284" class="text-white border-b border-brand-olive hover:text-brand-olive transition-colors pb-1">Hable con un asesor ahora</a>
     </div>
 
 </main>
 
-<footer class="w-full py-10 px-6 border-t border-white/10 bg-[#161412] text-center">
-    <div class="flex justify-center items-center gap-2 mb-4 opacity-50 grayscale hover:grayscale-0 transition-all">
-        <span class="text-xl font-serif text-brand-olive">Φ</span>
-        <span class="text-sm text-white tracking-widest uppercase">analysta</span>
+<footer class="bg-brand-black py-20 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+            <div class="col-span-1 md:col-span-1">
+                <a class="flex items-center space-x-2 mb-6" href="index.html">
+                    <span class="phi-symbol text-2xl text-brand-tan">φ</span>
+                    <span class="text-white text-xl font-normal lowercase tracking-tighter">analysta</span>
+                </a>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Decodificando Mercados en Centroamérica y el Caribe.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Explorar</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="soluciones.html">Soluciones</a></li>
+                    <li><a class="hover:text-white transition-colors" href="clientes.html">Clientes</a></li>
+                    <li><a class="hover:text-white transition-colors" href="precios.html">Precios</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Recursos</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="dashboards_gratis.html">Muestra Gratis</a></li>
+                    <li><a class="hover:text-white transition-colors" href="como_funciona.html">Metodología</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Legal</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="compania.html">Sobre Nosotros</a></li>
+                    <li><a class="hover:text-white transition-colors" href="terminos.html">Terminos y Condiciones</a></li>
+                    <li><a class="hover:text-white transition-colors" href="privacidad.html">Privacidad</a></li>
+                    <li><a class="hover:text-white transition-colors" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>© 2026 Analysta BI Solutions, LLC. Todos los derechos reservados.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0 uppercase tracking-widest font-medium">
+                <a class="hover:text-white" href="https://wa.me/17863958720">WhatsApp</a>
+                <a class="hover:text-white" href="mailto:info@analysta.biz">Email</a>
+            </div>
+        </div>
     </div>
-    <div class="mb-6 flex justify-center gap-4 text-[10px] text-gray-500">
-        <a href="privacidad.html" class="hover:text-white">Política de Privacidad</a>
-        <span>|</span>
-        <a href="mailto:ventas@analysta.biz" class="hover:text-white">Soporte</a>
-    </div>
-    <p class="text-xs text-gray-600">© 2026 Analysta. Todos los derechos reservados.</p>
 </footer>
 
 </body>
