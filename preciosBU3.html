@@ -215,7 +215,7 @@
                 <div class="flex items-baseline gap-1">
                     <span class="text-2xl font-bold text-white">Cotización a Medida</span>
                 </div>
-                <p class="text-[10px] text-brand-tan mt-2 uppercase tracking-wide">Licencia Multi-Usuario (Hasta 5)</p>
+                <p class="text-[10px] text-brand-tan mt-2 uppercase tracking-wide">Licencia Multi-Usuario (Hasta 3)</p>
             </div>
 
             <ul class="space-y-4 mb-8 flex-grow">
@@ -239,42 +239,7 @@
         </div>
 
     </div>
-
-    <div class="max-w-4xl mx-auto mt-24 border-t border-white/10 pt-16">
-        <div class="text-center mb-10">
-            <h3 class="font-serif text-3xl text-white mb-4">Ecosistema Analítico Especializado</h3>
-            <p class="text-gray-400 text-sm">Complemente su inteligencia de mercado con nuestras soluciones de nicho (Desarrollo bajo demanda para clientes corporativos).</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-brand-black p-6 rounded-lg border border-white/5 flex flex-col justify-between group">
-                <div>
-                    <h4 class="text-xl font-medium text-white mb-2">SAC <span class="italic text-brand-tan">Express</span></h4>
-                    <p class="text-sm text-gray-500 mb-4">Módulo especializado para la gestión ágil y monitoreo de servicios aduaneros centralizados.</p>
-                </div>
-                <a href="https://wa.me/17863958720" class="text-xs text-brand-olive uppercase font-bold tracking-widest group-hover:text-white transition-colors">Consultar Integración →</a>
-            </div>
-
-            <div class="bg-brand-black p-6 rounded-lg border border-white/5 flex flex-col justify-between group">
-                <div>
-                    <h4 class="text-xl font-medium text-white mb-2">Costo<span class="italic text-brand-tan">Bodega</span></h4>
-                    <p class="text-sm text-gray-500 mb-4">App dedicada al control preciso y proyección de costos logísticos desde el puerto hasta su inventario.</p>
-                </div>
-                <a href="https://wa.me/17863958720" class="text-xs text-brand-olive uppercase font-bold tracking-widest group-hover:text-white transition-colors">Solicitar Demo →</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="mt-24 text-center max-w-2xl mx-auto">
-        <h4 class="text-white font-serif text-xl mb-4">¿Preguntas sobre la facturación corporativa?</h4>
-        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-            Emitimos facturas digitales enviadas a su correo electrónico. Si requiere estructurar los pagos para diferentes departamentos (BI, Marketing, Supply Chain), estamos a su disposición.
-        </p>
-    </div>
-
 </main>
-
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
 <div id="checkoutModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center">
     <div class="absolute inset-0 bg-brand-dark/90 backdrop-blur-sm transition-opacity" onclick="closeCheckout()"></div>
@@ -293,16 +258,13 @@
             <p class="text-xs text-brand-gold mt-1" id="modalPlanName">Cargando plan...</p>
         </div>
 
-        <form action="https://assets.mailerlite.com/jsonp/2051910/forms/184054779899545377/subscribe" method="POST" target="hidden_iframe" id="legalConsentForm" onsubmit="processPayment(event)" class="space-y-5">
+        <form id="legalConsentForm" onsubmit="processPayment(event)" class="space-y-5">
             
             <input type="hidden" id="targetPaymentUrl" value="">
-            
-            <input type="hidden" name="ml-submit" value="1">
-            <input type="hidden" name="anticsrf" value="true">
 
             <div>
                 <label for="checkoutEmail" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Correo Corporativo *</label>
-                <input type="email" id="checkoutEmail" name="fields[email]" class="modal-input" placeholder="gerencia@suempresa.com" required>
+                <input type="email" id="checkoutEmail" class="modal-input" placeholder="gerencia@suempresa.com" required>
                 <p class="text-[10px] text-gray-500 mt-1">A este correo se enviarán sus credenciales de acceso.</p>
             </div>
 
@@ -312,7 +274,7 @@
                 </div>
                 <div class="text-xs text-gray-300 leading-tight">
                     <label for="checkoutConsent" class="cursor-pointer">
-                        He leído y acepto el <a href="privacidad.html" target="_blank" class="text-brand-tan hover:underline font-bold">Aviso de Privacidad</a> y los <a href="terminos.html" target="_blank" class="text-brand-tan hover:underline font-bold">Términos de Uso</a> de Analysta BI Solutions, LLC.
+                        Reconozco que Analysta proporciona una herramienta de inteligencia y acepto los <a href="terminos.html" target="_blank" class="text-brand-tan hover:underline font-bold">Términos de Licencia</a> y el <a href="privacidad.html" target="_blank" class="text-brand-tan hover:underline font-bold">Aviso de Privacidad</a>.
                     </label>
                 </div>
             </div>
@@ -325,50 +287,9 @@
     </div>
 </div>
 
-<footer class="bg-brand-black py-20 border-t border-white/5 mt-12 relative z-10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
-            <div class="col-span-1 md:col-span-1">
-                <a class="flex items-center space-x-2 mb-6" href="index.html">
-                    <span class="phi-symbol text-2xl text-brand-tan">φ</span>
-                    <span class="text-white text-xl font-normal lowercase tracking-tighter">analysta</span>
-                </a>
-                <p class="text-sm text-gray-500 leading-relaxed">
-                    Decodificando Mercados en Centroamérica y el Caribe.
-                </p>
-            </div>
-            <div>
-                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Explorar</h4>
-                <ul class="space-y-4 text-sm text-gray-400">
-                    <li><a class="hover:text-white transition-colors" href="soluciones.html">Soluciones</a></li>
-                    <li><a class="hover:text-white transition-colors" href="clientes.html">Clientes</a></li>
-                    <li><a class="hover:text-white transition-colors" href="precios.html">Precios</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Recursos</h4>
-                <ul class="space-y-4 text-sm text-gray-400">
-                    <li><a class="hover:text-white transition-colors" href="como_funciona.html">Metodología</a></li>
-                    <li><a class="hover:text-white transition-colors" href="dashboards_gratis.html">Muestra Gratis</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Legal</h4>
-                <ul class="space-y-4 text-sm text-gray-400">
-                    <li><a class="hover:text-white transition-colors" href="compania.html">Sobre Nosotros</a></li>
-                    <li><a class="hover:text-white transition-colors" href="terminos.html">Terminos y Condiciones</a></li>
-                    <li><a class="hover:text-white transition-colors" href="privacidad.html">Privacidad</a></li>
-                    <li><a class="hover:text-white transition-colors" href="contacto.html">Contacto</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-            <p>© 2026 Analysta BI Solutions, LLC. Todos los derechos reservados.</p>
-            <div class="flex space-x-6 mt-4 md:mt-0 uppercase tracking-widest font-medium">
-                <a class="hover:text-white" href="https://wa.me/17863958720">WhatsApp</a>
-                <a class="hover:text-white" href="mailto:info@analysta.biz">Email</a>
-            </div>
-        </div>
+<footer class="bg-brand-black py-20 border-t border-white/5 relative z-10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+        <p class="text-xs text-gray-500">© 2026 Analysta BI Solutions, LLC. Todos los derechos reservados.</p>
     </div>
 </footer>
 
@@ -384,21 +305,28 @@
     }
 
     function processPayment(event) {
-        // Importante: NO usamos event.preventDefault(); aquí. 
-        // Queremos que el formulario se envíe "naturalmente" al iframe invisible de MailerLite.
+        event.preventDefault();
         
+        const email = document.getElementById('checkoutEmail').value;
         const targetUrl = document.getElementById('targetPaymentUrl').value;
-        const btn = event.target.querySelector('button[type="submit"]');
+        const hasConsented = document.getElementById('checkoutConsent').checked;
 
-        // Cambiamos el botón para dar feedback al usuario
-        btn.innerHTML = '<span class="material-symbols-outlined text-sm animate-spin">autorenew</span> Conectando seguro...';
-        btn.classList.add('opacity-75', 'cursor-wait', 'pointer-events-none');
+        if (email && hasConsented) {
+            // AQUI DEBE IR LA CONEXIÓN CON MAILERLITE/BACKEND
+            // Ejemplo conceptual:
+            // sendToMailerLite(email, "Aceptó T&C y Privacidad al comprar " + planName);
+            
+            // Simulación visual de procesamiento
+            const btn = event.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Conectando con Pagadito...';
+            btn.classList.add('opacity-75', 'cursor-wait');
 
-        // Esperamos 1.2 segundos para que la orden llegue a los servidores de MailerLite en Europa
-        // Y luego disparamos la redirección hacia Pagadito
-        setTimeout(() => {
-            window.location.href = targetUrl;
-        }, 1200);
+            // Redirección a la pasarela de pago
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 800);
+        }
     }
 </script>
 
