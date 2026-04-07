@@ -61,23 +61,12 @@
             color: var(--brand-tan);
             transition: color 0.3s ease;
         }
-        .btn-price { transition: all 0.2s ease-in-out; cursor: pointer; }
+        .btn-price { transition: all 0.2s ease-in-out; }
         .btn-price:hover { transform: translateY(-2px); }
-        
-        /* Modal Styles */
-        .modal-input {
-            @apply w-full bg-brand-dark border border-white/20 text-white rounded px-4 py-3 transition-all duration-300;
-        }
-        .modal-input:focus {
-            @apply border-brand-olive outline-none ring-1 ring-brand-olive/50;
-        }
-        .custom-checkbox {
-            @apply w-4 h-4 text-brand-olive bg-brand-dark border-white/20 rounded focus:ring-brand-olive focus:ring-offset-brand-dark focus:ring-2 cursor-pointer;
-        }
     </style>
 </head>
 
-<body class="font-sans antialiased min-h-screen flex flex-col selection:bg-brand-olive selection:text-white relative">
+<body class="font-sans antialiased min-h-screen flex flex-col selection:bg-brand-olive selection:text-white">
 
 <header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-sm border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
@@ -95,8 +84,9 @@
                 <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="compania.html">Compañía</a>
                 <a class="text-sm font-medium tracking-wide text-brand-tan border-b border-brand-tan pb-0.5" href="precios.html">Precios</a>
             </nav>
-            <div class="hidden lg:flex items-center gap-4">
+            <div class="hidden lg:flex">
                 <a class="bg-brand-olive hover:bg-brand-olive/80 text-white px-6 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-sm shadow-lg shadow-black/20 flex items-center gap-2" href="dashboards_premium.html">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                     Portal Clientes
                 </a>
             </div>
@@ -107,9 +97,9 @@
     </div>
 </header>
 
-<main class="flex-grow pt-48 pb-20 px-6 lg:px-12 relative z-10">
+<main class="flex-grow pt-48 pb-20 px-6 lg:px-12">
     
-    <div class="text-center max-w-3xl mx-auto mb-20">
+    <div class="text-center max-w-3xl mx-auto mb-20 relative z-10">
         <span class="text-brand-olive text-xs font-bold uppercase tracking-[0.2em] mb-4 block">Licenciamiento SaaS</span>
         <h1 class="font-serif text-5xl lg:text-6xl text-white mb-6 leading-tight">Invierta en <span class="italic text-brand-tan">claridad comercial.</span></h1>
         <p class="text-brand-gold/80 text-lg font-light leading-relaxed">
@@ -117,7 +107,7 @@
         </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch relative">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch relative z-10">
         
         <div class="bg-brand-mud/30 border border-white/10 p-8 rounded-xl flex flex-col hover:border-brand-tan/30 transition-colors duration-300 h-full">
             <div class="mb-6">
@@ -138,25 +128,25 @@
             <div class="space-y-3 flex-grow">
                 <p class="text-xs text-brand-tan font-semibold uppercase mb-3">Seleccione su ciclo de licencia:</p>
                 
-                <button onclick="openCheckout('https://www.pagalink.com/f8d22b78635cdfd382c7', 'Plan Basic (1 Mes)')" class="btn-price flex justify-between items-center w-full px-4 py-3 rounded border border-white/10 hover:border-brand-olive hover:bg-brand-mud/50 bg-brand-dark text-sm text-gray-300 group-hover:text-white">
+                <a href="https://www.pagalink.com/f8d22b78635cdfd382c7" target="_blank" class="btn-price flex justify-between items-center w-full px-4 py-3 rounded border border-white/10 hover:border-brand-olive hover:bg-brand-mud/50 bg-brand-dark text-sm text-gray-300 group-hover:text-white">
                     <span>1 Mes</span>
                     <span class="font-bold text-white">$50.00</span>
-                </button>
+                </a>
 
-                <button onclick="openCheckout('https://www.pagalink.com/bf29e9e9a1793f348049', 'Plan Basic (3 Meses)')" class="btn-price flex justify-between items-center w-full px-4 py-3 rounded border border-white/10 hover:border-brand-olive hover:bg-brand-mud/50 bg-brand-dark text-sm text-gray-300 group-hover:text-white">
+                <a href="https://www.pagalink.com/bf29e9e9a1793f348049" target="_blank" class="btn-price flex justify-between items-center w-full px-4 py-3 rounded border border-white/10 hover:border-brand-olive hover:bg-brand-mud/50 bg-brand-dark text-sm text-gray-300 group-hover:text-white">
                     <span>3 Meses <span class="text-[10px] text-brand-olive ml-1">(-10%)</span></span>
                     <span class="font-bold text-white">$135.00</span>
-                </button>
+                </a>
 
-                 <button onclick="openCheckout('https://www.pagalink.com/0cabbfe8dd79a24aac81', 'Plan Basic (6 Meses)')" class="btn-price flex justify-between items-center w-full px-4 py-3 rounded border border-white/10 hover:border-brand-olive hover:bg-brand-mud/50 bg-brand-dark text-sm text-gray-300 group-hover:text-white">
+                 <a href="https://www.pagalink.com/0cabbfe8dd79a24aac81" target="_blank" class="btn-price flex justify-between items-center w-full px-4 py-3 rounded border border-white/10 hover:border-brand-olive hover:bg-brand-mud/50 bg-brand-dark text-sm text-gray-300 group-hover:text-white">
                     <span>6 Meses <span class="text-[10px] text-brand-olive ml-1">(-20%)</span></span>
                     <span class="font-bold text-white">$240.00</span>
-                </button>
+                </a>
 
-                <button onclick="openCheckout('https://www.pagalink.com/0c24d4f2f5efde4af7d1', 'Plan Basic (12 Meses)')" class="btn-price flex justify-between items-center w-full px-4 py-3 rounded border border-brand-olive bg-brand-olive/10 hover:bg-brand-olive text-sm text-white font-medium">
+                <a href="https://www.pagalink.com/0c24d4f2f5efde4af7d1" target="_blank" class="btn-price flex justify-between items-center w-full px-4 py-3 rounded border border-brand-olive bg-brand-olive/10 hover:bg-brand-olive text-sm text-white font-medium">
                     <span>12 Meses <span class="text-[10px] text-brand-tan ml-1 font-bold">Ahorra 40%</span></span>
                     <span class="font-bold">$360.00</span>
-                </button>
+                </a>
             </div>
             <p class="text-[10px] text-center text-gray-500 mt-4">Credenciales enviadas automáticamente al confirmar el pago.</p>
         </div>
@@ -195,9 +185,9 @@
                 </li>
             </ul>
             
-            <button onclick="openCheckout('https://www.pagalink.com/7f21651818bff1d08754', 'Plan Standard Anual')" class="btn-price w-full py-4 bg-brand-olive hover:bg-brand-olive/80 text-white text-center rounded transition-all text-sm font-bold tracking-widest uppercase shadow-lg shadow-black/50">
+            <a href="https://www.pagalink.com/7f21651818bff1d08754" target="_blank" class="btn-price w-full py-4 bg-brand-olive hover:bg-brand-olive/80 text-white text-center rounded transition-all text-sm font-bold tracking-widest uppercase shadow-lg shadow-black/50">
                 Adquirir Licencia Anual
-            </button>
+            </a>
             <p class="text-[10px] text-center text-gray-500 mt-4 flex items-center justify-center gap-1">
                 <svg class="w-3 h-3 text-brand-tan" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
                 Procesado por Pagadito / Stripe
@@ -233,102 +223,93 @@
                 </li>
             </ul>
             
-            <a href="https://wa.me/17863958720" target="_blank" class="btn-price w-full py-4 bg-transparent border border-white/30 hover:border-white hover:bg-white text-white hover:text-brand-dark text-center rounded transition-all text-sm font-bold tracking-widest uppercase block">
+            <a href="https://wa.me/17863958720" target="_blank" class="btn-price w-full py-4 bg-transparent border border-white/30 hover:border-white hover:bg-white text-white hover:text-brand-dark text-center rounded transition-all text-sm font-bold tracking-widest uppercase">
                 Contactar Asesor
             </a>
         </div>
 
     </div>
+
+    <div class="max-w-4xl mx-auto mt-24 border-t border-white/10 pt-16">
+        <div class="text-center mb-10">
+            <h3 class="font-serif text-3xl text-white mb-4">Ecosistema Analítico Especializado</h3>
+            <p class="text-gray-400 text-sm">Complemente su inteligencia de mercado con nuestras soluciones de nicho (Desarrollo bajo demanda para clientes corporativos).</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-brand-black p-6 rounded-lg border border-white/5 flex flex-col justify-between group">
+                <div>
+                    <h4 class="text-xl font-medium text-white mb-2">SAC <span class="italic text-brand-tan">Express</span></h4>
+                    <p class="text-sm text-gray-500 mb-4">Módulo especializado para la gestión ágil y monitoreo de servicios aduaneros centralizados.</p>
+                </div>
+                <a href="https://wa.me/17863958720" class="text-xs text-brand-olive uppercase font-bold tracking-widest group-hover:text-white transition-colors">Consultar Integración →</a>
+            </div>
+
+            <div class="bg-brand-black p-6 rounded-lg border border-white/5 flex flex-col justify-between group">
+                <div>
+                    <h4 class="text-xl font-medium text-white mb-2">Costo<span class="italic text-brand-tan">Bodega</span></h4>
+                    <p class="text-sm text-gray-500 mb-4">App dedicada al control preciso y proyección de costos logísticos desde el puerto hasta su inventario.</p>
+                </div>
+                <a href="https://wa.me/17863958720" class="text-xs text-brand-olive uppercase font-bold tracking-widest group-hover:text-white transition-colors">Solicitar Demo →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-24 text-center max-w-2xl mx-auto">
+        <h4 class="text-white font-serif text-xl mb-4">¿Preguntas sobre la facturación corporativa?</h4>
+        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+            Emitimos facturas digitales enviadas a su correo electronico. Si requiere estructurar los pagos para diferentes departamentos (BI, Marketing, Supply Chain), estamos a su disposición.
+        </p>
+    </div>
+
 </main>
 
-<div id="checkoutModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center">
-    <div class="absolute inset-0 bg-brand-dark/90 backdrop-blur-sm transition-opacity" onclick="closeCheckout()"></div>
-    
-    <div class="relative bg-brand-black border border-white/10 rounded-xl shadow-2xl p-8 max-w-md w-full mx-4 transform transition-all">
-        
-        <div class="absolute top-4 right-4">
-            <button onclick="closeCheckout()" class="text-gray-500 hover:text-white transition-colors">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-        </div>
-
-        <div class="text-center mb-6">
-            <span class="phi-symbol text-3xl text-brand-tan block mb-2">φ</span>
-            <h3 class="text-xl font-serif text-white">Validación de Licencia</h3>
-            <p class="text-xs text-brand-gold mt-1" id="modalPlanName">Cargando plan...</p>
-        </div>
-
-        <form id="legalConsentForm" onsubmit="processPayment(event)" class="space-y-5">
-            
-            <input type="hidden" id="targetPaymentUrl" value="">
-
+<footer class="bg-brand-black py-20 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+            <div class="col-span-1 md:col-span-1">
+                <a class="flex items-center space-x-2 mb-6" href="index.html">
+                    <span class="phi-symbol text-2xl text-brand-tan">φ</span>
+                    <span class="text-white text-xl font-normal lowercase tracking-tighter">analysta</span>
+                </a>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Decodificando Mercados en Centroamérica y el Caribe.
+                </p>
+            </div>
             <div>
-                <label for="checkoutEmail" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Correo Corporativo *</label>
-                <input type="email" id="checkoutEmail" class="modal-input" placeholder="gerencia@suempresa.com" required>
-                <p class="text-[10px] text-gray-500 mt-1">A este correo se enviarán sus credenciales de acceso.</p>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Explorar</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="soluciones.html">Soluciones</a></li>
+                    <li><a class="hover:text-white transition-colors" href="clientes.html">Clientes</a></li>
+                    <li><a class="hover:text-white transition-colors" href="precios.html">Precios</a></li>
+                </ul>
             </div>
-
-            <div class="flex items-start gap-3 bg-brand-mud/30 p-4 rounded border border-brand-olive/30 mt-4">
-                <div class="flex items-center h-5 mt-0.5">
-                    <input id="checkoutConsent" type="checkbox" required class="custom-checkbox">
-                </div>
-                <div class="text-xs text-gray-300 leading-tight">
-                    <label for="checkoutConsent" class="cursor-pointer">
-                        Reconozco que Analysta proporciona una herramienta de inteligencia y acepto los <a href="terminos.html" target="_blank" class="text-brand-tan hover:underline font-bold">Términos de Licencia</a> y el <a href="privacidad.html" target="_blank" class="text-brand-tan hover:underline font-bold">Aviso de Privacidad</a>.
-                    </label>
-                </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Recursos</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="como_funciona.html">Metodología</a></li>
+                    <li><a class="hover:text-white transition-colors" href="dashboards_gratis.html">Muestra Gratis</a></li>
+                </ul>
             </div>
-
-            <button type="submit" class="w-full bg-brand-olive hover:bg-brand-olive/80 text-white font-bold py-4 rounded transition-all duration-300 uppercase tracking-widest text-sm mt-4 flex justify-center items-center gap-2">
-                <span class="material-symbols-outlined text-sm">lock</span>
-                Proceder al Pago Seguro
-            </button>
-        </form>
-    </div>
-</div>
-
-<footer class="bg-brand-black py-20 border-t border-white/5 relative z-10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-        <p class="text-xs text-gray-500">© 2026 Analysta BI Solutions, LLC. Todos los derechos reservados.</p>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Legal</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="compania.html">Sobre Nosotros</a></li>
+                    <li><a class="hover:text-white transition-colors" href="terminos.html">Terminos y Condiciones</a></li>
+                    <li><a class="hover:text-white transition-colors" href="privacidad.html">Privacidad</a></li>
+                    <li><a class="hover:text-white transition-colors" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>© 2026 Analysta BI Solutions, LLC. Todos los derechos reservados.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0 uppercase tracking-widest font-medium">
+                <a class="hover:text-white" href="https://wa.me/17863958720">WhatsApp</a>
+                <a class="hover:text-white" href="mailto:info@analysta.biz">Email</a>
+            </div>
+        </div>
     </div>
 </footer>
-
-<script>
-    function openCheckout(paymentUrl, planName) {
-        document.getElementById('checkoutModal').classList.remove('hidden');
-        document.getElementById('targetPaymentUrl').value = paymentUrl;
-        document.getElementById('modalPlanName').innerText = planName;
-    }
-
-    function closeCheckout() {
-        document.getElementById('checkoutModal').classList.add('hidden');
-    }
-
-    function processPayment(event) {
-        event.preventDefault();
-        
-        const email = document.getElementById('checkoutEmail').value;
-        const targetUrl = document.getElementById('targetPaymentUrl').value;
-        const hasConsented = document.getElementById('checkoutConsent').checked;
-
-        if (email && hasConsented) {
-            // AQUI DEBE IR LA CONEXIÓN CON MAILERLITE/BACKEND
-            // Ejemplo conceptual:
-            // sendToMailerLite(email, "Aceptó T&C y Privacidad al comprar " + planName);
-            
-            // Simulación visual de procesamiento
-            const btn = event.target.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = 'Conectando con Pagadito...';
-            btn.classList.add('opacity-75', 'cursor-wait');
-
-            // Redirección a la pasarela de pago
-            setTimeout(() => {
-                window.location.href = targetUrl;
-            }, 800);
-        }
-    }
-</script>
 
 </body>
 </html>
