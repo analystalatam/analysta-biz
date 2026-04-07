@@ -10,77 +10,106 @@
     </script>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Contacto y Solicitudes - Analysta</title>
+    <title>Contacto - Analysta</title>
+    
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        'brand-bg': '#1E1914',
-                        'brand-olive': '#727B3D',
-                        'brand-wine': '#450C1B',
-                        'brand-wine-hover': '#5e1025',
-                        'brand-tan': '#AEA393',
-                        'brand-light': '#F9F8F6',
-                        'brand-dark': '#14110E',
-                        'brand-mud': '#4A412A',
-                    },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'brand-dark': '#1E1914',
+                        'brand-gold': '#AEA393',
+                        'brand-tan': '#B69574',
+                        'brand-olive': '#727B3D',
+                        'brand-brown': '#63372C',
+                        'brand-mud': '#4A412A',
+                        'brand-wine': '#450C1B',
+                        'brand-wine-hover': '#5e1025',
+                        'brand-black': '#14110E',
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #1E1914; color: white; }
-        
+    <style type="text/tailwindcss">
+        :root {
+            --brand-dark: #1E1914;
+            --brand-tan: #B69574;
+            --brand-olive: #727B3D;
+        }
+        body {
+            background-color: var(--brand-dark);
+            color: #E5E1DC;
+            -webkit-font-smoothing: antialiased;
+        }
+        .phi-symbol {
+            font-family: serif;
+            font-style: italic;
+        }
+        .hover-gold-link:hover {
+            color: var(--brand-tan);
+            transition: color 0.3s ease;
+        }
+        /* Estilos de formulario Premium */
         .form-input, .form-select, .form-textarea {
-            background-color: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: white;
-            transition: all 0.3s ease;
+            @apply w-full bg-white/5 border border-white/10 text-white rounded px-4 py-3 transition-all duration-300;
         }
         .form-input:focus, .form-select:focus, .form-textarea:focus {
-            border-color: #727B3D;
-            background-color: rgba(255, 255, 255, 0.05);
-            outline: none;
-            box-shadow: 0 0 0 1px rgba(114, 123, 61, 0.2);
+            @apply border-brand-olive bg-white/10 outline-none ring-1 ring-brand-olive/50;
         }
         ::placeholder { color: #6b7280; font-weight: 300; }
         select option { background-color: #1E1914; color: white; }
+        
+        /* Checkbox personalizado */
         .custom-checkbox {
-            width: 1rem; height: 1rem; color: #727B3D; background-color: #1E1914; border-color: rgba(255,255,255,0.2); border-radius: 0.25rem; cursor: pointer;
+            @apply w-4 h-4 text-brand-olive bg-brand-dark border-white/20 rounded focus:ring-brand-olive focus:ring-offset-brand-dark focus:ring-2 cursor-pointer;
         }
-        .phi-symbol { font-family: 'Playfair Display', serif; font-style: italic; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased bg-brand-bg selection:bg-brand-olive selection:text-white">
 
-<header class="w-full py-5 px-6 md:px-12 flex items-center justify-between border-b border-white/5 bg-brand-bg/95 backdrop-blur-sm fixed top-0 z-50">
-    <div class="flex items-center gap-3">
-        <a href="index.html" class="flex items-center gap-2 group">
-             <div class="flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-brand-olive text-xl font-serif font-bold group-hover:bg-brand-olive group-hover:text-white transition-all">φ</div>
-            <span class="text-lg font-medium tracking-tight text-white group-hover:text-brand-tan transition-colors">analysta</span>
-        </a>
-    </div>
-    <nav class="hidden lg:flex items-center gap-8 text-xs font-medium uppercase tracking-widest text-brand-tan">
-        <a class="hover:text-white transition-colors" href="soluciones.html">Soluciones</a>
-        <a class="hover:text-white transition-colors" href="como_funciona.html">Metodología</a>
-        <a class="hover:text-white transition-colors" href="precios.html">Precios</a>
-    </nav>
-    <div class="hidden md:flex items-center gap-4">
-        <a class="text-brand-tan text-xs font-semibold px-4 py-2 border-b border-brand-tan uppercase tracking-wider cursor-default" href="#">Contacto</a>
-        <a class="bg-brand-olive hover:bg-brand-olive/80 text-white px-4 py-2 text-xs font-bold uppercase tracking-widest transition-all rounded shadow-lg" href="dashboards_premium.html">Portal Clientes</a>
+<body class="font-sans antialiased min-h-screen flex flex-col selection:bg-brand-olive selection:text-white">
+
+<header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-sm border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex justify-between items-center h-24">
+            <div class="flex-shrink-0 flex items-center">
+                <a class="flex items-center space-x-2 group" href="index.html">
+                    <span class="phi-symbol text-3xl text-brand-tan">φ</span>
+                    <span class="text-white text-2xl font-normal tracking-tighter lowercase">analysta</span>
+                </a>
+            </div>
+            <nav class="hidden lg:flex space-x-10">
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="soluciones.html">Soluciones</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="clientes.html">Clientes</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="como_funciona.html">Metodología</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="compania.html">Compañía</a>
+                <a class="text-sm font-medium tracking-wide text-gray-300 hover-gold-link" href="precios.html">Precios</a>
+            </nav>
+            <div class="hidden lg:flex items-center gap-4">
+                <a class="text-sm font-bold tracking-wide text-brand-tan uppercase border-b border-brand-tan pb-0.5" href="contacto.html">Contacto</a>
+                <a class="bg-brand-olive hover:bg-brand-olive/80 text-white px-6 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-sm shadow-lg shadow-black/20 flex items-center gap-2" href="dashboards_premium.html">
+                    Portal Clientes
+                </a>
+            </div>
+             <div class="lg:hidden">
+                <a href="precios.html" class="text-brand-tan uppercase text-xs font-bold border border-brand-tan px-4 py-2">Ver Precios</a>
+            </div>
+        </div>
     </div>
 </header>
 
-<main class="flex-grow pt-32 pb-20 px-6 md:px-12 lg:px-20 relative overflow-hidden">
+<main class="flex-grow pt-32 pb-20 px-6 lg:px-12 relative overflow-hidden">
     
     <div class="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-brand-black to-transparent pointer-events-none z-0"></div>
     <span class="absolute -top-24 -left-24 phi-symbol text-[40rem] text-white/5 pointer-events-none select-none z-0">φ</span>
@@ -89,14 +118,14 @@
         
         <div class="flex flex-col justify-center">
             <span class="text-brand-olive text-xs font-bold uppercase tracking-widest mb-4 block">Hablemos de negocios</span>
-            <h1 class="font-serif text-4xl md:text-5xl text-white mb-6 leading-tight">
+            <h1 class="font-serif text-5xl md:text-6xl text-white mb-6 leading-tight">
                 El conocimiento es su mejor <span class="text-brand-tan italic">ventaja.</span>
             </h1>
-            <p class="text-brand-tan/80 text-lg font-light leading-relaxed mb-8">
-                Ya sea que necesite solicitar su <strong>Dashboard de Muestra Gratuito</strong>, agendar una demostración o cotizar un despliegue de BI Corporativo, nuestro equipo directivo está listo para asistirle.
+            <p class="text-gray-300 text-lg font-light leading-relaxed mb-10">
+                Ya sea que necesite estadísticas de importaciones precisas, informes de participación de mercado o cotizar un despliegue de BI Corporativo, nuestro equipo directivo está listo para asistirle.
             </p>
             
-            <div class="space-y-8 border-t border-white/10 pt-8 mt-4">
+            <div class="space-y-8 border-t border-white/10 pt-10">
                 <div class="flex items-start gap-4">
                     <span class="material-symbols-outlined text-brand-tan text-3xl">mail</span>
                     <div>
@@ -109,19 +138,20 @@
                 <div class="flex items-start gap-4">
                     <span class="material-symbols-outlined text-brand-tan text-3xl">support_agent</span>
                     <div>
-                        <h3 class="text-white font-medium mb-1">Soporte y Demostraciones</h3>
-                        <p class="text-sm text-gray-400 mb-2">Atención directa para agendar una reunión o resolver dudas técnicas.</p>
+                        <h3 class="text-white font-medium mb-1">Soporte a Suscriptores</h3>
+                        <p class="text-sm text-gray-400 mb-2">Asistencia técnica para el uso de Dashboards y facturación.</p>
                         <a href="https://wa.me/17863958720" target="_blank" class="text-sm font-semibold text-brand-olive hover:text-white transition-colors">WhatsApp: +1 (786) 395-8720</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="bg-white/5 border border-white/5 p-8 md:p-10 rounded-xl shadow-2xl backdrop-blur-sm relative" id="formContainer">
+        <div class="bg-brand-black border border-white/10 p-8 md:p-10 rounded-xl shadow-2xl relative">
+            <div class="absolute inset-0 bg-gradient-to-br from-brand-mud/10 to-transparent rounded-xl pointer-events-none"></div>
             
             <iframe name="hidden_iframe_contact" id="hidden_iframe_contact" style="display:none;"></iframe>
 
-            <form action="https://assets.mailerlite.com/jsonp/2051910/forms/177129890679620702/subscribe" method="POST" target="hidden_iframe_contact" id="contactForm" class="space-y-6" onsubmit="handleFormSubmit(event)">
+            <form action="https://assets.mailerlite.com/jsonp/2051910/forms/177129890679620702/subscribe" method="POST" target="hidden_iframe_contact" id="contactForm" class="space-y-6 relative z-10" onsubmit="handleFormSubmit(event)">
                 
                 <input type="hidden" name="ml-submit" value="1">
                 <input type="hidden" name="anticsrf" value="true">
@@ -129,82 +159,87 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label for="nombre" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Nombre *</label>
-                        <input type="text" id="nombre" name="fields[name]" class="form-input w-full rounded px-4 py-3" placeholder="Ej. Carlos" required>
+                        <input type="text" id="nombre" name="fields[name]" class="form-input" required>
                     </div>
                     <div>
                         <label for="apellido" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Apellido *</label>
-                        <input type="text" id="apellido" name="fields[last_name]" class="form-input w-full rounded px-4 py-3" placeholder="Ej. Lopez" required>
+                        <input type="text" id="apellido" name="fields[last_name]" class="form-input" required>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label for="email" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Correo Corporativo *</label>
-                        <input type="email" id="email" name="fields[email]" class="form-input w-full rounded px-4 py-3" placeholder="nombre@empresa.com" required>
+                        <input type="email" id="email" name="fields[email]" class="form-input" placeholder="ejemplo@suempresa.com" required>
                     </div>
                     <div>
                         <label for="telefono" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Teléfono</label>
-                        <input type="tel" id="telefono" name="fields[phone]" class="form-input w-full rounded px-4 py-3" placeholder="+505 0000 0000">
+                        <input type="tel" id="telefono" name="fields[phone]" class="form-input" placeholder="+505 0000 0000">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label for="empresa" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Empresa *</label>
-                        <input type="text" id="empresa" name="fields[company]" class="form-input w-full rounded px-4 py-3" required>
+                        <input type="text" id="empresa" name="fields[company]" class="form-input" required>
                     </div>
                     <div>
-                        <label for="nit_ruc" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">NIT / RUC</label>
-                        <input type="text" id="nit_ruc" name="fields[nit_ruc]" class="form-input w-full rounded px-4 py-3" placeholder="ID Tributario (Opcional)">
+                        <label for="cargo" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Cargo</label>
+                        <input type="text" id="cargo" name="fields[job_tittle_cargo]" class="form-input" placeholder="Ej. Gerente Comercial">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label for="cargo" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Cargo / Puesto</label>
-                        <input type="text" id="cargo" name="fields[job_tittle_cargo]" class="form-input w-full rounded px-4 py-3" placeholder="Ej. Gerente de Compras">
+                        <label for="pais" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">País *</label>
+                        <select id="pais" name="fields[country]" class="form-select cursor-pointer" required>
+                            <option value="" disabled selected>Seleccione uno</option>
+                            <option value="CR">Costa Rica</option>
+                            <option value="SV">El Salvador</option>
+                            <option value="GT">Guatemala</option>
+                            <option value="HN">Honduras</option>
+                            <option value="NI">Nicaragua</option>
+                            <option value="PA">Panamá</option>
+                            <option value="DO">República Dominicana</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="OTRO">Otro</option>
+                        </select>
                     </div>
                     <div>
-                        <label for="pais" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">País *</label>
-                        <select id="pais" name="fields[country]" class="form-select w-full rounded px-4 py-3 cursor-pointer" required>
-                            <option value="" disabled selected>Seleccione uno...</option>
-                            <option value="Costa Rica">Costa Rica</option>
-                            <option value="El Salvador">El Salvador</option>
-                            <option value="Guatemala">Guatemala</option>
-                            <option value="Honduras">Honduras</option>
-                            <option value="Nicaragua">Nicaragua</option>
-                            <option value="Panama">Panamá</option>
-                            <option value="Republica Dominicana">Republica Dominicana</option>
-                            <option value="Otro">Otro</option>
+                        <label for="motivo" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Motivo *</label>
+                        <select id="motivo" name="fields[product_interest_producto_de_interes]" class="form-select cursor-pointer" required>
+                            <option value="" disabled selected>Seleccione uno</option>
+                            <option value="demo">Solicitar Demo Gratis</option>
+                            <option value="cotizacion">Cotización Premium</option>
+                            <option value="soporte">Soporte Técnico</option>
+                            <option value="general">Información General</option>
                         </select>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label for="producto_interes" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Producto de Interés *</label>
-                        <input type="text" id="producto_interes" name="fields[product_interest_producto_de_interes]" class="form-input w-full rounded px-4 py-3" placeholder="Ej. Llantas, Agroquímicos..." required>
-                    </div>
-                    <div>
-                        <label for="hs_code" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Partida Arancelaria (HS Code)</label>
-                        <input type="text" id="hs_code" name="fields[hs_code]" class="form-input w-full rounded px-4 py-3" placeholder="Opcional (Ej. 8703.23)">
-                    </div>
+                <div>
+                    <label for="mensaje" class="block text-xs font-medium text-brand-tan uppercase tracking-wider mb-2">Mensaje</label>
+                    <textarea id="mensaje" name="fields[hs_code]" rows="3" class="form-textarea resize-none" placeholder="¿En qué podemos ayudarle?"></textarea>
                 </div>
 
-                <div class="flex items-start gap-3 bg-brand-mud/20 p-4 rounded border border-white/5 mt-4">
-                    <div class="flex items-center h-5 mt-0.5">
-                        <input id="privacidad" type="checkbox" required class="custom-checkbox">
+                <div class="flex items-start gap-3 bg-brand-mud/20 p-4 rounded border border-white/5 relative z-10">
+                    <div class="flex items-center h-5">
+                        <input id="privacidad" name="privacidad" type="checkbox" required class="custom-checkbox">
                     </div>
                     <div class="text-xs text-gray-400 leading-tight">
-                        <label for="privacidad" class="cursor-pointer">
-                            He leído y acepto el <a href="privacidad.html" target="_blank" class="text-brand-tan hover:underline font-bold">Aviso de Privacidad</a> y los <a href="terminos.html" target="_blank" class="text-brand-tan hover:underline font-bold">Términos de Uso</a> de Analysta BI Solutions, LLC.
+                        <label for="privacidad">
+                            He leído y acepto el <a href="privacidad.html" target="_blank" class="text-brand-tan hover:underline">Aviso de Privacidad</a> y los <a href="terminos.html" target="_blank" class="text-brand-tan hover:underline">Términos de Uso</a> de Analysta BI Solutions, LLC. Entiendo que mis datos serán procesados para responder a mi solicitud comercial.
                         </label>
                     </div>
                 </div>
 
-                <button type="submit" id="submitBtnContact" class="w-full bg-brand-wine hover:bg-brand-wine-hover text-white font-bold py-4 rounded transition-all duration-300 uppercase tracking-widest text-sm shadow-lg shadow-black/40 flex justify-center items-center gap-2">
-                    Solicitar Información
+                <button id="submitBtnContact" type="submit" class="w-full bg-brand-wine hover:bg-brand-wine-hover text-white font-bold py-4 rounded transition-all duration-300 uppercase tracking-widest text-sm shadow-lg shadow-black/40 relative z-10 flex justify-center items-center gap-2">
+                    Enviar Solicitud
                 </button>
+                
+                <p class="text-[10px] text-center text-gray-500 mt-2 relative z-10">
+                    Operamos bajo cumplimiento normativo global. Su información es confidencial y no será vendida a terceros.
+                </p>
             </form>
 
             <div id="successMessage" class="hidden absolute inset-0 bg-brand-black/95 backdrop-blur-sm rounded-xl flex-col items-center justify-center p-8 text-center border border-brand-olive/30 z-20">
@@ -224,29 +259,67 @@
     </div>
 </main>
 
-<footer class="w-full py-10 px-6 border-t border-white/10 bg-[#161412] text-center relative z-10">
-    <p class="text-xs text-gray-600">© 2026 Analysta BI Solutions, LLC. Todos los derechos reservados.</p>
+<footer class="bg-brand-black py-20 border-t border-white/5 mt-12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+            <div class="col-span-1 md:col-span-1">
+                <a class="flex items-center space-x-2 mb-6" href="index.html">
+                    <span class="phi-symbol text-2xl text-brand-tan">φ</span>
+                    <span class="text-white text-xl font-normal lowercase tracking-tighter">analysta</span>
+                </a>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Decodificando Mercados en Centroamérica y el Caribe.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Explorar</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="soluciones.html">Soluciones</a></li>
+                    <li><a class="hover:text-white transition-colors" href="clientes.html">Clientes</a></li>
+                    <li><a class="hover:text-white transition-colors" href="precios.html">Precios</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Recursos</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="dashboards_gratis.html">Muestra Gratis</a></li>
+                    <li><a class="hover:text-white transition-colors" href="como_funciona.html">Metodología</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-brand-tan text-xs font-bold uppercase tracking-widest mb-6">Legal</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="compania.html">Sobre Nosotros</a></li>
+                    <li><a class="hover:text-white transition-colors" href="terminos.html">Términos y Condiciones</a></li>
+                    <li><a class="hover:text-white transition-colors" href="privacidad.html">Privacidad</a></li>
+                    <li><a class="hover:text-white transition-colors" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>© 2026 Analysta BI Solutions, LLC. Todos los derechos reservados.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0 uppercase tracking-widest font-medium">
+                <a class="hover:text-white" href="https://wa.me/17863958720">WhatsApp</a>
+                <a class="hover:text-white" href="mailto:ventas@analysta.biz">Email</a>
+            </div>
+        </div>
+    </div>
 </footer>
 
 <script>
     function handleFormSubmit(event) {
-        // Dejamos que el formulario se envíe naturalmente al Iframe oculto (target="hidden_iframe_contact")
         const btn = document.getElementById('submitBtnContact');
         
-        // Cambiamos estado del botón para feedback visual
         btn.innerHTML = '<span class="material-symbols-outlined text-sm animate-spin">autorenew</span> Procesando...';
         btn.classList.add('opacity-75', 'cursor-wait', 'pointer-events-none');
 
-        // Tras 1.5 segundos (tiempo suficiente para que MailerLite procese), mostramos el mensaje de éxito
         setTimeout(() => {
             document.getElementById('contactForm').classList.add('hidden');
-            
             const successDiv = document.getElementById('successMessage');
             successDiv.classList.remove('hidden');
             successDiv.classList.add('flex');
             
-            // Reseteamos el formulario y el botón internamente
-            btn.innerHTML = 'Solicitar Información';
+            btn.innerHTML = 'Enviar Solicitud';
             btn.classList.remove('opacity-75', 'cursor-wait', 'pointer-events-none');
             document.getElementById('contactForm').reset();
         }, 1500);
@@ -256,7 +329,6 @@
         const successDiv = document.getElementById('successMessage');
         successDiv.classList.add('hidden');
         successDiv.classList.remove('flex');
-        
         document.getElementById('contactForm').classList.remove('hidden');
     }
 </script>
